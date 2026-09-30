@@ -1,6 +1,6 @@
 // One-off: 30 days of hourly prices for every liquid wrapper of a curated set of assets.
 //   npm run backfill   (after npm run snapshot)
-// Uses /v2/cryptocurrency/quotes/historical, which needs a paid tier (the hackathon Startup plan
+// Uses /v2/cryptocurrency/quotes/historical, which needs a paid tier (our hackathon key
 // covers it). Afterwards, scripts/snapshot.ts appends new points on the free tier.
 
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';

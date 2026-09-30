@@ -47,7 +47,7 @@ From snapshots taken on 2026-09-30, plus 30 days of hourly history. The live sit
 | `GET /v5/real-world-assets/market-pairs/list` | Probed on every snapshot; returns 1006 on our key (see feedback) | Basic per docs |
 | `GET /v2/cryptocurrency/info` | Wrapper logos and chains, joined on `crypto_id` | Basic |
 | `GET /v1/global-metrics/quotes/latest` | Market context | Basic |
-| `GET /v2/cryptocurrency/quotes/historical` | 30 days × hourly prices for every liquid wrapper of 24 assets (one-off backfill) | Startup |
+| `GET /v2/cryptocurrency/quotes/historical` | 30 days × hourly prices for every liquid wrapper of 24 assets (one-off backfill) | Paid (our hackathon key) |
 
 A cold snapshot is **25 calls / 17 credits**. Refreshes reuse cached token metadata: **17 calls / 9 credits**. The one-off backfill was 24 calls / 1,046 credits.
 
@@ -97,7 +97,7 @@ All of this lives in one pure, unit-tested module: [`src/lib/parity.ts`](src/lib
 **Got in the way.**
 
 1. **Mixed units under one `rwa_id`.** Per-gram and per-ounce gold share an asset, and some stock wrappers stand for several shares per token. No field says so. `average_tokenized_price` is computed across them, so for KLAC it lands on $1,719 when the wrappers trade at $195 and $1,955. A per-token `units_per_share` field would fix both.
-2. **`market-pairs/list` returns `1006`** ("plan doesn't support this endpoint") on a hackathon Startup key, although the docs list it for Basic through Enterprise. Without it there's no per-venue view.
+2. **`market-pairs/list` returns `1006`** ("plan doesn't support this endpoint") on our hackathon API key, although the docs list it for every plan from Basic up. (Other teams report it working on the Startup tier, so this is at least a doc/plan mismatch.) Without it there's no per-venue view.
 3. **`quotes/latest` silently caps at 100 IDs.** The limit isn't in the docs, and an ID list taken straight from `assets/list` can contain `null` (Honeywell has `rwa_id: null` and `has_tokens: null` despite a $52M tokenized cap), which fails the whole request with `4001`. Fetching it by `rwa_slug=honeywell` also returns `4001`.
 4. **Nulls.** Whole groups of wrappers return `price: null` (122 Backed, 23 Dinari), and some tokens have `issuer_name: null`.
 5. **No RWA history endpoint.** History has to be rebuilt per wrapper from `/v2/cryptocurrency/quotes/historical`, which the free tier doesn't include.
@@ -128,7 +128,7 @@ src/                ──► React + Vite static site, reads public/data/*
 .github/workflows/  ──► every 3h: snapshot (if the key secret is set) → test → build → GitHub Pages
 ```
 
-It's a static site on purpose. The API key never reaches the browser, the demo keeps working if the CMC call fails (the last good snapshot stays live), and the RWA endpoints it refreshes from are all on the free tier, so it survives the end of the hackathon's Startup access.
+It's a static site on purpose. The API key never reaches the browser, the demo keeps working if the CMC call fails (the last good snapshot stays live), and the RWA endpoints it refreshes from are all on the free tier, so it survives the end of the hackathon's upgraded access.
 
 ## License
 

@@ -1,7 +1,7 @@
 // Pulls a fresh snapshot of the tokenized-RWA market from the CMC API into public/data/.
 //   npm run snapshot
 // Every endpoint used here is available on the free Basic tier, so the site can keep refreshing
-// after the hackathon's Startup-tier access ends. Typical cost: ~25 credits per run.
+// after the hackathon's upgraded access ends. Typical cost: 9 to 17 credits per run.
 
 import { existsSync, readdirSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
@@ -200,7 +200,7 @@ async function main() {
       title: 'Market Pairs rejects keys the docs say are allowed',
       detail:
         'The RWA reference lists /v5/real-world-assets/market-pairs/list for Basic through Enterprise, ' +
-        'but it returns this error on a hackathon Startup-tier key. Without it there is no per-venue price, ' +
+        'but it returns this error on our hackathon key. Without it there is no per-venue price, ' +
         'so Parity can only compare wrappers, not the exchanges they trade on.',
       endpoint: '/v5/real-world-assets/market-pairs/list',
       evidence: `error_code ${err.code}: ${err.message.split(': ').slice(1).join(': ')}`,
