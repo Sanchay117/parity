@@ -12,13 +12,13 @@ The S&P 500 has nine tokenized wrappers on CoinMarketCap: xStocks, Ondo, bStocks
 
 ## What it found
 
-From the snapshot of 2026-09-30 06:08 UTC plus 30 days of hourly history. Every number is recomputed on each refresh.
+From snapshots taken on 2026-09-30, plus 30 days of hourly history. The live site recomputes everything on each refresh, so its exact numbers will have moved.
 
 | Finding | Evidence |
 |---|---|
 | **Spreads between wrappers of the same asset persist.** They aren't blips. | SPY wrappers: 30-day median spread 103 bps (p95 116). IBM 283 bps, QCOM 210, GME 180. |
 | **The issuer decides what you pay.** | Ondo wrappers averaged **+17 bps** over consensus across 24 assets and traded above it in 63% of them. bStocks averaged **−20 bps** (above in 18%), Robinhood −18, Reality −17. |
-| **CMC's own `average_tokenized_price` blends units.** | KLAC: CMC reports **$1,718.97**. Its wrappers trade at $195 (Backed, perp) and $1,955 (Ondo, a 10× unit), so no wrapper trades anywhere near the average. NOW: CMC's $649.62 is Ondo's 5× unit, while three other wrappers trade at $130. |
+| **CMC's own `average_tokenized_price` blends units.** | KLAC: CMC reports **about $1,717**. Its wrappers trade near $195 (Backed, perp) and $1,955 (Ondo, a 10× unit), so no wrapper trades anywhere near the average. NOW: CMC's ~$650 is Ondo's 5× unit, while three other wrappers trade near $130. |
 | **Wrappers under one `rwa_id` use different units, and nothing in the API says so.** | Comtech CGO and VNX VNXAU are priced per gram, PAXG/XAUt per ounce. Ondo's NFLXon and KLACon (10×), NOWon (5×) and CRWDon (4×) trade at exact multiples of three or more independent peers, so one token stands for several shares (most likely after a split). |
 | **Lots of dead data.** | 155 of 853 wrappers return `price: null` (122 of them Backed). 10 quotes sit ≥5% from their peers with zero volume. |
 
