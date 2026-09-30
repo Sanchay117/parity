@@ -470,6 +470,8 @@ export interface DividendFit {
   issuerName: string;
   n: number;
   correlation: number | null;
+  /** Share of the variance in premium explained by yield. */
+  r2: number | null;
   /** Least-squares slope of premium on yield: 1 means the full dividend shows up in the price. */
   slope: number | null;
   /** Median premium for assets yielding over 2%, and for non-payers (under 0.2%). */
@@ -477,7 +479,7 @@ export interface DividendFit {
   nonPayersMedian: number | null;
 }
 
-function fit(issuerName: string, pts: DividendPoint[]): DividendFit {
+function fit(issuerName: string, pts: Pick<DividendPoint, 'yieldPct' | 'premiumPct'>[]): DividendFit {
   const n = pts.length;
   const mx = pts.reduce((s, p) => s + p.yieldPct, 0) / n;
   const my = pts.reduce((s, p) => s + p.premiumPct, 0) / n;
@@ -493,6 +495,7 @@ function fit(issuerName: string, pts: DividendPoint[]): DividendFit {
     issuerName,
     n,
     correlation: sxx && syy ? sxy / Math.sqrt(sxx * syy) : null,
+    r2: sxx && syy ? (sxy * sxy) / (sxx * syy) : null,
     slope: sxx ? sxy / sxx : null,
     payersMedian: median(pts.filter((p) => p.yieldPct > 2).map((p) => p.premiumPct)),
     nonPayersMedian: median(pts.filter((p) => p.yieldPct < 0.2).map((p) => p.premiumPct)),
@@ -530,4 +533,29 @@ export function dividendStudy(views: AssetView[], minAssets = 12): { points: Div
     .map(([issuer, pts]) => fit(issuer, pts))
     .sort((a, b) => (b.slope ?? 0) - (a.slope ?? 0));
   return { points, fits };
+}
+
+/** Issuers whose wrappers track the share price only (their premium doesn't grow with yield). */
+export const PRICE_ONLY_ISSUERS = ['bStocks', 'Robinhood', 'Reality'];
+
+/**
+ * Same-stock version of the dividend fit: for assets that have both an `issuer` wrapper and a
+ * price-only wrapper, regress the gap between the two on dividend yield. Comparing within one
+ * asset cancels which stocks each issuer happens to wrap and any move since the market closed.
+ */
+export function pairedDividendFit(views: AssetView[], issuer: string): DividendFit | null {
+  const pts: { yieldPct: number; premiumPct: number }[] = [];
+  for (const v of views) {
+    const ref = v.reference;
+    if (!ref || ref.dividendsTtm == null) continue;
+    const a = v.wrappers.find((w) => w.issuerName === issuer && w.eligible && !w.unit);
+    const peers = v.wrappers.filter((w) => PRICE_ONLY_ISSUERS.includes(w.issuerName) && w.eligible && !w.unit);
+    if (!a || !peers.length) continue;
+    const b = peers.reduce((m, w) => ((w.volume24h ?? 0) > (m.volume24h ?? 0) ? w : m));
+    pts.push({
+      yieldPct: (ref.dividendsTtm / ref.price) * 100,
+      premiumPct: ((a.normalizedPrice as number) / (b.normalizedPrice as number) - 1) * 100,
+    });
+  }
+  return pts.length >= 8 ? fit(issuer, pts) : null;
 }

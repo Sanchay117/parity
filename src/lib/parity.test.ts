@@ -3,6 +3,7 @@ import {
   analyzeAsset,
   analyzeHistory,
   dividendStudy,
+  pairedDividendFit,
   analyzeIssuers,
   computeParity,
   detectUnit,
@@ -276,5 +277,22 @@ describe('dividendStudy', () => {
     expect(ondo.slope!).toBeCloseTo(0.7, 1);
     expect(ondo.correlation!).toBeGreaterThan(0.99);
     expect(Math.abs(backed.slope!)).toBeLessThan(0.01);
+    expect(ondo.r2!).toBeGreaterThan(0.98);
+  });
+
+  it('pairs each total-return wrapper with a price-only wrapper of the same stock', () => {
+    const views = Array.from({ length: 10 }, (_, i) =>
+      analyzeAsset({
+        ...asset(`P${'Y'.repeat(i)}`, [
+          wrapper(`P${i}on`, 'Ondo Assets', 101 * (1 + (0.5 * i * 0.5) / 100), 1e6),
+          wrapper(`P${i}B`, 'bStocks', 101, 1e6),
+        ]),
+        reference: { price: 100, dividendsTtm: i * 0.5, asOf: '', marketOpen: false, exchange: 'NYSE', ticker: `P${i}`, source: 'test' },
+      }),
+    );
+    // The 1% move since the close shifts both wrappers equally and drops out of the paired gap.
+    const paired = pairedDividendFit(views, 'Ondo Assets')!;
+    expect(paired.slope!).toBeCloseTo(0.5, 2);
+    expect(paired.n).toBe(10);
   });
 });

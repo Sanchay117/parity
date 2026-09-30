@@ -6,7 +6,7 @@ The S&P 500 has nine tokenized wrappers on CoinMarketCap: xStocks, Ondo, bStocks
 
 **Track:** Real World Assets  
 **Live demo:** https://sanchay117.github.io/parity/  
-**Demo video:** https://youtu.be/Uz0YfScKXyg (2:38, narrated; also at https://sanchay117.github.io/parity/demo.mp4)
+**Demo video:** https://youtu.be/Uz0YfScKXyg (2:41, narrated; also at https://sanchay117.github.io/parity/demo.mp4)
 
 ![Parity radar](docs/radar.png)
 
@@ -17,7 +17,7 @@ From snapshots taken on 2026-09-30, plus 30 days of hourly history. The live sit
 | Finding | Evidence |
 |---|---|
 | **Spreads between wrappers of the same asset persist.** They aren't blips. | SPY wrappers: 30-day median spread 103 bps (p95 116). IBM 283 bps, QCOM 210, GME 180. |
-| **The issuer decides what you pay, and dividends explain most of it.** | Ondo wrappers averaged **+17 bps** over consensus across 24 assets; bStocks **−20 bps**, Robinhood −18, Reality −17. Against the real stock, Ondo's premium rises with the stock's dividend yield: **slope ≈0.7, correlation ≈0.75 across 127 assets** (+0.3% for non-payers, +2.5% above a 2% yield). xStocks shows the same drift (≈0.65); bStocks, Robinhood and Reality stay flat. A slope near 0.7 is what reinvesting dividends after a 30% US withholding tax would produce: those wrappers behave like total-return tokens, so their "premium" is mostly accrued dividends, not overpricing. |
+| **The issuer decides what you pay, and for Ondo, dividends are a big part of why.** | Ondo wrappers averaged **+17 bps** over consensus across 24 assets; bStocks **−20 bps**, Robinhood −18, Reality −17. Against the real stock, Ondo's premium rises with the stock's dividend yield (**slope ≈0.7, R² ≈0.56 across 127 assets**; +0.3% for non-payers, +2.5% above a 2% yield), while bStocks, Robinhood and Reality stay flat. The stricter test compares Ondo with a price-only wrapper **of the same stock**, which cancels stock choice and after-hours moves: the gap still grows with yield (**slope ≈0.54, R² ≈0.47, 52 stocks**). Around SPY's 18 Sep ex-dividend date ($1.89), the SPYon vs SPYB gap stepped up from ~0.97% to ~1.09% on weekdays. This is consistent with Ondo tokens reinvesting dividends net of withholding tax (inferred from prices, not issuer docs), so their "premium" on dividend payers shouldn't be read as overpricing. xStocks' fit is weak (R² ≈0.06) and doesn't survive the same-stock test. |
 | **CMC's own `average_tokenized_price` blends units.** | KLAC: CMC reports **about $1,720 to $1,745**, **roughly 9× the real NASDAQ price** (~$197). Its wrappers trade near $195 (Backed, perp) and $1,960 (Ondo, quoted per 10 shares), so no wrapper trades anywhere near the average. NOW: CMC's average has ranged **4.4× to 5× the real NYSE price** (~$130) as its weights shift. |
 | **Wrappers under one `rwa_id` use different units, and nothing in the API says so.** | Comtech CGO and VNX VNXAU are priced per gram, PAXG/XAUt per ounce. Ondo's NFLXon and KLACon (10×), NOWon (5×) and CRWDon (4×) trade at exact multiples of three or more independent peers, so one token stands for several shares (most likely after a split). |
 | **Lots of dead data.** | 155 of 853 wrappers return `price: null` (122 of them Backed). 10 quotes sit ≥5% from their peers with zero volume. |
@@ -27,7 +27,7 @@ From snapshots taken on 2026-09-30, plus 30 days of hourly history. The live sit
 - **Radar** (`#/`): the widest spreads right now between liquid wrappers of the same asset (both legs ≥ $250K/day), the 30-day issuer premium table, and the automatically detected API data issues.
 - **Best way to buy** (`#/asset/spy`): pick any of 249 assets and see every wrapper's premium or discount to consensus, volume, market cap, chains and flags. Three picks answer "which one should I buy?": tracks closest, cheapest liquid, most liquid. The 30-day hourly chart shows whether a gap is persistent or noise.
 - **Tokenized vs the real stock** (on the radar): each asset's wrapper consensus against the listed stock or ETF itself, with CMC's average flagged where it's off by a multiple. Unit normalizations are confirmed against the real price.
-- **The dividend effect** (`#/dividends`): every wrapper plotted by the real stock's dividend yield against its premium to the real price, with a fit per issuer. It separates total-return wrappers from price-only ones.
+- **The dividend effect** (`#/dividends`): every wrapper plotted by the real stock's dividend yield against its premium to the real price, with a fit per issuer. A same-stock comparison against price-only wrappers controls for which stocks each issuer wraps.
 - **Issuers** (`#/issuers`): a league table grading each issuer on tracking error against its *peers* (leave-one-out, so the biggest wrapper can't grade itself), plus typical premium, market share and problem counts. Grades measure price tracking only, not custody or solvency.
 - **Method & API** (`#/method`): how the numbers are computed, every endpoint called with credits used, and API feedback.
 

@@ -6,6 +6,7 @@ import {
   findSpreads,
   dividendStudy,
   integrityReport,
+  pairedDividendFit,
   issuerTrends,
   median,
   referenceGaps,
@@ -60,6 +61,7 @@ export function Radar({ views, snapshot, summary }: Props) {
   const gaps = referenceGaps(views);
   const dividends = dividendStudy(views);
   const ondoFit = dividends.fits.find((f) => f.issuerName === 'Ondo Assets');
+  const ondoPaired = pairedDividendFit(views, 'Ondo Assets');
   const flatFits = dividends.fits.filter((f) => Math.abs(f.slope ?? 1) < 0.15);
   const medianGap = median(gaps.map((v) => v.referenceGapBps as number));
   const refClosed = gaps.some((v) => !v.reference?.marketOpen);
@@ -116,8 +118,8 @@ export function Radar({ views, snapshot, summary }: Props) {
               Average 30-day premium to consensus across {richest.assets} assets
               {ondoFit && richest.issuerName === 'Ondo Assets' ? (
                 <>
-                  . Most of it is <strong>dividends</strong>: Ondo's premium to the real stock rises with dividend yield (slope{' '}
-                  {ondoFit.slope!.toFixed(2)}), while price-only wrappers stay flat.
+                  . Much of it tracks <strong>dividends</strong>: against a price-only wrapper of the same stock, Ondo's gap grows with
+                  dividend yield{ondoPaired ? ` (R² ${ondoPaired.r2!.toFixed(2)} across ${ondoPaired.n} stocks)` : ''}.
                 </>
               ) : (
                 <>
@@ -274,22 +276,31 @@ export function Radar({ views, snapshot, summary }: Props) {
             </div>
             <div className="grid">
               <div className="card insight">
-                <span className="kicker">Ondo, {ondoFit.n} assets</span>
+                <span className="kicker">Ondo vs the real stock, {ondoFit.n} assets</span>
                 <span className="big">{ondoFit.slope!.toFixed(2)}</span>
                 <p>
-                  Extra premium per 1% of dividend yield (correlation {ondoFit.correlation!.toFixed(2)}). Non-payers:{' '}
+                  Extra premium per 1% of dividend yield (R² {ondoFit.r2!.toFixed(2)}). Non-payers:{' '}
                   {ondoFit.nonPayersMedian! > 0 ? '+' : ''}
                   {ondoFit.nonPayersMedian!.toFixed(2)}%. Yield over 2%: <strong>+{ondoFit.payersMedian!.toFixed(2)}%</strong>.
                 </p>
               </div>
+              {ondoPaired && (
+                <div className="card insight">
+                  <span className="kicker">Same stock, Ondo vs price-only wrapper</span>
+                  <span className="big">{ondoPaired.slope!.toFixed(2)}</span>
+                  <p>
+                    The stricter test: {ondoPaired.n} stocks where Ondo and bStocks, Robinhood or Reality both trade. Comparing inside one
+                    stock cancels stock choice and after-hours moves; the gap still grows with yield (R² {ondoPaired.r2!.toFixed(2)}).
+                  </p>
+                </div>
+              )}
               <div className="card insight">
                 <span className="kicker">What it means</span>
                 <p>
-                  A slope near 0.7 is what reinvesting dividends after a 30% US withholding tax would produce: those wrappers behave
-                  like <strong>total-return</strong> tokens.
-                  {flatFits.length > 0 &&
-                    ` ${flatFits.map((f) => issuerLabel(f.issuerName)).join(', ')} stay flat (price-only).`}{' '}
-                  Compare them after adjusting for dividends, not as overpricing.
+                  The pattern is consistent with Ondo's tokens reinvesting dividends (net of US withholding tax) while
+                  {flatFits.length > 0 ? ` ${flatFits.map((f) => issuerLabel(f.issuerName)).join(', ')}` : ' price-only wrappers'} track the
+                  share price alone. We infer this from prices, not from issuer documentation. Either way, a{' '}
+                  <strong>dividend-paying</strong> stock's Ondo wrapper should be compared after adjusting for dividends, not read as overpriced.
                 </p>
               </div>
             </div>
@@ -301,7 +312,7 @@ export function Radar({ views, snapshot, summary }: Props) {
                   <th>Issuer</th>
                   <th className="r">Assets</th>
                   <th className="r">Slope (premium per 1% yield)</th>
-                  <th className="r">Correlation</th>
+                  <th className="r">R²</th>
                   <th className="r">Median vs real, yield over 2%</th>
                   <th className="r">Median vs real, non-payers</th>
                 </tr>
@@ -316,7 +327,7 @@ export function Radar({ views, snapshot, summary }: Props) {
                     <td className="r num" style={{ fontWeight: 600 }}>
                       {f.slope?.toFixed(2)}
                     </td>
-                    <td className="r num secondary">{f.correlation?.toFixed(2)}</td>
+                    <td className="r num secondary">{f.r2?.toFixed(2)}</td>
                     <td className="r num secondary">{f.payersMedian != null ? `${f.payersMedian > 0 ? '+' : ''}${f.payersMedian.toFixed(2)}%` : '—'}</td>
                     <td className="r num secondary">
                       {f.nonPayersMedian != null ? `${f.nonPayersMedian > 0 ? '+' : ''}${f.nonPayersMedian.toFixed(2)}%` : '—'}
@@ -327,8 +338,9 @@ export function Radar({ views, snapshot, summary }: Props) {
             </table>
           </div>
           <p className="muted" style={{ fontSize: 12, marginTop: 8 }}>
-            Dividends and real prices from {gaps[0]?.reference?.source ?? 'an external source'}. Tokens launched recently have accrued
-            fewer dividends, which weakens the fit; outside US hours part of every gap is news since the close.
+            Dividends and real prices from {gaps[0]?.reference?.source ?? 'an external source'}. Different issuers wrap different stocks
+            and tokens launched recently have accrued fewer dividends, which is why the same-stock comparison above is the one to
+            trust. A low R² means yield explains little of that issuer's premium.
           </p>
         </section>
       )}
