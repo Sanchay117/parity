@@ -264,6 +264,13 @@ code,
 .cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
+.cols-2-1 {
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  align-items: start;
+}
+#dividends {
+  scroll-margin-top: 72px;
+}
 
 /* ---------- Hero ---------- */
 .hero {
@@ -702,7 +709,8 @@ tbody tr.clickable:hover td {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .cols-3,
-  .cols-2 {
+  .cols-2,
+  .cols-2-1 {
     grid-template-columns: 1fr;
   }
   .fresh span.long {

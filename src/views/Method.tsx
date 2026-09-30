@@ -77,7 +77,15 @@ export function Method({ snapshot }: { snapshot: Snapshot; views: AssetView[] })
           {int(TRADEABLE_VOLUME_USD)} a day. That's a price map, not an arbitrage guarantee: wrappers differ in chain, KYC, redemption
           rights and trading hours.
         </p>
-        <h3>6. History</h3>
+        <h3>6. The real stock</h3>
+        <p>
+          CoinMarketCap quotes the wrappers but not the listed instrument behind them, so each snapshot also pulls the last
+          regular-session price of the real stock or ETF from Yahoo Finance's public chart endpoint (an external reference, clearly
+          labelled). A quote more than 30% from the wrapper consensus is treated as a different instrument sharing the ticker and
+          dropped. This is what confirms the unit findings: KLACon at $1,955 matches the real KLA share price only once divided by
+          10. Outside US market hours the wrappers keep trading, so a gap to the last close partly reflects news since then.
+        </p>
+        <h3>7. History</h3>
         <p>
           <code>/v2/cryptocurrency/quotes/historical</code> backfilled 720 hourly points for every liquid wrapper of{' '}
           {snapshot.backfill?.assets ?? 24} assets. The same
@@ -118,7 +126,8 @@ export function Method({ snapshot }: { snapshot: Snapshot; views: AssetView[] })
           </table>
         </div>
         <p className="muted" style={{ fontSize: 13, marginTop: 10 }}>
-          Raw request/response evidence for every endpoint (key redacted) is in{' '}
+          Plus one external source: Yahoo Finance's chart endpoint for the real stock's last price (no key, ~150 calls per
+          snapshot). Raw request/response evidence for every CMC endpoint (key redacted) is in{' '}
           <a href={`${REPO_URL}/tree/main/evidence`}>/evidence</a> in the repo.
         </p>
       </section>

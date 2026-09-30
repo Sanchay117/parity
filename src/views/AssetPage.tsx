@@ -1,7 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { DevCell, IssuerChip, SectionHead, Stat, StatusBadges, WrapperCell } from '../components/ui.tsx';
 import { useHistory } from '../lib/data.ts';
-import { bps, pct, price, shortDescription, usd } from '../lib/format.ts';
+import { bps, pct, price, referenceWhen, shortDescription, usd } from '../lib/format.ts';
 import { issuerLabel } from '../lib/issuers.ts';
 import type { AssetView, WrapperView } from '../lib/parity.ts';
 import type { HistorySummary, Snapshot } from '../lib/types.ts';
@@ -48,6 +48,7 @@ function Pick({ kicker, w, why, meta }: { kicker: string; w: WrapperView | null;
 export function AssetPage({ slug, views, snapshot, summary }: Props) {
   const view = views.find((v) => v.asset.slug === slug) ?? views.find((v) => v.asset.symbol === 'SPY') ?? views[0];
   const { asset } = view;
+  const ref = view.reference;
   const historyAvailable = summary?.assets.some((a) => a.rwaId === asset.rwaId) ?? false;
   const history = useHistory(historyAvailable ? asset.rwaId : null);
   const hSummary = summary?.assets.find((a) => a.rwaId === asset.rwaId);
@@ -64,6 +65,7 @@ export function AssetPage({ slug, views, snapshot, summary }: Props) {
           <div className="eyebrow">
             Best way to buy · {TYPE_LABEL[asset.assetType] ?? asset.assetType}
             {asset.primaryExchange ? ` · ${asset.primaryExchange}` : ''}
+            {` · ${usd(asset.tokenizedMarketCap)} tokenized`}
           </div>
           <h1 style={{ marginTop: 8 }}>
             {asset.symbol} <span className="muted" style={{ fontWeight: 500 }}>{asset.name}</span>
@@ -86,11 +88,22 @@ export function AssetPage({ slug, views, snapshot, summary }: Props) {
 
       <div className="grid cols-4 section" style={{ marginTop: 20 }}>
         <Stat label="Consensus price" value={price(view.consensus)} sub={`${view.method} of ${view.liquidCount} liquid wrapper${view.liquidCount === 1 ? '' : 's'}`} />
+        {ref ? (
+          <Stat
+            label={`Real ${ref.ticker} · ${ref.exchange}`}
+            value={price(ref.price)}
+            sub={`${referenceWhen(ref)} · wrappers ${bps(view.referenceGapBps, 0)} vs it`}
+          />
+        ) : (
+          <Stat label="Tokenized market cap" value={usd(asset.tokenizedMarketCap)} sub={`${usd(asset.tokenizedVolume24h)} traded in 24h`} />
+        )}
         <Stat
           label="CMC average_tokenized_price"
           value={price(asset.avgTokenizedPrice)}
           sub={
-            view.cmcAverageGapBps != null && Math.abs(view.cmcAverageGapBps) >= 100 ? (
+            view.cmcVsReference != null && Math.abs(view.cmcVsReference - 1) >= 0.05 ? (
+              <span style={{ color: 'var(--critical)' }}>✕ {view.cmcVsReference.toFixed(1)}× the real price</span>
+            ) : view.cmcAverageGapBps != null && Math.abs(view.cmcAverageGapBps) >= 100 ? (
               <span style={{ color: 'var(--critical)' }}>
                 ✕ {bps(view.cmcAverageGapBps, 0)} vs consensus{view.cmcAverageUntraded ? ', no wrapper trades here' : ''}
               </span>
@@ -104,7 +117,6 @@ export function AssetPage({ slug, views, snapshot, summary }: Props) {
           value={view.spreadBps != null ? bps(view.spreadBps, 0).replace('+', '') : '—'}
           sub={hSummary?.spreadP50 != null ? `30-day median ${bps(hSummary.spreadP50, 0).replace('+', '')}` : 'cheapest vs richest liquid wrapper'}
         />
-        <Stat label="Tokenized market cap" value={usd(asset.tokenizedMarketCap)} sub={`${usd(asset.tokenizedVolume24h)} traded in 24h`} />
       </div>
 
       <div className="grid cols-3 section" style={{ marginTop: 16 }}>
@@ -124,7 +136,7 @@ export function AssetPage({ slug, views, snapshot, summary }: Props) {
           meta={snapshot.tokenMeta}
           why={
             view.cheapest
-              ? `${bps(view.cheapest.deviationBps)} vs consensus, ${usd(view.cheapest.volume24h)} 24h volume. Cheapest entry, if you can use ${issuerLabel(view.cheapest.issuerName)}.`
+              ? `${bps(view.cheapest.deviationBps)} vs consensus${view.cheapest.vsReferenceBps != null ? ` (${bps(view.cheapest.vsReferenceBps)} vs the real stock)` : ''}, ${usd(view.cheapest.volume24h)} 24h volume. Cheapest entry, if you can use ${issuerLabel(view.cheapest.issuerName)}.`
               : ''
           }
         />
@@ -144,6 +156,7 @@ export function AssetPage({ slug, views, snapshot, summary }: Props) {
         <SectionHead title="Every wrapper">
           Premium (red) or discount (blue) to the consensus price. Prices shown as quoted by CMC; wrappers in different units are
           normalized before comparing.
+          {ref && !ref.marketOpen && ` The ${ref.ticker} market is closed, so the “vs real” column compares 24/7 wrappers with the last close.`}
         </SectionHead>
         <div className="card table-wrap">
           <table>
@@ -153,6 +166,7 @@ export function AssetPage({ slug, views, snapshot, summary }: Props) {
                 <th>Issuer</th>
                 <th className="r">Price</th>
                 <th className="r">vs consensus</th>
+                {ref && <th className="r">vs real {ref.ticker}</th>}
                 <th className="r">24h volume</th>
                 <th className="r">Market cap</th>
                 <th>Flags</th>
@@ -180,6 +194,7 @@ export function AssetPage({ slug, views, snapshot, summary }: Props) {
                     <td className="r">
                       <DevCell value={w.deviationBps} max={maxDev} />
                     </td>
+                    {ref && <td className="r num secondary">{bps(w.vsReferenceBps)}</td>}
                     <td className="r num">{usd(w.volume24h)}</td>
                     <td className="r num">{usd(w.marketCap)}</td>
                     <td>

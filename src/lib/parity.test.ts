@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import {
   analyzeAsset,
   analyzeHistory,
+  dividendStudy,
   analyzeIssuers,
   computeParity,
   detectUnit,
@@ -208,5 +209,72 @@ describe('analyzeHistory', () => {
     expect(h.spreadBps[0]).toBeCloseTo(100);
     expect(h.spreadBps[1]).toBeCloseTo(50);
     expect(h.series[1].meanDevBps!).toBeGreaterThan(0);
+  });
+});
+
+describe('reference (real listed instrument)', () => {
+  const ref = (price: number) => ({
+    price,
+    dividendsTtm: 0,
+    asOf: '2026-09-29T20:00:00.000Z',
+    marketOpen: false,
+    exchange: 'NasdaqGS',
+    ticker: 'KLAC',
+    source: 'test',
+  });
+
+  it('measures wrappers and CMC’s average against the real price', () => {
+    const klac = analyzeAsset({
+      ...asset(
+        'KLAC',
+        [wrapper('KLACx', 'Backed', 194.99, 1e6), wrapper('KLAC', 'Perp', 195.4, 1e6), wrapper('KLACon', 'Ondo', 1954.85, 1e6)],
+        1716.85,
+      ),
+      reference: ref(196.53),
+    });
+    expect(klac.cmcVsReference).toBeCloseTo(8.74, 2);
+    expect(klac.referenceGapBps!).toBeLessThan(0);
+    const ondo = klac.wrappers.find((w) => w.symbol === 'KLACon')!;
+    // The 10× unit is confirmed by the real price once normalized.
+    expect(ondo.unitConfirmed).toBe(true);
+    expect(Math.abs(ondo.vsReferenceBps!)).toBeLessThan(100);
+  });
+
+  it('leaves reference fields empty without a match', () => {
+    const v = analyzeAsset(asset('X', [wrapper('A', 'a', 10, 1e6), wrapper('B', 'b', 10.1, 1e6)]));
+    expect(v.reference).toBeNull();
+    expect(v.referenceGapBps).toBeNull();
+    expect(v.wrappers[0].vsReferenceBps).toBeNull();
+  });
+});
+
+describe('dividendStudy', () => {
+  it('separates a total-return issuer from price-return ones', () => {
+    const views = Array.from({ length: 14 }, (_, i) => {
+      const realPrice = 100;
+      const yieldPct = i * 0.4; // 0% … 5.2%
+      const a = analyzeAsset({
+        ...asset(`S${'X'.repeat(i)}`, [
+          wrapper(`T${i}on`, 'Ondo Assets', realPrice * (1 + (0.7 * yieldPct) / 100), 1e6),
+          wrapper(`T${i}x`, 'Backed Assets', realPrice, 1e6),
+        ]),
+        reference: {
+          price: realPrice,
+          dividendsTtm: yieldPct,
+          asOf: '',
+          marketOpen: false,
+          exchange: 'NYSE',
+          ticker: `S${i}`,
+          source: 'test',
+        },
+      });
+      return a;
+    });
+    const { fits } = dividendStudy(views, 10);
+    const ondo = fits.find((f) => f.issuerName === 'Ondo Assets')!;
+    const backed = fits.find((f) => f.issuerName === 'Backed Assets')!;
+    expect(ondo.slope!).toBeCloseTo(0.7, 1);
+    expect(ondo.correlation!).toBeGreaterThan(0.99);
+    expect(Math.abs(backed.slope!)).toBeLessThan(0.01);
   });
 });

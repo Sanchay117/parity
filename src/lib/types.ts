@@ -38,6 +38,22 @@ export interface RwaAsset {
   primaryExchange: string | null;
   wrappers: Wrapper[];
   tradfiMarkets: { exchange: string; ticker: string; url: string }[];
+  /** The listed instrument itself, from an external quote source; absent when no match. */
+  reference?: ReferenceQuote;
+}
+
+/** Last regular-session price of the real (non-tokenized) stock or ETF. */
+export interface ReferenceQuote {
+  price: number;
+  /** Cash dividends per share paid over the last 12 months (0 for non-payers). */
+  dividendsTtm: number | null;
+  /** Time of `price`. */
+  asOf: string;
+  /** Whether the exchange's regular session was open when the snapshot ran. */
+  marketOpen: boolean;
+  exchange: string;
+  ticker: string;
+  source: string;
 }
 
 export interface Issuer {

@@ -114,7 +114,8 @@ export function Issuers({ views, snapshot, summary }: Props) {
         </div>
         <p className="muted" style={{ fontSize: 13, marginTop: 10 }}>
           Grades measure how tightly an issuer's wrappers track their peers on price, nothing about custody, solvency or product
-          quality. Tracking error, typical price and wrapper counts cover every asset in the snapshot with at least two liquid
+          quality. Issuers whose tokens reinvest dividends (Ondo, and to a lesser degree xStocks) drift above price-only peers on
+          dividend payers, which counts against them here; see <a href="#/dividends">the dividend effect</a>. Tracking error, typical price and wrapper counts cover every asset in the snapshot with at least two liquid
           wrappers; the 30-day column covers the {summary?.assets.length ?? 0} assets with hourly history. Hover a wrapper count for the
           issuer's total <code>num_tokens</code> from <code>/v5/real-world-assets/issuers/list</code>.
         </p>

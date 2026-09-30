@@ -1,17 +1,21 @@
-import { bps, int, price, usd } from '../lib/format.ts';
+import { bps, int, price, referenceWhen, usd } from '../lib/format.ts';
 import { issuerLabel } from '../lib/issuers.ts';
 import {
   analyzeIssuers,
   DISLOCATION_BPS,
   findSpreads,
+  dividendStudy,
   integrityReport,
   issuerTrends,
+  median,
+  referenceGaps,
   TRADEABLE_VOLUME_USD,
   type AssetView,
 } from '../lib/parity.ts';
 import type { HistorySummary, Snapshot } from '../lib/types.ts';
 import { DevCell, IssuerChip, SectionHead, Stat, WrapperMini } from '../components/ui.tsx';
 import { Findings } from './Findings.tsx';
+import { DividendScatter } from '../components/DividendScatter.tsx';
 
 interface Props {
   views: AssetView[];
@@ -43,8 +47,22 @@ export function Radar({ views, snapshot, summary }: Props) {
   const leadView = lead ? views.find((v) => v.asset.rwaId === lead.rwaId) : undefined;
   const richest = trends[0];
   const cheapest = trends.at(-1);
-  // Prefer an average that blends units into a price no wrapper trades at: that's wrong under any reading.
-  const worstAggregate = integrity.aggregateGaps.find((v) => v.cmcAverageUntraded) ?? integrity.aggregateGaps[0];
+  // Lead with the average furthest from the real stock; else one that blends units into a price no wrapper trades at.
+  const worstAggregate =
+    [...integrity.aggregateGaps].filter((v) => v.cmcVsReference != null).sort((a, b) => (b.cmcVsReference ?? 0) - (a.cmcVsReference ?? 0))[0] ??
+    integrity.aggregateGaps.find((v) => v.cmcAverageUntraded) ??
+    integrity.aggregateGaps[0];
+  const unitWrapper = worstAggregate?.wrappers.find((w) => w.unit);
+  const unitPhrase =
+    unitWrapper && unitWrapper.unit!.factor < 1
+      ? `${unitWrapper.symbol} is quoted per ${Math.round(1 / unitWrapper.unit!.factor)} shares`
+      : 'its wrappers are quoted in different units';
+  const gaps = referenceGaps(views);
+  const dividends = dividendStudy(views);
+  const ondoFit = dividends.fits.find((f) => f.issuerName === 'Ondo Assets');
+  const flatFits = dividends.fits.filter((f) => Math.abs(f.slope ?? 1) < 0.15);
+  const medianGap = median(gaps.map((v) => v.referenceGapBps as number));
+  const refClosed = gaps.some((v) => !v.reference?.marketOpen);
   const aggregatePrices = worstAggregate
     ? worstAggregate.wrappers.filter((w) => w.price != null && !w.offPeg).map((w) => w.price as number)
     : [];
@@ -89,26 +107,47 @@ export function Radar({ views, snapshot, summary }: Props) {
           </a>
         )}
         {richest && cheapest && (
-          <a className="card insight" href="#/issuers" style={{ color: 'inherit', textDecoration: 'none' }}>
-            <span className="kicker">Who charges you more</span>
+          <a className="card insight" href={ondoFit ? '#/dividends' : '#/issuers'} style={{ color: 'inherit', textDecoration: 'none' }}>
+            <span className="kicker">{ondoFit ? 'Why Ondo trades rich' : 'Who charges you more'}</span>
             <span className="big">
               {issuerLabel(richest.issuerName)} {bps(richest.meanDevBps, 0)}
             </span>
             <p>
-              Average 30-day premium to consensus across {richest.assets} assets. The same exposure via{' '}
-              <strong>{issuerLabel(cheapest.issuerName)}</strong> averaged {bps(cheapest.meanDevBps, 0)}.
+              Average 30-day premium to consensus across {richest.assets} assets
+              {ondoFit && richest.issuerName === 'Ondo Assets' ? (
+                <>
+                  . Most of it is <strong>dividends</strong>: Ondo's premium to the real stock rises with dividend yield (slope{' '}
+                  {ondoFit.slope!.toFixed(2)}), while price-only wrappers stay flat.
+                </>
+              ) : (
+                <>
+                  . The same exposure via <strong>{issuerLabel(cheapest.issuerName)}</strong> averaged {bps(cheapest.meanDevBps, 0)}.
+                </>
+              )}
             </p>
           </a>
         )}
         {worstAggregate && (
           <a className="card insight" href={`#/asset/${worstAggregate.asset.slug}`} style={{ color: 'inherit', textDecoration: 'none' }}>
             <span className="kicker">CMC's own average is off</span>
-            <span className="big">{price(worstAggregate.asset.avgTokenizedPrice)}</span>
-            <p>
-              CoinMarketCap's <code>average_tokenized_price</code> for <strong>{worstAggregate.asset.symbol}</strong>.
-              {worstAggregate.cmcAverageUntraded ? ' No wrapper trades there: they' : ' Its wrappers'} trade at{' '}
-              {price(Math.min(...aggregatePrices))} and {price(Math.max(...aggregatePrices))}, the same share in two different units.
-            </p>
+            <span className="big">
+              {worstAggregate.cmcVsReference != null
+                ? `${worstAggregate.cmcVsReference.toFixed(1)}× the real price`
+                : price(worstAggregate.asset.avgTokenizedPrice)}
+            </span>
+            {worstAggregate.reference ? (
+              <p>
+                CoinMarketCap's <code>average_tokenized_price</code> for <strong>{worstAggregate.asset.symbol}</strong> is{' '}
+                {price(worstAggregate.asset.avgTokenizedPrice)}. The real stock last traded at {price(worstAggregate.reference.price)} on{' '}
+                {worstAggregate.reference.exchange}. {unitPhrase[0].toUpperCase() + unitPhrase.slice(1)}, and the average blends them.
+              </p>
+            ) : (
+              <p>
+                CoinMarketCap's <code>average_tokenized_price</code> for <strong>{worstAggregate.asset.symbol}</strong>.
+                {worstAggregate.cmcAverageUntraded ? ' No wrapper trades there: they' : ' Its wrappers'} trade at{' '}
+                {price(Math.min(...aggregatePrices))} and {price(Math.max(...aggregatePrices))}, the same share in two different units.
+              </p>
+            )}
           </a>
         )}
       </div>
@@ -160,6 +199,139 @@ export function Radar({ views, snapshot, summary }: Props) {
           </table>
         </div>
       </section>
+
+      {gaps.length > 0 && (
+        <section className="section">
+          <SectionHead title="Tokenized vs the real stock">
+            Wrapper consensus against the listed stock or ETF itself, across {gaps.length} assets (median{' '}
+            {bps(medianGap, 0)}).
+            {refClosed
+              ? ' US markets are closed right now: wrappers keep trading 24/7, so part of each gap is news since the close.'
+              : ''}{' '}
+            Big premiums on dividend payers are mostly reinvested dividends: see <a href="#/dividends">the dividend effect</a>.
+          </SectionHead>
+          <div className="card table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Asset</th>
+                  <th className="r">Real price</th>
+                  <th className="r">Wrapper consensus</th>
+                  <th className="r">Gap</th>
+                  <th>Closest-to-real wrapper</th>
+                  <th className="r">CMC average</th>
+                </tr>
+              </thead>
+              <tbody>
+                {gaps.slice(0, 10).map((v) => {
+                  const ref = v.reference!;
+                  const best = [...v.wrappers]
+                    .filter((w) => w.eligible && w.vsReferenceBps != null)
+                    .sort((a, b) => Math.abs(a.vsReferenceBps as number) - Math.abs(b.vsReferenceBps as number))[0];
+                  return (
+                    <tr key={v.asset.rwaId} className="clickable" onClick={() => go(v.asset.slug)}>
+                      <td>
+                        <b>{v.asset.symbol}</b>
+                        <div className="muted" style={{ fontSize: 12 }}>
+                          {ref.exchange} · {referenceWhen(ref)}
+                        </div>
+                      </td>
+                      <td className="r num">{price(ref.price)}</td>
+                      <td className="r num">{price(v.consensus)}</td>
+                      <td className="r">
+                        <DevCell value={v.referenceGapBps} max={150} />
+                      </td>
+                      <td>{best ? <WrapperMini w={{ ...best, deviationBps: best.vsReferenceBps }} meta={snapshot.tokenMeta[best.cryptoId]} /> : '—'}</td>
+                      <td className="r num secondary">
+                        {v.cmcVsReference != null && Math.abs(v.cmcVsReference - 1) >= 0.05 ? (
+                          <span style={{ color: 'var(--critical)' }}>✕ {v.cmcVsReference.toFixed(1)}×</span>
+                        ) : (
+                          price(v.asset.avgTokenizedPrice)
+                        )}
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+          <p className="muted" style={{ fontSize: 12, marginTop: 8 }}>
+            Real prices are last regular-session quotes from {gaps[0].reference!.source}, an external reference: CoinMarketCap has
+            no quote for the underlying listed instrument.
+          </p>
+        </section>
+      )}
+
+      {ondoFit && (
+        <section className="section" id="dividends">
+          <SectionHead title="The dividend effect">
+            Why some issuers look expensive. Each dot is one wrapper, plotted by the real stock's dividend yield against the wrapper's
+            premium to the real price.
+          </SectionHead>
+          <div className="grid cols-2-1">
+            <div className="card pad">
+              <DividendScatter points={dividends.points} fits={dividends.fits} />
+            </div>
+            <div className="grid">
+              <div className="card insight">
+                <span className="kicker">Ondo, {ondoFit.n} assets</span>
+                <span className="big">{ondoFit.slope!.toFixed(2)}</span>
+                <p>
+                  Extra premium per 1% of dividend yield (correlation {ondoFit.correlation!.toFixed(2)}). Non-payers:{' '}
+                  {ondoFit.nonPayersMedian! > 0 ? '+' : ''}
+                  {ondoFit.nonPayersMedian!.toFixed(2)}%. Yield over 2%: <strong>+{ondoFit.payersMedian!.toFixed(2)}%</strong>.
+                </p>
+              </div>
+              <div className="card insight">
+                <span className="kicker">What it means</span>
+                <p>
+                  A slope near 0.7 is what reinvesting dividends after a 30% US withholding tax would produce: those wrappers behave
+                  like <strong>total-return</strong> tokens.
+                  {flatFits.length > 0 &&
+                    ` ${flatFits.map((f) => issuerLabel(f.issuerName)).join(', ')} stay flat (price-only).`}{' '}
+                  Compare them after adjusting for dividends, not as overpricing.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="card table-wrap" style={{ marginTop: 16 }}>
+            <table>
+              <thead>
+                <tr>
+                  <th>Issuer</th>
+                  <th className="r">Assets</th>
+                  <th className="r">Slope (premium per 1% yield)</th>
+                  <th className="r">Correlation</th>
+                  <th className="r">Median vs real, yield over 2%</th>
+                  <th className="r">Median vs real, non-payers</th>
+                </tr>
+              </thead>
+              <tbody>
+                {dividends.fits.map((f) => (
+                  <tr key={f.issuerName}>
+                    <td>
+                      <IssuerChip name={f.issuerName} />
+                    </td>
+                    <td className="r num">{f.n}</td>
+                    <td className="r num" style={{ fontWeight: 600 }}>
+                      {f.slope?.toFixed(2)}
+                    </td>
+                    <td className="r num secondary">{f.correlation?.toFixed(2)}</td>
+                    <td className="r num secondary">{f.payersMedian != null ? `${f.payersMedian > 0 ? '+' : ''}${f.payersMedian.toFixed(2)}%` : '—'}</td>
+                    <td className="r num secondary">
+                      {f.nonPayersMedian != null ? `${f.nonPayersMedian > 0 ? '+' : ''}${f.nonPayersMedian.toFixed(2)}%` : '—'}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="muted" style={{ fontSize: 12, marginTop: 8 }}>
+            Dividends and real prices from {gaps[0]?.reference?.source ?? 'an external source'}. Tokens launched recently have accrued
+            fewer dividends, which weakens the fit; outside US hours part of every gap is news since the close.
+          </p>
+        </section>
+      )}
 
       <section className="section">
         <SectionHead title="Issuer premium">

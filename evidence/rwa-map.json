@@ -15,17 +15,17 @@
           "rwa_rank": 2,
           "has_tokens": true,
           "first_historical_data": "2003-09-07T04:00:00.000Z",
-          "last_historical_data": "2026-09-29T23:59:00.000Z"
+          "last_historical_data": "2026-09-30T08:10:00.000Z"
         }
       ],
       "total_size": 4686,
       "has_more": true
     },
     "status": {
-      "timestamp": "2026-09-30T06:32:56.358Z",
+      "timestamp": "2026-09-30T08:12:12.577Z",
       "error_code": "0",
       "error_message": "",
-      "elapsed": 2,
+      "elapsed": 3,
       "credit_count": 0
     }
   }

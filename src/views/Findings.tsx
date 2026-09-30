@@ -36,6 +36,9 @@ export function Findings({ snapshot, integrity }: Props) {
                 <li key={wrapper.cryptoId}>
                   <a href={`#/asset/${view.asset.slug}`}>{view.asset.symbol}</a> · <b>{wrapper.symbol}</b> ({issuerLabel(wrapper.issuerName)})
                   at {price(wrapper.price)}: {wrapper.unit!.label}
+                  {wrapper.unitConfirmed && (
+                    <span className="muted"> ✓ matches the real {view.reference!.ticker} price once normalized</span>
+                  )}
                 </li>
               ))}
             </ul>
@@ -54,7 +57,9 @@ export function Findings({ snapshot, integrity }: Props) {
               {aggregateGaps.slice(0, 8).map((v) => (
                 <li key={v.asset.rwaId}>
                   <a href={`#/asset/${v.asset.slug}`}>{v.asset.symbol}</a>: CMC {price(v.asset.avgTokenizedPrice)} vs consensus{' '}
-                  {price(v.consensus)} ({bps(v.cmcAverageGapBps, 0)}){v.cmcAverageUntraded ? ', a price no wrapper trades at' : ''}
+                  {price(v.consensus)}
+                  {v.reference ? `, real ${v.reference.ticker} ${price(v.reference.price)} (${v.cmcVsReference!.toFixed(1)}×)` : ` (${bps(v.cmcAverageGapBps, 0)})`}
+                  {v.cmcAverageUntraded ? ', a price no wrapper trades at' : ''}
                 </li>
               ))}
             </ul>

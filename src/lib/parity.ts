@@ -1,7 +1,7 @@
 // Parity analytics: how far each tokenized wrapper of a real-world asset trades from the others.
 // Pure functions over CMC data, shared by the site and the snapshot scripts.
 
-import type { AssetHistory, HistorySummary, Issuer, RwaAsset, Wrapper } from './types.ts';
+import type { AssetHistory, HistorySummary, Issuer, ReferenceQuote, RwaAsset, Wrapper } from './types.ts';
 
 /** A wrapper needs this much 24h volume to count toward the consensus price. */
 export const LIQUID_VOLUME_USD = 50_000;
@@ -140,7 +140,14 @@ export function computeParity<T extends Quote>(quotes: T[]): ParityResult<T> {
   return { consensus, method, rows };
 }
 
-export type WrapperView = Wrapper & ParityFields & { volumeShare: number };
+export type WrapperView = Wrapper &
+  ParityFields & {
+    volumeShare: number;
+    /** Premium (+) or discount (−) of the unit-normalized price to the real listed instrument. */
+    vsReferenceBps: number | null;
+    /** A unit normalization that the real price confirms (within 5%). */
+    unitConfirmed: boolean;
+  };
 
 export interface AssetView {
   asset: RwaAsset;
@@ -162,13 +169,29 @@ export interface AssetView {
   cmcAverageGapBps: number | null;
   /** True when no wrapper's raw price is within 5% of CMC's average: it blends units into a price nobody trades at. */
   cmcAverageUntraded: boolean;
+  /** The real listed stock/ETF, when a reference quote matched. */
+  reference: ReferenceQuote | null;
+  /** Consensus of the wrappers vs the real instrument's last regular-session price. */
+  referenceGapBps: number | null;
+  /** CMC's average_tokenized_price as a multiple of the real price (1 = agrees). */
+  cmcVsReference: number | null;
 }
 
 export function analyzeAsset(asset: RwaAsset): AssetView {
   const { consensus, method, rows } = computeParity(asset.wrappers);
+  const reference = asset.reference ?? null;
+  const vsRef = (p: number | null) => (p != null && reference ? (p / reference.price - 1) * 10_000 : null);
   const totalVolume = rows.reduce((s, r) => s + (r.volume24h ?? 0), 0);
   const wrappers: WrapperView[] = rows
-    .map((r) => ({ ...r, volumeShare: totalVolume ? (r.volume24h ?? 0) / totalVolume : 0 }))
+    .map((r) => {
+      const vsReferenceBps = vsRef(r.normalizedPrice);
+      return {
+        ...r,
+        volumeShare: totalVolume ? (r.volume24h ?? 0) / totalVolume : 0,
+        vsReferenceBps,
+        unitConfirmed: r.unit != null && vsReferenceBps != null && Math.abs(vsReferenceBps) < 500,
+      };
+    })
     .sort((a, b) => (b.volume24h ?? 0) - (a.volume24h ?? 0));
 
   const liquid = wrappers.filter((w) => w.eligible && w.deviationBps != null);
@@ -202,6 +225,9 @@ export function analyzeAsset(asset: RwaAsset): AssetView {
     cmcAverageUntraded:
       asset.avgTokenizedPrice != null &&
       !wrappers.some((w) => w.price != null && Math.abs(w.price / asset.avgTokenizedPrice! - 1) < 0.05),
+    reference,
+    referenceGapBps: vsRef(consensus),
+    cmcVsReference: reference && asset.avgTokenizedPrice != null ? asset.avgTokenizedPrice / reference.price : null,
   };
 }
 
@@ -219,6 +245,13 @@ export function findSpreads(views: AssetView[], minBps = DISLOCATION_BPS): Asset
 
 /** CMC's average_tokenized_price this far from our consensus is treated as a distorted aggregate. */
 export const AGGREGATE_GAP_BPS = 100;
+
+/** Assets whose wrappers trade furthest from the real listed instrument, largest gap first. */
+export function referenceGaps(views: AssetView[]): AssetView[] {
+  return views
+    .filter((v) => v.referenceGapBps != null && v.liquidCount >= 1)
+    .sort((a, b) => Math.abs(b.referenceGapBps as number) - Math.abs(a.referenceGapBps as number));
+}
 
 export interface IntegrityReport {
   unitMismatches: Dislocation[];
@@ -420,4 +453,81 @@ export function issuerTrends(summary: HistorySummary, minAssets = 3): IssuerTren
       richShare: xs.filter((x) => x > 0).length / xs.length,
     }))
     .sort((a, b) => b.meanDevBps - a.meanDevBps);
+}
+
+export interface DividendPoint {
+  symbol: string;
+  slug: string;
+  wrapper: string;
+  issuerName: string;
+  /** Trailing 12-month dividends as % of the real price. */
+  yieldPct: number;
+  /** Wrapper's premium to the real price, in %. */
+  premiumPct: number;
+}
+
+export interface DividendFit {
+  issuerName: string;
+  n: number;
+  correlation: number | null;
+  /** Least-squares slope of premium on yield: 1 means the full dividend shows up in the price. */
+  slope: number | null;
+  /** Median premium for assets yielding over 2%, and for non-payers (under 0.2%). */
+  payersMedian: number | null;
+  nonPayersMedian: number | null;
+}
+
+function fit(issuerName: string, pts: DividendPoint[]): DividendFit {
+  const n = pts.length;
+  const mx = pts.reduce((s, p) => s + p.yieldPct, 0) / n;
+  const my = pts.reduce((s, p) => s + p.premiumPct, 0) / n;
+  let sxy = 0;
+  let sxx = 0;
+  let syy = 0;
+  for (const p of pts) {
+    sxy += (p.yieldPct - mx) * (p.premiumPct - my);
+    sxx += (p.yieldPct - mx) ** 2;
+    syy += (p.premiumPct - my) ** 2;
+  }
+  return {
+    issuerName,
+    n,
+    correlation: sxx && syy ? sxy / Math.sqrt(sxx * syy) : null,
+    slope: sxx ? sxy / sxx : null,
+    payersMedian: median(pts.filter((p) => p.yieldPct > 2).map((p) => p.premiumPct)),
+    nonPayersMedian: median(pts.filter((p) => p.yieldPct < 0.2).map((p) => p.premiumPct)),
+  };
+}
+
+/**
+ * Does a wrapper's premium to the real stock grow with the stock's dividend yield? A total-return
+ * wrapper (dividends reinvested) drifts above the share price by the dividends it has accrued; a
+ * price-return wrapper doesn't. One point per issuer per asset (its most liquid eligible wrapper).
+ */
+export function dividendStudy(views: AssetView[], minAssets = 12): { points: DividendPoint[]; fits: DividendFit[] } {
+  const points: DividendPoint[] = [];
+  for (const v of views) {
+    const ref = v.reference;
+    if (!ref || ref.dividendsTtm == null) continue;
+    const seen = new Set<string>();
+    for (const w of v.wrappers) {
+      if (!w.eligible || w.unit || w.vsReferenceBps == null || w.issuerName === 'NA (Derivatives)' || seen.has(w.issuerName)) continue;
+      seen.add(w.issuerName);
+      points.push({
+        symbol: v.asset.symbol,
+        slug: v.asset.slug,
+        wrapper: w.symbol,
+        issuerName: w.issuerName,
+        yieldPct: (ref.dividendsTtm / ref.price) * 100,
+        premiumPct: w.vsReferenceBps / 100,
+      });
+    }
+  }
+  const byIssuer = new Map<string, DividendPoint[]>();
+  for (const p of points) byIssuer.set(p.issuerName, [...(byIssuer.get(p.issuerName) ?? []), p]);
+  const fits = [...byIssuer]
+    .filter(([, pts]) => pts.length >= minAssets)
+    .map(([issuer, pts]) => fit(issuer, pts))
+    .sort((a, b) => (b.slope ?? 0) - (a.slope ?? 0));
+  return { points, fits };
 }

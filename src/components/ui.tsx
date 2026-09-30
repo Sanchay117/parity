@@ -61,7 +61,13 @@ export function WrapperCell({ w, meta }: { w: { symbol: string; name: string; cr
 
 export function StatusBadges({ w }: { w: WrapperView }) {
   const out: ReactNode[] = [];
-  if (w.unit) out.push(<span key="u" className="badge warning" title={w.unit.label}>⚠ units</span>);
+  if (w.unit) {
+    out.push(
+      <span key="u" className="badge warning" title={`${w.unit.label}${w.unitConfirmed ? '. Confirmed by the real price.' : ''}`}>
+        ⚠ units{w.unitConfirmed ? ' ✓' : ''}
+      </span>,
+    );
+  }
   if (w.offPeg && !w.unit) out.push(<span key="o" className="badge critical">✕ off-peg</span>);
   if (w.status === 'no-price') out.push(<span key="p" className="badge critical">no price</span>);
   if (w.status === 'no-volume') out.push(<span key="v" className="badge">no volume</span>);

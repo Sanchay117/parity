@@ -57,3 +57,11 @@ export function shortDescription(md: string, maxChars = 320): string {
   }
   return out.length > maxChars ? `${out.slice(0, maxChars - 1)}…` : out;
 }
+
+/** "live" while the session is open, else "close 29 Sep 20:00 UTC". */
+export function referenceWhen(ref: { asOf: string; marketOpen: boolean }): string {
+  if (ref.marketOpen) return 'live, delayed';
+  const d = new Date(ref.asOf);
+  const day = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' });
+  return `close ${day} ${d.toISOString().slice(11, 16)} UTC`;
+}

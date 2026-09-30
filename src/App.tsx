@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useHashRoute, useSnapshot } from './lib/data.ts';
 import { ago, utc } from './lib/format.ts';
 import { analyzeAsset } from './lib/parity.ts';
@@ -19,6 +19,14 @@ export function App() {
   const route = useHashRoute();
   const views = useMemo(() => data?.snapshot.assets.map(analyzeAsset) ?? [], [data]);
   const [theme, setTheme] = useState<'light' | 'dark' | null>(null);
+
+  // #/dividends is a section of the radar page, not a page of its own.
+  useEffect(() => {
+    if (data && route[0] === 'dividends') {
+      const t = setTimeout(() => document.getElementById('dividends')?.scrollIntoView({ block: 'start' }), 50);
+      return () => clearTimeout(t);
+    }
+  }, [data, route]);
 
   const toggleTheme = () => {
     const current =

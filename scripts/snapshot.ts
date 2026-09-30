@@ -7,11 +7,14 @@ import { existsSync, readdirSync, readFileSync, writeFileSync, mkdirSync } from 
 import { join } from 'node:path';
 import { CmcError, chunk, createClient, requireKey } from './cmc.ts';
 import { HISTORY_META_FILES, writeHistorySummary } from './history-summary.ts';
+import { attachReferences } from './reference.ts';
+import { computeParity } from '../src/lib/parity.ts';
 import type {
   ApiIssue,
   AssetHistory,
   AssetType,
   Issuer,
+  ReferenceQuote,
   RwaAsset,
   Snapshot,
   TokenMeta,
@@ -173,6 +176,10 @@ async function main() {
     .map((q) => toAsset(q, infoById.get(q.rwa_id)))
     .sort((a, b) => (b.tokenizedMarketCap ?? 0) - (a.tokenizedMarketCap ?? 0));
 
+  // External reference: the real listed stock/ETF, to check wrappers and CMC's average against.
+  const refs = await attachReferences(assets, (a) => computeParity(a.wrappers).consensus, loadPreviousReferences());
+  console.log(`references: ${refs.fetched} fetched, ${refs.kept} kept from last snapshot, ${refs.dropped.length} dropped as mismatched`);
+
   // 7. Wrapper token metadata (logo + chains) via the regular crypto endpoint, joined on crypto_id.
   const tokenMeta = loadTokenMeta();
   const priced = assets.flatMap((a) => a.wrappers.filter((w) => w.price !== null).map((w) => w.cryptoId));
@@ -275,6 +282,13 @@ function toAsset(q: RawQuoteAsset, info: RawInfoAsset | undefined): RwaAsset {
       url: m.market_url,
     })),
   };
+}
+
+function loadPreviousReferences(): Map<number, ReferenceQuote> {
+  const file = join(DATA_DIR, 'snapshot.json');
+  if (!existsSync(file)) return new Map();
+  const prev = JSON.parse(readFileSync(file, 'utf8')) as Snapshot;
+  return new Map(prev.assets.filter((a) => a.reference).map((a) => [a.rwaId, a.reference as ReferenceQuote]));
 }
 
 function loadTokenMeta(): Record<string, TokenMeta> {
