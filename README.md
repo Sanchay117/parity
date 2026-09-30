@@ -105,7 +105,7 @@ All of this lives in one pure, unit-tested module: [`src/lib/parity.ts`](src/lib
 
 1. **Mixed units under one `rwa_id`.** Per-gram and per-ounce gold share an asset, and some stock wrappers stand for several shares per token. No field says so. `average_tokenized_price` is computed across them, so for KLAC it lands on $1,719 when the wrappers trade at $195 and $1,955. A per-token `units_per_share` field would fix both.
 2. **`market-pairs/list` returns `1006`** ("plan doesn't support this endpoint") on our hackathon API key, although the docs list it for every plan from Basic up. (Other teams report it working on the Startup tier, so this is at least a doc/plan mismatch.) Without it there's no per-venue view.
-3. **`quotes/latest` silently caps at 100 IDs.** The limit isn't in the docs, and an ID list taken straight from `assets/list` can contain `null` (Honeywell has `rwa_id: null` and `has_tokens: null` despite a $52M tokenized cap), which fails the whole request with `4001`. Fetching it by `rwa_slug=honeywell` also returns `4001`.
+3. **Ranked assets with `rwa_id: null`.** An ID list taken straight from `assets/list` can contain `null` (Honeywell has `rwa_id: null` and `has_tokens: null` despite a $52M tokenized cap), which fails the whole `quotes/latest` request with `4001`. Fetching it by `rwa_slug=honeywell` also returns `4001`.
 4. **Nulls.** Whole groups of wrappers return `price: null` (122 Backed, 23 Dinari), and some tokens have `issuer_name: null`.
 5. **No RWA history endpoint.** History has to be rebuilt per wrapper from `/v2/cryptocurrency/quotes/historical`, which the free tier doesn't include.
 6. **Symbol collisions.** `/v2/tools/price-conversion?symbol=XAU` returns memecoins alongside gold, so IDs are the only safe join key.

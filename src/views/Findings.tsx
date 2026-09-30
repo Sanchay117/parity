@@ -19,7 +19,8 @@ export function Findings({ snapshot, integrity }: Props) {
     <section className="section" id="findings">
       <SectionHead title="What the API gets wrong">
         Parity checks the RWA data on every snapshot, and these are found automatically rather than hand-picked. They're the
-        reason the consensus normalizes units and ignores stale quotes.
+        reason the consensus normalizes units and ignores stale quotes. Repro commands and suggested fixes are on the{' '}
+        <a href="#/feedback">API feedback</a> page.
       </SectionHead>
       <div className="grid cols-2">
         {unitMismatches.length > 0 && (

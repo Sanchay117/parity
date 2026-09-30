@@ -114,8 +114,8 @@ async function main() {
     });
   }
 
-  // 2. Per-wrapper prices for those assets, and 3. their static metadata. The endpoint caps a
-  //    request at 100 IDs (undocumented; 101+ silently returns 100), so batch.
+  // 2. Per-wrapper prices for those assets, and 3. their static metadata, in batches of 100 IDs
+  //    to keep request URLs short.
   const quotes = { rwa_assets: [] as RawQuoteAsset[] };
   for (const [i, batch] of chunk(ids, 100).entries()) {
     const page = await cmc.get<{ rwa_assets: RawQuoteAsset[] }>(

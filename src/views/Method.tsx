@@ -140,6 +140,10 @@ export function Method({ snapshot }: { snapshot: Snapshot; views: AssetView[] })
           <code>crypto_id</code>, the rest of the CMC API (logos, chains, hourly history) works on RWA wrappers with no extra glue.
         </p>
         <h3>Where it got in the way</h3>
+        <p>
+          Summary below; the <a href="#/feedback">API feedback</a> page has a runnable repro, the live result and a suggested fix for
+          each.
+        </p>
         <ul>
           <li>
             <strong>Mixed units under one rwa_id</strong> (per-gram vs per-ounce gold, unapplied stock splits), and{' '}
@@ -150,8 +154,8 @@ export function Method({ snapshot }: { snapshot: Snapshot; views: AssetView[] })
             <strong>market-pairs/list returns 1006</strong> on a key the docs say should have access. Without it there's no per-venue view.
           </li>
           <li>
-            <strong>quotes/latest caps at 100 IDs</strong> without saying so in the docs; an ID list straight from{' '}
-            <code>assets/list</code> can contain <code>null</code> and fail the whole request with 4001.
+            <strong>Ranked assets with a null rwa_id</strong>: an ID list straight from <code>assets/list</code> can contain{' '}
+            <code>null</code> and fail the whole <code>quotes/latest</code> request with 4001.
           </li>
           <li>
             <strong>Nulls</strong>: whole issuers' wrappers return <code>price: null</code>, and some ranked assets have no{' '}

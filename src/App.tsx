@@ -4,6 +4,7 @@ import { ago, utc } from './lib/format.ts';
 import { analyzeAsset } from './lib/parity.ts';
 import { AssetPage } from './views/AssetPage.tsx';
 import { Issuers } from './views/Issuers.tsx';
+import { Feedback } from './views/Feedback.tsx';
 import { Method } from './views/Method.tsx';
 import { Radar } from './views/Radar.tsx';
 
@@ -11,7 +12,8 @@ const NAV = [
   { href: '#/', key: '', label: 'Radar' },
   { href: '#/asset/spy', key: 'asset', label: 'Best way to buy' },
   { href: '#/issuers', key: 'issuers', label: 'Issuers' },
-  { href: '#/method', key: 'method', label: 'Method & API' },
+  { href: '#/feedback', key: 'feedback', label: 'API feedback' },
+  { href: '#/method', key: 'method', label: 'Method' },
 ];
 
 export function App() {
@@ -42,6 +44,7 @@ export function App() {
     if (route[0] === 'asset') page = <AssetPage slug={route[1] ?? 'spy'} views={views} snapshot={snapshot} summary={summary} />;
     else if (route[0] === 'issuers') page = <Issuers views={views} snapshot={snapshot} summary={summary} />;
     else if (route[0] === 'method') page = <Method snapshot={snapshot} views={views} />;
+    else if (route[0] === 'feedback') page = <Feedback snapshot={snapshot} views={views} />;
     else page = <Radar views={views} snapshot={snapshot} summary={summary} />;
   }
 
