@@ -1,0 +1,36 @@
+{
+  "request": "GET https://pro-api.coinmarketcap.com/v5/real-world-assets/issuers/list?limit=250",
+  "headers": {
+    "X-CMC_PRO_API_KEY": "<redacted>"
+  },
+  "response": {
+    "data": {
+      "issuers": [
+        {
+          "name": "Backed Assets",
+          "website": "https://assets.backed.fi/",
+          "logo": null,
+          "issuer_id": "6878977dcbbf471de3366e85",
+          "num_tokens": 1176
+        },
+        {
+          "name": "Backpack",
+          "website": "https://backpack.exchange",
+          "logo": "https://s2.coinmarketcap.com/static/img/issuer/M7sS2GzR_400x400.png",
+          "issuer_id": "6a2d54b697c45356b1a634f4",
+          "num_tokens": 10
+        },
+        "… 23 more"
+      ],
+      "total_size": 25,
+      "has_more": false
+    },
+    "status": {
+      "timestamp": "2026-09-30T05:44:24.154Z",
+      "error_code": "0",
+      "error_message": "",
+      "elapsed": 4,
+      "credit_count": 1
+    }
+  }
+}

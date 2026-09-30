@@ -1,0 +1,282 @@
+{
+  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/quotes/historical?id=5176%2C4705%2C20245%2C34212%2C37082%2C22492&interval=hourly&count=720",
+  "headers": {
+    "X-CMC_PRO_API_KEY": "<redacted>"
+  },
+  "response": {
+    "data": {
+      "4705": {
+        "id": 4705,
+        "name": "PAX Gold",
+        "symbol": "PAXG",
+        "is_active": 1,
+        "is_fiat": 0,
+        "quotes": [
+          {
+            "timestamp": "2026-08-31T05:00:00.000Z",
+            "quote": {
+              "USD": {
+                "price": 4420.898998767962,
+                "percent_change_1h": 0.007485678041,
+                "percent_change_24h": -0.924274173329,
+                "percent_change_7d": -4.533388819253,
+                "percent_change_30d": 9.384875762579,
+                "volume_24h": 149283064.21,
+                "market_cap": 1906791033.019646,
+                "circulating_supply": 431312.96,
+                "total_supply": 431312.96,
+                "timestamp": "2026-08-31T05:00:00.000Z"
+              }
+            }
+          },
+          {
+            "timestamp": "2026-08-31T06:00:00.000Z",
+            "quote": {
+              "USD": {
+                "price": 4437.403443655958,
+                "percent_change_1h": 0.373327798093,
+                "percent_change_24h": -0.570268836653,
+                "percent_change_7d": -4.196349550945,
+                "percent_change_30d": 9.774759841626,
+                "volume_24h": 159194463.51,
+                "market_cap": 1913909613.9974444,
+                "circulating_supply": 431312.96,
+                "total_supply": 431312.96,
+                "timestamp": "2026-08-31T06:00:00.000Z"
+              }
+            }
+          },
+          "… 718 more"
+        ]
+      },
+      "5176": {
+        "id": 5176,
+        "name": "Tether Gold",
+        "symbol": "XAUt",
+        "is_active": 1,
+        "is_fiat": 0,
+        "quotes": [
+          {
+            "timestamp": "2026-08-31T05:00:00.000Z",
+            "quote": {
+              "USD": {
+                "price": 4412.174444929275,
+                "percent_change_1h": -0.018302108234,
+                "percent_change_24h": -1.002140733695,
+                "percent_change_7d": -4.442056616405,
+                "percent_change_30d": 9.325472990507,
+                "volume_24h": 345772908.06,
+                "market_cap": 2703884891.900027,
+                "circulating_supply": 612823.66,
+                "total_supply": 707747.09,
+                "timestamp": "2026-08-31T05:00:00.000Z"
+              }
+            }
+          },
+          {
+            "timestamp": "2026-08-31T06:00:00.000Z",
+            "quote": {
+              "USD": {
+                "price": 4431.722241938247,
+                "percent_change_1h": 0.443042251682,
+                "percent_change_24h": -0.52845731676,
+                "percent_change_7d": -4.051237877259,
+                "percent_change_30d": 9.788065968893,
+                "volume_24h": 361547983.26,
+                "market_cap": 2715864244.408002,
+                "circulating_supply": 612823.66,
+                "total_supply": 707747.09,
+                "timestamp": "2026-08-31T06:00:00.000Z"
+              }
+            }
+          },
+          "… 718 more"
+        ]
+      },
+      "20245": {
+        "id": 20245,
+        "name": "Comtech Gold",
+        "symbol": "CGO",
+        "is_active": 1,
+        "is_fiat": 0,
+        "quotes": [
+          {
+            "timestamp": "2026-08-31T05:00:00.000Z",
+            "quote": {
+              "USD": {
+                "price": 141.8257686125965,
+                "percent_change_1h": -0.196426435212,
+                "percent_change_24h": -0.411969161761,
+                "percent_change_7d": -4.8516223397,
+                "percent_change_30d": 9.77099068814,
+                "volume_24h": 914971.13,
+                "market_cap": 19997433.374376107,
+                "circulating_supply": 141000,
+                "total_supply": 141000,
+                "timestamp": "2026-08-31T05:00:00.000Z"
+              }
+            }
+          },
+          {
+            "timestamp": "2026-08-31T06:00:00.000Z",
+            "quote": {
+              "USD": {
+                "price": 142.43433849483057,
+                "percent_change_1h": 0.429096833521,
+                "percent_change_24h": 0.289416094829,
+                "percent_change_7d": -4.259944725789,
+                "percent_change_30d": 9.716745660754,
+                "volume_24h": 909746.56,
+                "market_cap": 20083241.72777111,
+                "circulating_supply": 141000,
+                "total_supply": 141000,
+                "timestamp": "2026-08-31T06:00:00.000Z"
+              }
+            }
+          },
+          "… 718 more"
+        ]
+      },
+      "22492": {
+        "id": 22492,
+        "name": "VNX Gold",
+        "symbol": "VNXAU",
+        "is_active": 1,
+        "is_fiat": 0,
+        "quotes": [
+          {
+            "timestamp": "2026-08-31T05:00:00.000Z",
+            "quote": {
+              "USD": {
+                "price": 145.1570305925728,
+                "percent_change_1h": -0.330187867691,
+                "percent_change_24h": -0.227521664635,
+                "percent_change_7d": -0.727349773966,
+                "percent_change_30d": 10.618296663048,
+                "volume_24h": 1732.61,
+                "market_cap": 6111110.987947315,
+                "circulating_supply": 42100,
+                "total_supply": 44000,
+                "timestamp": "2026-08-31T05:00:00.000Z"
+              }
+            }
+          },
+          {
+            "timestamp": "2026-08-31T06:00:00.000Z",
+            "quote": {
+              "USD": {
+                "price": 145.56161324742402,
+                "percent_change_1h": 0.278720674568,
+                "percent_change_24h": 0.051139223397,
+                "percent_change_7d": -0.73533790808,
+                "percent_change_30d": 10.918839124597,
+                "volume_24h": 1866.59,
+                "market_cap": 6128143.917716552,
+                "circulating_supply": 42100,
+                "total_supply": 44000,
+                "timestamp": "2026-08-31T06:00:00.000Z"
+              }
+            }
+          },
+          "… 718 more"
+        ]
+      },
+      "34212": {
+        "id": 34212,
+        "name": "Matrixdock Gold",
+        "symbol": "XAUM",
+        "is_active": 1,
+        "is_fiat": 0,
+        "quotes": [
+          {
+            "timestamp": "2026-08-31T05:00:00.000Z",
+            "quote": {
+              "USD": {
+                "price": 4409.551071751648,
+                "percent_change_1h": 0.00859189513,
+                "percent_change_24h": -0.952655031236,
+                "percent_change_7d": -4.299339748098,
+                "percent_change_30d": 9.211064555414,
+                "volume_24h": 476755.65,
+                "market_cap": 48376964.330633745,
+                "circulating_supply": 10970.95,
+                "total_supply": 10970.95,
+                "timestamp": "2026-08-31T05:00:00.000Z"
+              }
+            }
+          },
+          {
+            "timestamp": "2026-08-31T06:00:00.000Z",
+            "quote": {
+              "USD": {
+                "price": 4432.908738240526,
+                "percent_change_1h": 0.529706224257,
+                "percent_change_24h": -0.423290144086,
+                "percent_change_7d": -3.719582735045,
+                "percent_change_30d": 9.791795097401,
+                "volume_24h": 466536.97,
+                "market_cap": 48633220.1217999,
+                "circulating_supply": 10970.95,
+                "total_supply": 10970.95,
+                "timestamp": "2026-08-31T06:00:00.000Z"
+              }
+            }
+          },
+          "… 718 more"
+        ]
+      },
+      "37082": {
+        "id": 37082,
+        "name": "Tether Gold Tokens",
+        "symbol": "XAUT0",
+        "is_active": 1,
+        "is_fiat": 0,
+        "quotes": [
+          {
+            "timestamp": "2026-08-31T05:00:00.000Z",
+            "quote": {
+              "USD": {
+                "price": 4414.977738518861,
+                "percent_change_1h": -0.066038659239,
+                "percent_change_24h": -1.021541191217,
+                "percent_change_7d": -4.50411886447,
+                "percent_change_30d": 9.463475318108,
+                "volume_24h": 247335.26,
+                "market_cap": 16324909.98550211,
+                "circulating_supply": 3697.62,
+                "total_supply": 3697.62,
+                "timestamp": "2026-08-31T05:00:00.000Z"
+              }
+            }
+          },
+          {
+            "timestamp": "2026-08-31T06:00:00.000Z",
+            "quote": {
+              "USD": {
+                "price": 4433.271491939914,
+                "percent_change_1h": 0.414356640158,
+                "percent_change_24h": -0.596989099974,
+                "percent_change_7d": -4.006412785561,
+                "percent_change_30d": 10.036634955534,
+                "volume_24h": 251371.78,
+                "market_cap": 16392553.334026866,
+                "circulating_supply": 3697.62,
+                "total_supply": 3697.62,
+                "timestamp": "2026-08-31T06:00:00.000Z"
+              }
+            }
+          },
+          "… 718 more"
+        ]
+      }
+    },
+    "status": {
+      "timestamp": "2026-09-30T05:49:18.154Z",
+      "error_code": 0,
+      "error_message": null,
+      "elapsed": 140,
+      "credit_count": 44,
+      "notice": null
+    }
+  }
+}

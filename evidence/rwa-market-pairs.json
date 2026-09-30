@@ -1,0 +1,15 @@
+{
+  "request": "GET https://pro-api.coinmarketcap.com/v5/real-world-assets/market-pairs/list?symbol=NVDA&limit=5",
+  "headers": {
+    "X-CMC_PRO_API_KEY": "<redacted>"
+  },
+  "response": {
+    "status": {
+      "timestamp": "2026-09-30T05:44:58.265Z",
+      "error_code": "1006",
+      "error_message": "Your API Key subscription plan doesn't support this endpoint.",
+      "elapsed": 0,
+      "credit_count": 0
+    }
+  }
+}

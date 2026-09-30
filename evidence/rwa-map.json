@@ -1,0 +1,32 @@
+{
+  "request": "GET https://pro-api.coinmarketcap.com/v5/real-world-assets/map?asset_type=stock&limit=1",
+  "headers": {
+    "X-CMC_PRO_API_KEY": "<redacted>"
+  },
+  "response": {
+    "data": {
+      "rwa_assets": [
+        {
+          "name": "Nvidia Corp",
+          "symbol": "NVDA",
+          "slug": "nvidia",
+          "rwa_id": 2,
+          "asset_type": "stock",
+          "rwa_rank": 2,
+          "has_tokens": true,
+          "first_historical_data": "2003-09-07T04:00:00.000Z",
+          "last_historical_data": "2026-09-29T23:59:00.000Z"
+        }
+      ],
+      "total_size": 4686,
+      "has_more": true
+    },
+    "status": {
+      "timestamp": "2026-09-30T05:44:26.251Z",
+      "error_code": "0",
+      "error_message": "",
+      "elapsed": 1,
+      "credit_count": 0
+    }
+  }
+}

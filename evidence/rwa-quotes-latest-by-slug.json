@@ -1,0 +1,17 @@
+{
+  "request": "GET https://pro-api.coinmarketcap.com/v5/real-world-assets/quotes/latest?rwa_slug=honeywell&skip_invalid=true",
+  "headers": {
+    "X-CMC_PRO_API_KEY": "<redacted>"
+  },
+  "response": {
+    "status": {
+      "timestamp": "2026-09-30T05:44:16.163Z",
+      "error_code": "4001",
+      "error_message": "Invalid parameter.",
+      "elapsed": 1,
+      "credit_count": 0,
+      "category": "VALIDATION",
+      "error_detail": "Invalid value for \"rwa_slug\": \"honeywell\""
+    }
+  }
+}
