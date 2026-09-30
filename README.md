@@ -5,8 +5,8 @@
 The S&P 500 has nine tokenized wrappers on CoinMarketCap: xStocks, Ondo, bStocks, Robinhood, Reality and more. They're meant to be the same thing, but for the last 30 days they've traded a **median 103 bps apart**, every hour. Parity reads every wrapper of every tokenized stock, ETF and commodity, puts them on the same units, and shows which trade rich, which trade cheap, and which are simply broken.
 
 **Track:** Real World Assets  
-**Live demo:** LIVE_URL  
-**Demo video:** VIDEO_URL
+**Live demo:** https://sanchay117.github.io/parity/  
+**Demo video:** https://sanchay117.github.io/parity/demo.mp4 (2:35, narrated)
 
 ![Parity radar](docs/radar.png)
 
