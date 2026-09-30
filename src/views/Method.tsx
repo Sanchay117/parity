@@ -56,7 +56,7 @@ export function Method({ snapshot }: { snapshot: Snapshot; views: AssetView[] })
         <h3>2. Fix units before comparing</h3>
         <p>
           A robust median sets a reference. Any wrapper whose price is a known ratio away (31.1035× for grams of gold, 32.15× for
-          kilograms, 2–100× for splits and fractional units) is flagged and normalized. That's how PAXG ($4,176/oz) and Comtech CGO
+          kilograms, 2 to 100× for multi-share or fractional tokens) is flagged and normalized. That's how PAXG ($4,176/oz) and Comtech CGO
           ($134/g) end up on one scale. The assumption: the unit used by most wrappers of an asset is the reference. Units are
           flagged, not silently fixed, so you can check each one.
         </p>

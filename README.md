@@ -6,7 +6,7 @@ The S&P 500 has nine tokenized wrappers on CoinMarketCap: xStocks, Ondo, bStocks
 
 **Track:** Real World Assets  
 **Live demo:** https://sanchay117.github.io/parity/  
-**Demo video:** https://sanchay117.github.io/parity/demo.mp4 (2:08, narrated)
+**Demo video:** https://youtu.be/Uz0YfScKXyg (2:08, narrated; also at https://sanchay117.github.io/parity/demo.mp4)
 
 ![Parity radar](docs/radar.png)
 
@@ -63,9 +63,9 @@ Every snapshot writes the exact request (key redacted) and a trimmed response fo
     "data": {
       "rwa_assets": [{
         "name": "Gold", "symbol": "GOLD", "rwa_id": 1, "asset_type": "commodity",
-        "average_tokenized_price": 4178.49, "tokenized_market_cap": 4895196178.49,
+        "average_tokenized_price": 4181.3, "tokenized_market_cap": 4898392746,
         "tokens": [
-          { "symbol": "PAXG", "price": 4180.93, "issuer_name": "Paxos", "crypto_id": 4705, … },
+          { "symbol": "PAXG", "price": 4185.84, "issuer_name": "Paxos", "crypto_id": 4705, … },
           …
 ```
 
@@ -81,7 +81,7 @@ curl -H "X-CMC_PRO_API_KEY: $CMC_API_KEY" \
 ## How the numbers work
 
 1. **Group.** `quotes/latest` returns every wrapper under its underlying asset, with issuer and `crypto_id`.
-2. **Fix units.** A median price sets a reference. A wrapper that sits a known ratio away (31.1035× for grams of gold, 32.15× for kilograms, 2–100× for multi-share or fractional tokens) is flagged and normalized. The assumption is that the unit most wrappers use is the reference; every normalization is flagged in the UI, so you can check each one.
+2. **Fix units.** A median price sets a reference. A wrapper that sits a known ratio away (31.1035× for grams of gold, 32.15× for kilograms, 2 to 100× for multi-share or fractional tokens) is flagged and normalized. The assumption is that the unit most wrappers use is the reference; every normalization is flagged in the UI, so you can check each one.
 3. **Discard what can't be trusted.** No price, no volume, or under $50K/day of volume: the wrapper doesn't vote. After unit fixes, anything ≥5% from the median is off-peg (usually a stale last trade) and excluded.
 4. **Consensus** is the volume-weighted mean of what's left. Each wrapper's premium or discount is measured against it in bps. Issuer grades use a **leave-one-out** consensus, so a dominant wrapper can't grade itself.
 5. **History.** The same calculation is replayed on every hour of the backfill. Each new snapshot appends a point, so the charts keep moving on the free tier.
@@ -110,7 +110,7 @@ Requires Node 22.18+ (runs TypeScript scripts natively).
 ```bash
 cp .env.example .env        # add your CMC_API_KEY
 npm install
-npm run snapshot            # 9–17 credits: writes public/data/snapshot.json + evidence/
+npm run snapshot            # 9 to 17 credits: writes public/data/snapshot.json + evidence/
 npm run backfill            # optional, needs a paid tier: 30 days of hourly history
 npm run dev                 # http://localhost:5173
 npm test                    # analytics unit tests
