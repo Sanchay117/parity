@@ -5,10 +5,10 @@
   },
   "response": {
     "status": {
-      "timestamp": "2026-09-30T05:44:16.163Z",
+      "timestamp": "2026-09-30T06:08:31.586Z",
       "error_code": "4001",
       "error_message": "Invalid parameter.",
-      "elapsed": 1,
+      "elapsed": 0,
       "credit_count": 0,
       "category": "VALIDATION",
       "error_detail": "Invalid value for \"rwa_slug\": \"honeywell\""

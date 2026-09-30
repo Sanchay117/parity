@@ -72,8 +72,8 @@ describe('detectUnit', () => {
   it('recognizes per-gram gold against a per-ounce reference', () => {
     expect(detectUnit(134.125, 4172)?.factor).toBeCloseTo(31.1035);
   });
-  it('recognizes an unapplied 10-for-1 split', () => {
-    expect(detectUnit(706.4, 70.7)?.label).toMatch(/10-for-1/);
+  it('recognizes a wrapper quoted at 10× its peers', () => {
+    expect(detectUnit(706.4, 70.7)?.label).toMatch(/10× peers/);
   });
   it('leaves normal premiums alone', () => {
     expect(detectUnit(101, 100)).toBeNull();
@@ -158,6 +158,21 @@ describe('analyzeAsset / findSpreads', () => {
     const report = integrityReport([analyzeAsset(now)]);
     expect(report.unitMismatches.map((d) => d.wrapper.symbol)).toEqual(['NOWon']);
     expect(report.aggregateGaps.map((v) => v.asset.symbol)).toEqual(['NOW']);
+    // CMC's 650 matches the Ondo wrapper's own units, so it is traded somewhere.
+    expect(report.aggregateGaps[0].cmcAverageUntraded).toBe(false);
+  });
+
+  it('detects an average that blends units into a price nobody trades at', () => {
+    // Real KLAC quotes from the 2026-09-30 snapshot.
+    const klac = analyzeAsset(
+      asset(
+        'KLAC',
+        [wrapper('KLACx', 'Backed', 194.99, 1e6), wrapper('KLAC', 'Perp', 195.4, 1e6), wrapper('KLACon', 'Ondo', 1954.85, 1e6)],
+        1721.19,
+      ),
+    );
+    expect(klac.cmcAverageUntraded).toBe(true);
+    expect(klac.consensus).toBeCloseTo(195.1, 0);
   });
 });
 

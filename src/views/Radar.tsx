@@ -34,8 +34,7 @@ export function Radar({ views, snapshot, summary }: Props) {
   const wrappers = views.reduce((s, v) => s + v.wrappers.length, 0);
   const priced = views.reduce((s, v) => s + v.wrappers.filter((w) => w.price != null).length, 0);
   const issuerCount = new Set(views.flatMap((v) => v.wrappers.map((w) => w.issuerId))).size;
-  const findingCount =
-    integrity.unitMismatches.length + integrity.aggregateGaps.length + snapshot.apiIssues.length + (integrity.noPrice.length ? 1 : 0);
+  const findingCount = integrity.unitMismatches.length + integrity.aggregateGaps.length + snapshot.apiIssues.length;
 
   // Lead with the most recognizable persistent spread: the S&P 500 if we have it.
   const spyView = views.find((v) => v.asset.symbol === 'SPY');
@@ -44,7 +43,11 @@ export function Radar({ views, snapshot, summary }: Props) {
   const leadView = lead ? views.find((v) => v.asset.rwaId === lead.rwaId) : undefined;
   const richest = trends[0];
   const cheapest = trends.at(-1);
-  const worstAggregate = integrity.aggregateGaps[0];
+  // Prefer an average that blends units into a price no wrapper trades at: that's wrong under any reading.
+  const worstAggregate = integrity.aggregateGaps.find((v) => v.cmcAverageUntraded) ?? integrity.aggregateGaps[0];
+  const aggregatePrices = worstAggregate
+    ? worstAggregate.wrappers.filter((w) => w.price != null && !w.offPeg).map((w) => w.price as number)
+    : [];
 
   return (
     <>
@@ -67,7 +70,11 @@ export function Radar({ views, snapshot, summary }: Props) {
         <Stat label="Tokenized value analysed" value={usd(tracked)} sub={`${views.length} assets of ${int(snapshot.universe.totalAssets)} listed`} />
         <Stat label="Wrappers compared" value={int(priced)} sub={`of ${int(wrappers)} listed, from ${issuerCount} issuers`} />
         <Stat label={`Spreads ≥ ${DISLOCATION_BPS} bps`} value={spreads.length} sub={`both sides ≥ ${usd(TRADEABLE_VOLUME_USD)} 24h volume`} />
-        <Stat label="API data issues found" value={findingCount} sub="unit mix-ups, bad aggregates, errors" />
+        <Stat
+          label="API data issues found"
+          value={findingCount}
+          sub={`${integrity.unitMismatches.length} unit mix-ups · ${integrity.aggregateGaps.length} bad averages · ${snapshot.apiIssues.length} API errors`}
+        />
       </div>
 
       <div className="grid cols-3 section" style={{ marginTop: 16 }}>
@@ -96,12 +103,11 @@ export function Radar({ views, snapshot, summary }: Props) {
         {worstAggregate && (
           <a className="card insight" href={`#/asset/${worstAggregate.asset.slug}`} style={{ color: 'inherit', textDecoration: 'none' }}>
             <span className="kicker">CMC's own average is off</span>
-            <span className="big">
-              {(1 + (worstAggregate.cmcAverageGapBps as number) / 10_000).toFixed(1)}× too high
-            </span>
+            <span className="big">{price(worstAggregate.asset.avgTokenizedPrice)}</span>
             <p>
-              CoinMarketCap reports tokenized <strong>{worstAggregate.asset.symbol}</strong> at {price(worstAggregate.asset.avgTokenizedPrice)}.
-              Normalized for units, its wrappers agree on {price(worstAggregate.consensus)}.
+              CoinMarketCap's <code>average_tokenized_price</code> for <strong>{worstAggregate.asset.symbol}</strong>.
+              {worstAggregate.cmcAverageUntraded ? ' No wrapper trades there: they' : ' Its wrappers'} trade at{' '}
+              {price(Math.min(...aggregatePrices))} and {price(Math.max(...aggregatePrices))}, the same share in two different units.
             </p>
           </a>
         )}

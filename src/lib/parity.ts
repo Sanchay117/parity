@@ -23,10 +23,10 @@ export interface UnitFactor {
 export const UNIT_FACTORS: UnitFactor[] = [
   { factor: 31.1035, label: 'priced per gram (1 oz = 31.1035 g)' },
   { factor: 1 / 32.1507, label: 'priced per kilogram (1 kg = 32.15 oz)' },
-  // Wrapper priced at N× its peers: typically an N-for-1 stock split the wrapper never applied.
+  // Wrapper priced at N× its peers: one token stands for N shares, typically after an N-for-1 split.
   ...[2, 3, 4, 5, 10, 20, 100].map((n) => ({
     factor: 1 / n,
-    label: `priced at ${n}× peers (${n}-for-1 split not applied?)`,
+    label: `priced at ${n}× peers (different share ratio, e.g. after a ${n}-for-1 split)`,
   })),
   // Wrapper priced at 1/N of its peers: a fractional unit or a reverse split.
   ...[2, 3, 4, 5, 10, 20, 100, 1000].map((n) => ({
@@ -160,6 +160,8 @@ export interface AssetView {
   mostLiquid: WrapperView | null;
   /** How far CMC's own average_tokenized_price sits from our consensus. */
   cmcAverageGapBps: number | null;
+  /** True when no wrapper's raw price is within 5% of CMC's average: it blends units into a price nobody trades at. */
+  cmcAverageUntraded: boolean;
 }
 
 export function analyzeAsset(asset: RwaAsset): AssetView {
@@ -197,6 +199,9 @@ export function analyzeAsset(asset: RwaAsset): AssetView {
     mostLiquid: liquid[0] ?? null,
     cmcAverageGapBps:
       consensus && asset.avgTokenizedPrice ? (asset.avgTokenizedPrice / consensus - 1) * 10_000 : null,
+    cmcAverageUntraded:
+      asset.avgTokenizedPrice != null &&
+      !wrappers.some((w) => w.price != null && Math.abs(w.price / asset.avgTokenizedPrice! - 1) < 0.05),
   };
 }
 

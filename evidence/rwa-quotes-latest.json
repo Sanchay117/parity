@@ -14,40 +14,40 @@
             {
               "symbol": "USD",
               "crypto_id": 2781,
-              "average_tokenized_price": 4178.591162021788,
-              "tokenized_market_cap": 4895179409.126483,
-              "tokenized_volume_24h": 383708249.64812267,
-              "last_updated": "2026-09-30T05:42:59.000Z"
+              "average_tokenized_price": 4178.492637013311,
+              "tokenized_market_cap": 4895196178.4943,
+              "tokenized_volume_24h": 378080800.50853455,
+              "last_updated": "2026-09-30T06:06:59.000Z"
             }
           ],
           "rwa_id": 1,
           "asset_type": "commodity",
           "rwa_rank": 1,
           "has_tokens": true,
-          "average_tokenized_price": 4178.591162021788,
-          "tokenized_market_cap": 4895179409.126483,
-          "tokenized_volume_24h": 383708249.64812267,
-          "last_updated": "2026-09-30T05:42:35.957Z",
+          "average_tokenized_price": 4178.492637013311,
+          "tokenized_market_cap": 4895196178.4943,
+          "tokenized_volume_24h": 378080800.50853455,
+          "last_updated": "2026-09-30T06:05:39.428Z",
           "tokens": [
             {
               "symbol": "PAXG",
               "name": "PAX Gold",
-              "price": 4183.11870290985,
+              "price": 4180.926571785873,
               "crypto_id": 4705,
               "issuer_id": "68904c24abae9b5b9fb35815",
               "issuer_name": "Paxos",
-              "market_cap": 1820914041.67,
-              "volume_24h": 170651654.9314127
+              "market_cap": 1819959805.7,
+              "volume_24h": 169574413.81640202
             },
             {
               "symbol": "XAUt",
               "name": "Tether Gold",
-              "price": 4176.755287787571,
+              "price": 4174.175748202153,
               "crypto_id": 5176,
               "issuer_id": "68904e9cabae9b5b9fb358ac",
               "issuer_name": "Tether Holdings",
-              "market_cap": 2962671345.7,
-              "volume_24h": 211276546.40722403
+              "market_cap": 2960841617.24,
+              "volume_24h": 208656066.32207885
             },
             "… 5 more"
           ],
@@ -61,40 +61,40 @@
             {
               "symbol": "USD",
               "crypto_id": 2781,
-              "average_tokenized_price": 84.09706186538726,
-              "tokenized_market_cap": 322416674.6279631,
-              "tokenized_volume_24h": 78473211.11181647,
-              "last_updated": "2026-09-30T05:42:59.000Z"
+              "average_tokenized_price": 84.11353954588337,
+              "tokenized_market_cap": 322410440.2051292,
+              "tokenized_volume_24h": 78334065.12323035,
+              "last_updated": "2026-09-30T06:06:59.000Z"
             }
           ],
           "rwa_id": 115,
           "asset_type": "stock",
           "rwa_rank": 567,
           "has_tokens": true,
-          "average_tokenized_price": 84.09706186538726,
-          "tokenized_market_cap": 322416674.6279631,
-          "tokenized_volume_24h": 78473211.11181647,
-          "last_updated": "2026-09-30T05:42:36.815Z",
+          "average_tokenized_price": 84.11353954588337,
+          "tokenized_market_cap": 322410440.2051292,
+          "tokenized_volume_24h": 78334065.12323035,
+          "last_updated": "2026-09-30T06:05:40.477Z",
           "tokens": [
             {
               "symbol": "CRCLX",
               "name": "Circle tokenized stock (xStock)",
-              "price": 84.11441890358743,
+              "price": 84.09442800707784,
               "crypto_id": 37005,
               "issuer_id": "6878977dcbbf471de3366e85",
               "issuer_name": "Backed Assets",
-              "market_cap": 78657035.08,
-              "volume_24h": 20295408.58177871
+              "market_cap": 78638341.2,
+              "volume_24h": 20184884.98083388
             },
             {
               "symbol": "CRCLon",
               "name": "Circle Internet Group Tokenized Stock (Ondo)",
-              "price": 83.9721491205728,
+              "price": 83.94652807024681,
               "crypto_id": 38056,
               "issuer_id": "688ca4ccabae9b5b9fb3167a",
               "issuer_name": "Ondo Assets",
-              "market_cap": 100223969.03,
-              "volume_24h": 4676745.69308607
+              "market_cap": 100193389.33,
+              "volume_24h": 4647943.99568479
             },
             "… 5 more"
           ],
@@ -114,10 +114,10 @@
       ]
     },
     "status": {
-      "timestamp": "2026-09-30T05:44:09.871Z",
+      "timestamp": "2026-09-30T06:08:25.269Z",
       "error_code": "0",
       "error_message": "",
-      "elapsed": 12,
+      "elapsed": 13,
       "credit_count": 1
     }
   }

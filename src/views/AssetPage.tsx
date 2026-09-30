@@ -91,7 +91,9 @@ export function AssetPage({ slug, views, snapshot, summary }: Props) {
           value={price(asset.avgTokenizedPrice)}
           sub={
             view.cmcAverageGapBps != null && Math.abs(view.cmcAverageGapBps) >= 100 ? (
-              <span style={{ color: 'var(--critical)' }}>✕ {bps(view.cmcAverageGapBps, 0)} vs consensus</span>
+              <span style={{ color: 'var(--critical)' }}>
+                ✕ {bps(view.cmcAverageGapBps, 0)} vs consensus{view.cmcAverageUntraded ? ', no wrapper trades here' : ''}
+              </span>
             ) : (
               `${bps(view.cmcAverageGapBps)} vs consensus`
             )

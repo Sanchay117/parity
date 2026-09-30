@@ -28,8 +28,8 @@ export function Findings({ snapshot, integrity }: Props) {
               <span className="badge warning">⚠ units</span> Mixed units under one asset
             </h3>
             <p>
-              Wrappers of the same <code>rwa_id</code> are quoted in different units. Read raw, they look like 90–99% discounts or
-              400–900% premiums. Parity detects the ratio and normalizes before comparing.
+              Wrappers of the same <code>rwa_id</code> are quoted in different units, but the API has no field that says so. Read raw,
+              they look like 97% discounts or 900% premiums. Parity detects the ratio and normalizes before comparing.
             </p>
             <ul>
               {unitMismatches.map(({ view, wrapper }) => (
@@ -47,14 +47,14 @@ export function Findings({ snapshot, integrity }: Props) {
               <span className="badge critical">✕ aggregate</span> <code>average_tokenized_price</code> is distorted
             </h3>
             <p>
-              CMC's headline tokenized price doesn't account for the unit problems above or for dead quotes, so for these assets it
-              disagrees with what the wrappers actually trade at.
+              CMC's headline tokenized price is averaged across wrappers quoted in different units, so it can land on a price no
+              wrapper trades at. Parity's consensus normalizes units first.
             </p>
             <ul>
               {aggregateGaps.slice(0, 8).map((v) => (
                 <li key={v.asset.rwaId}>
                   <a href={`#/asset/${v.asset.slug}`}>{v.asset.symbol}</a>: CMC {price(v.asset.avgTokenizedPrice)} vs consensus{' '}
-                  {price(v.consensus)} ({bps(v.cmcAverageGapBps, 0)})
+                  {price(v.consensus)} ({bps(v.cmcAverageGapBps, 0)}){v.cmcAverageUntraded ? ', a price no wrapper trades at' : ''}
                 </li>
               ))}
             </ul>

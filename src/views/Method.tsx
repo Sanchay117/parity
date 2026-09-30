@@ -57,7 +57,8 @@ export function Method({ snapshot }: { snapshot: Snapshot; views: AssetView[] })
         <p>
           A robust median sets a reference. Any wrapper whose price is a known ratio away (31.1035× for grams of gold, 32.15× for
           kilograms, 2–100× for splits and fractional units) is flagged and normalized. That's how PAXG ($4,176/oz) and Comtech CGO
-          ($134/g) end up on one scale.
+          ($134/g) end up on one scale. The assumption: the unit used by most wrappers of an asset is the reference. Units are
+          flagged, not silently fixed, so you can check each one.
         </p>
         <h3>3. Set aside what can't be trusted</h3>
         <p>
@@ -133,7 +134,8 @@ export function Method({ snapshot }: { snapshot: Snapshot; views: AssetView[] })
         <ul>
           <li>
             <strong>Mixed units under one rwa_id</strong> (per-gram vs per-ounce gold, unapplied stock splits), and{' '}
-            <code>average_tokenized_price</code> is computed over them, so it can be off by several multiples.
+            <code>average_tokenized_price</code> is computed across them, so for KLAC it lands on a price no wrapper trades at. A
+            per-token <code>units_per_share</code> field would fix both.
           </li>
           <li>
             <strong>market-pairs/list returns 1006</strong> on a key the docs say should have access. Without it there's no per-venue view.

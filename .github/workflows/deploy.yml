@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
   schedule:
-    # Every 3 hours. A run costs ~20 credits on the free Basic tier (~160/day).
+    # Every 3 hours. A refresh costs about 9 credits on the free Basic tier (~72/day).
     - cron: '17 */3 * * *'
   workflow_dispatch:
 

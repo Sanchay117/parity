@@ -1,4 +1,4 @@
-import { DevCell, IssuerChip, SectionHead } from '../components/ui.tsx';
+import { IssuerChip, SectionHead } from '../components/ui.tsx';
 import { bps, int, pct, usd } from '../lib/format.ts';
 import { analyzeIssuers, issuerTrends, type AssetView } from '../lib/parity.ts';
 import type { HistorySummary, Snapshot } from '../lib/types.ts';
@@ -65,10 +65,20 @@ export function Issuers({ views, snapshot, summary }: Props) {
                       </span>
                     </td>
                     <td className="r num">{i.medianAbsDevBps != null ? bps(i.medianAbsDevBps).replace('+', '') : '—'}</td>
-                    <td className="r">
-                      <DevCell value={i.medianPremiumBps} max={40} />
+                    <td className="r num">
+                      {i.medianPremiumBps != null && (
+                        <span
+                          className="swatch"
+                          style={{
+                            display: 'inline-block',
+                            marginRight: 6,
+                            background: i.medianPremiumBps > 0 ? 'var(--div-pos)' : 'var(--div-neg)',
+                          }}
+                        />
+                      )}
+                      {bps(i.medianPremiumBps)}
                     </td>
-                    <td className="r num secondary">{t ? `${bps(t.meanDevBps)} · ${t.assets} assets` : '—'}</td>
+                    <td className="r num secondary">{t ? `${bps(t.meanDevBps)} · ${t.assets} asset${t.assets === 1 ? '' : 's'}` : '—'}</td>
                     <td>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                         <div style={{ width: 60, height: 8, background: 'var(--surface-2)', borderRadius: 4 }} title={usd(i.marketCap)}>
@@ -103,7 +113,9 @@ export function Issuers({ views, snapshot, summary }: Props) {
           </table>
         </div>
         <p className="muted" style={{ fontSize: 13, marginTop: 10 }}>
-          Covers wrappers of assets with at least two liquid wrappers (a peer to compare against). Hover a wrapper count for the
+          Grades measure how tightly an issuer's wrappers track their peers on price, nothing about custody, solvency or product
+          quality. Tracking error, typical price and wrapper counts cover every asset in the snapshot with at least two liquid
+          wrappers; the 30-day column covers the {summary?.assets.length ?? 0} assets with hourly history. Hover a wrapper count for the
           issuer's total <code>num_tokens</code> from <code>/v5/real-world-assets/issuers/list</code>.
         </p>
       </section>
