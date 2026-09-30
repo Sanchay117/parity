@@ -85,7 +85,7 @@ export function AssetPage({ slug, views, snapshot, summary }: Props) {
       </div>
 
       <div className="grid cols-4 section" style={{ marginTop: 20 }}>
-        <Stat label="Consensus price" value={price(view.consensus)} sub={`${view.method} of ${view.liquidCount} liquid wrappers`} />
+        <Stat label="Consensus price" value={price(view.consensus)} sub={`${view.method} of ${view.liquidCount} liquid wrapper${view.liquidCount === 1 ? '' : 's'}`} />
         <Stat
           label="CMC average_tokenized_price"
           value={price(asset.avgTokenizedPrice)}
