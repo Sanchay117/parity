@@ -66,7 +66,7 @@ export function Feedback({ snapshot, views }: { snapshot: Snapshot; views: Asset
       actual: (
         <>
           {integrity.aggregateGaps
-            .filter((v) => v.cmcVsReference != null)
+            .filter((v) => v.cmcVsReference != null && Math.abs(v.cmcVsReference - 1) >= 0.05)
             .map((v) => `${v.asset.symbol}: ${price(v.asset.avgTokenizedPrice)}, ${v.cmcVsReference!.toFixed(1)}× the real ${v.reference!.ticker} price of ${price(v.reference!.price)}`)
             .join('. ')}
           .
