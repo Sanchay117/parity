@@ -2,7 +2,7 @@
 
 **Same asset. Different price.** A parity radar for tokenized real-world assets, built on the CoinMarketCap v5 RWA API.
 
-The S&P 500 has nine tokenized wrappers on CoinMarketCap: xStocks, Ondo, bStocks, Robinhood, Reality and more. They're meant to be the same thing, but for the last 30 days they've traded a **median 103 bps apart**, every hour. Parity reads every wrapper of every tokenized stock, ETF and commodity, puts them on the same units, and shows which trade rich, which trade cheap, and which are simply broken.
+The S&P 500 has nine tokenized wrappers on CoinMarketCap: xStocks, Ondo, bStocks, Robinhood, Reality and more. They're meant to be the same thing, but for the last 30 days they've traded a **median 103 bps apart**, every hour. Parity reads every wrapper of every tokenized stock, ETF and commodity, puts them on the same units, checks them against the real listed stock, and shows which trade rich, which trade cheap, which are simply broken, and why.
 
 **Track:** Real World Assets  
 **Live demo:** https://sanchay117.github.io/parity/  
@@ -17,8 +17,8 @@ From snapshots taken on 2026-09-30, plus 30 days of hourly history. The live sit
 | Finding | Evidence |
 |---|---|
 | **Spreads between wrappers of the same asset persist.** They aren't blips. | SPY wrappers: 30-day median spread 103 bps (p95 116). IBM 283 bps, QCOM 210, GME 180. |
-| **The issuer decides what you pay.** | Ondo wrappers averaged **+17 bps** over consensus across 24 assets and traded above it in 63% of them. bStocks averaged **−20 bps** (above in 18%), Robinhood −18, Reality −17. |
-| **CMC's own `average_tokenized_price` blends units.** | KLAC: CMC reports **about $1,717**. Its wrappers trade near $195 (Backed, perp) and $1,955 (Ondo, a 10× unit), so no wrapper trades anywhere near the average. NOW: CMC's ~$650 is Ondo's 5× unit, while three other wrappers trade near $130. |
+| **The issuer decides what you pay, and dividends explain most of it.** | Ondo wrappers averaged **+17 bps** over consensus across 24 assets; bStocks **−20 bps**, Robinhood −18, Reality −17. Against the real stock, Ondo's premium rises with the stock's dividend yield: **slope ≈0.7, correlation ≈0.75 across 127 assets** (+0.3% for non-payers, +2.5% above a 2% yield). xStocks shows the same drift (≈0.65); bStocks, Robinhood and Reality stay flat. A slope near 0.7 is what reinvesting dividends after a 30% US withholding tax would produce: those wrappers behave like total-return tokens, so their "premium" is mostly accrued dividends, not overpricing. |
+| **CMC's own `average_tokenized_price` blends units.** | KLAC: CMC reports **about $1,717**, **8.7× the real NASDAQ price** ($196.53). Its wrappers trade near $195 (Backed, perp) and $1,955 (Ondo, quoted per 10 shares), so no wrapper trades anywhere near the average. NOW: CMC's ~$650 is **5× the real NYSE price** (~$130). |
 | **Wrappers under one `rwa_id` use different units, and nothing in the API says so.** | Comtech CGO and VNX VNXAU are priced per gram, PAXG/XAUt per ounce. Ondo's NFLXon and KLACon (10×), NOWon (5×) and CRWDon (4×) trade at exact multiples of three or more independent peers, so one token stands for several shares (most likely after a split). |
 | **Lots of dead data.** | 155 of 853 wrappers return `price: null` (122 of them Backed). 10 quotes sit ≥5% from their peers with zero volume. |
 
@@ -26,8 +26,12 @@ From snapshots taken on 2026-09-30, plus 30 days of hourly history. The live sit
 
 - **Radar** (`#/`): the widest spreads right now between liquid wrappers of the same asset (both legs ≥ $250K/day), the 30-day issuer premium table, and the automatically detected API data issues.
 - **Best way to buy** (`#/asset/spy`): pick any of 249 assets and see every wrapper's premium or discount to consensus, volume, market cap, chains and flags. Three picks answer "which one should I buy?": tracks closest, cheapest liquid, most liquid. The 30-day hourly chart shows whether a gap is persistent or noise.
+- **Tokenized vs the real stock** (on the radar): each asset's wrapper consensus against the listed stock or ETF itself, with CMC's average flagged where it's off by a multiple. Unit normalizations are confirmed against the real price.
+- **The dividend effect** (`#/dividends`): every wrapper plotted by the real stock's dividend yield against its premium to the real price, with a fit per issuer. It separates total-return wrappers from price-only ones.
 - **Issuers** (`#/issuers`): a league table grading each issuer on tracking error against its *peers* (leave-one-out, so the biggest wrapper can't grade itself), plus typical premium, market share and problem counts. Grades measure price tracking only, not custody or solvency.
 - **Method & API** (`#/method`): how the numbers are computed, every endpoint called with credits used, and API feedback.
+
+![The dividend effect](docs/dividends.png)
 
 | Best way to buy SPY | Issuer scorecard |
 |---|---|
@@ -48,6 +52,8 @@ From snapshots taken on 2026-09-30, plus 30 days of hourly history. The live sit
 | `GET /v2/cryptocurrency/info` | Wrapper logos and chains, joined on `crypto_id` | Basic |
 | `GET /v1/global-metrics/quotes/latest` | Market context | Basic |
 | `GET /v2/cryptocurrency/quotes/historical` | 30 days × hourly prices for every liquid wrapper of 24 assets (one-off backfill) | Paid (our hackathon key) |
+
+**External reference (not CMC):** Yahoo Finance's public chart endpoint supplies the real stock's last regular-session price and 12-month dividends, because CMC has no quote for the listed instrument behind a wrapper. About 245 calls per snapshot, no key; a quote more than 30% from the wrapper consensus is dropped as a different instrument sharing the ticker, and a failed fetch keeps the previous value.
 
 A cold snapshot is **25 calls / 17 credits**. Refreshes reuse cached token metadata: **17 calls / 9 credits**. The one-off backfill was 24 calls / 1,046 credits.
 
@@ -84,9 +90,10 @@ curl -H "X-CMC_PRO_API_KEY: $CMC_API_KEY" \
 2. **Fix units.** A median price sets a reference. A wrapper that sits a known ratio away (31.1035× for grams of gold, 32.15× for kilograms, 2 to 100× for multi-share or fractional tokens) is flagged and normalized. The assumption is that the unit most wrappers use is the reference; every normalization is flagged in the UI, so you can check each one.
 3. **Discard what can't be trusted.** No price, no volume, or under $50K/day of volume: the wrapper doesn't vote. After unit fixes, anything ≥5% from the median is off-peg (usually a stale last trade) and excluded.
 4. **Consensus** is the volume-weighted mean of what's left. Each wrapper's premium or discount is measured against it in bps. Issuer grades use a **leave-one-out** consensus, so a dominant wrapper can't grade itself.
-5. **History.** The same calculation is replayed on every hour of the backfill. Each new snapshot appends a point, so the charts keep moving on the free tier.
+5. **The real stock.** Each wrapper and CMC's own average are compared with the listed instrument's last price, which also confirms each unit normalization. Premium is then regressed on 12-month dividend yield per issuer to separate total-return wrappers from price-only ones.
+6. **History.** The same calculation is replayed on every hour of the backfill. Each new snapshot appends a point, so the charts keep moving on the free tier.
 
-All of this lives in one pure, unit-tested module: [`src/lib/parity.ts`](src/lib/parity.ts), with tests in [`src/lib/parity.test.ts`](src/lib/parity.test.ts).
+All of this lives in one pure, unit-tested module: [`src/lib/parity.ts`](src/lib/parity.ts), with 20 tests in [`src/lib/parity.test.ts`](src/lib/parity.test.ts).
 
 **Spreads are a price map, not an arbitrage guarantee.** Wrappers differ in chain, KYC, redemption rights and trading hours.
 
@@ -122,8 +129,9 @@ The committed snapshot means `npm install && npm run dev` works without a key.
 
 ```
 scripts/snapshot.ts ──► CMC API (Basic-tier endpoints) ──► public/data/snapshot.json, evidence/*.json
+scripts/reference.ts ──► real stock price + dividends (Yahoo Finance, external) ──► snapshot.json (asset.reference)
 scripts/backfill.ts ──► /v2/cryptocurrency/quotes/historical ──► public/data/history/<rwa_id>.json
-src/lib/parity.ts   ──► pure analytics (units, consensus, spreads, issuers, history), shared by scripts and site
+src/lib/parity.ts   ──► pure analytics (units, consensus, spreads, issuers, real-price gaps, dividend fits, history)
 src/                ──► React + Vite static site, reads public/data/*
 .github/workflows/  ──► every 3h: snapshot (if the key secret is set) → test → build → GitHub Pages
 ```
