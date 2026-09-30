@@ -6,7 +6,7 @@ The S&P 500 has nine tokenized wrappers on CoinMarketCap: xStocks, Ondo, bStocks
 
 **Track:** Real World Assets  
 **Live demo:** https://sanchay117.github.io/parity/  
-**Demo video:** https://sanchay117.github.io/parity/demo.mp4 (2:35, narrated)
+**Demo video:** https://sanchay117.github.io/parity/demo.mp4 (2:08, narrated)
 
 ![Parity radar](docs/radar.png)
 
