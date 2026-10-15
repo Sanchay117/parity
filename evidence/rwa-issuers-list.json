@@ -11,7 +11,7 @@
           "website": "https://assets.backed.fi/",
           "logo": null,
           "issuer_id": "6878977dcbbf471de3366e85",
-          "num_tokens": 1178
+          "num_tokens": 1179
         },
         {
           "name": "Backpack",
@@ -26,10 +26,10 @@
       "has_more": false
     },
     "status": {
-      "timestamp": "2026-10-15T07:14:04.134Z",
+      "timestamp": "2026-10-15T11:32:09.497Z",
       "error_code": "0",
       "error_message": "",
-      "elapsed": 3,
+      "elapsed": 2,
       "credit_count": 1
     }
   }
