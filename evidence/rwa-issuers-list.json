@@ -11,14 +11,14 @@
           "website": "https://assets.backed.fi/",
           "logo": null,
           "issuer_id": "6878977dcbbf471de3366e85",
-          "num_tokens": 1176
+          "num_tokens": 1178
         },
         {
           "name": "Backpack",
           "website": "https://backpack.exchange",
           "logo": "https://s2.coinmarketcap.com/static/img/issuer/M7sS2GzR_400x400.png",
           "issuer_id": "6a2d54b697c45356b1a634f4",
-          "num_tokens": 10
+          "num_tokens": 13
         },
         "… 23 more"
       ],
@@ -26,10 +26,10 @@
       "has_more": false
     },
     "status": {
-      "timestamp": "2026-09-30T08:12:10.475Z",
+      "timestamp": "2026-10-15T07:14:04.134Z",
       "error_code": "0",
       "error_message": "",
-      "elapsed": 2,
+      "elapsed": 3,
       "credit_count": 1
     }
   }
