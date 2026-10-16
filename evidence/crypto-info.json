@@ -1,40 +1,17 @@
 {
-  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42572%2C42602%2C41944%2C42604%2C42571%2C42564&skip_invalid=true&aux=logo%2Cplatform",
+  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42591&skip_invalid=true&aux=logo%2Cplatform",
   "headers": {
     "X-CMC_PRO_API_KEY": "<redacted>"
   },
   "response": {
     "data": {
-      "41944": {
-        "id": 41944,
-        "name": "Direxion Daily TSLA Bull 2X ETF (Derivatives)",
-        "symbol": "TSLL",
+      "42591": {
+        "id": 42591,
+        "name": "Hesai Group Tokenized Stock (Coinbase)",
+        "symbol": "HSAIc",
         "category": "token",
-        "slug": "direxion-daily-tsla-bull-2x-etf-derivatives",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/41944.png",
-        "subreddit": "",
-        "tag-names": [
-          "DeFi",
-          "Synthetics",
-          "… 5 more"
-        ],
-        "tag-groups": [
-          "CATEGORY",
-          "INDUSTRY",
-          "… 5 more"
-        ],
-        "platform": null,
-        "twitter_username": "",
-        "is_hidden": 0,
-        "infinite_supply": false
-      },
-      "42564": {
-        "id": 42564,
-        "name": "Vale S.A. Tokenized Stock (Coinbase)",
-        "symbol": "VALEc",
-        "category": "token",
-        "slug": "vale-sa-tokenized-stock-coinbase",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42564.png",
+        "slug": "hesai-group-tokenized-stock-coinbase",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42591.png",
         "subreddit": "",
         "tag-names": [
           "DeFi",
@@ -51,13 +28,13 @@
           "name": "Base",
           "symbol": "-",
           "slug": "base",
-          "token_address": "0xb20000000000000000000063376b142c0764b489"
+          "token_address": "0xb200000000000000000000f3049F4aa834b23b64"
         },
         "twitter_username": "",
         "is_hidden": 0,
         "contract_address": [
           {
-            "contract_address": "0xb20000000000000000000063376b142c0764b489",
+            "contract_address": "0xb200000000000000000000f3049F4aa834b23b64",
             "platform": {
               "name": "Base",
               "coin": {
@@ -68,210 +45,12 @@
               }
             }
           }
-        ],
-        "infinite_supply": false
-      },
-      "42571": {
-        "id": 42571,
-        "name": "Infosys Limited Tokenized Stock (Coinbase)",
-        "symbol": "INFYc",
-        "category": "token",
-        "slug": "infosys-limited-tokenized-stock-coinbase",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42571.png",
-        "subreddit": "",
-        "tag-names": [
-          "DeFi",
-          "Tokenized Stock",
-          "… 3 more"
-        ],
-        "tag-groups": [
-          "CATEGORY",
-          "CATEGORY",
-          "… 3 more"
-        ],
-        "platform": {
-          "id": "27716",
-          "name": "Base",
-          "symbol": "-",
-          "slug": "base",
-          "token_address": "0xb200000000000000000000F6b0417af5F52341FC"
-        },
-        "twitter_username": "",
-        "is_hidden": 0,
-        "contract_address": [
-          {
-            "contract_address": "0xb200000000000000000000F6b0417af5F52341FC",
-            "platform": {
-              "name": "Base",
-              "coin": {
-                "id": "27716",
-                "name": "Base",
-                "symbol": "-",
-                "slug": "base"
-              }
-            }
-          }
-        ],
-        "infinite_supply": false
-      },
-      "42572": {
-        "id": 42572,
-        "name": "Li Auto Inc. Tokenized Stock (Coinbase)",
-        "symbol": "LIc",
-        "category": "token",
-        "slug": "li-auto-inc-tokenized-stock-coinbase",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42572.png",
-        "subreddit": "",
-        "tag-names": [
-          "DeFi",
-          "Tokenized Stock",
-          "… 3 more"
-        ],
-        "tag-groups": [
-          "CATEGORY",
-          "CATEGORY",
-          "… 3 more"
-        ],
-        "platform": {
-          "id": "27716",
-          "name": "Base",
-          "symbol": "-",
-          "slug": "base",
-          "token_address": "0xb200000000000000000000D61eFD9F54A23ef9eB"
-        },
-        "twitter_username": "",
-        "is_hidden": 0,
-        "contract_address": [
-          {
-            "contract_address": "0xb200000000000000000000D61eFD9F54A23ef9eB",
-            "platform": {
-              "name": "Base",
-              "coin": {
-                "id": "27716",
-                "name": "Base",
-                "symbol": "-",
-                "slug": "base"
-              }
-            }
-          }
-        ],
-        "infinite_supply": false
-      },
-      "42602": {
-        "id": 42602,
-        "name": "Direxion Daily 20 Year Treasury Bull 3X tokenized ETF (xStock)",
-        "symbol": "TMFx",
-        "category": "token",
-        "slug": "direxion-daily-20-year-treasury-bull-3x-tokenized-etf-xstock",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42602.png",
-        "subreddit": "",
-        "tag-names": [
-          "DeFi",
-          "Ethereum Ecosystem",
-          "… 13 more"
-        ],
-        "tag-groups": [
-          "CATEGORY",
-          "PLATFORM",
-          "… 13 more"
-        ],
-        "platform": {
-          "id": "1027",
-          "name": "Ethereum",
-          "symbol": "ETH",
-          "slug": "ethereum",
-          "token_address": "0xD2F2243031c07d20FAaee3A4F67AdC355e1e14C7"
-        },
-        "twitter_username": "xStocksFi",
-        "is_hidden": 0,
-        "contract_address": [
-          {
-            "contract_address": "0xD2F2243031c07d20FAaee3A4F67AdC355e1e14C7",
-            "platform": {
-              "name": "Ethereum",
-              "coin": {
-                "id": "1027",
-                "name": "Ethereum",
-                "symbol": "ETH",
-                "slug": "ethereum"
-              }
-            }
-          },
-          {
-            "contract_address": "0xD2F2243031c07d20FAaee3A4F67AdC355e1e14C7",
-            "platform": {
-              "name": "BNB Smart Chain (BEP20)",
-              "coin": {
-                "id": "1839",
-                "name": "BNB",
-                "symbol": "BNB",
-                "slug": "bnb"
-              }
-            }
-          },
-          "… 8 more"
-        ],
-        "infinite_supply": false
-      },
-      "42604": {
-        "id": 42604,
-        "name": "Direxion Daily TSLA Bull 2X Shares tokenized ETF (xStock)",
-        "symbol": "TSLLx",
-        "category": "token",
-        "slug": "direxion-daily-tsla-bull-2x-shares-tokenized-etf-xstock",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42604.png",
-        "subreddit": "",
-        "tag-names": [
-          "DeFi",
-          "Ethereum Ecosystem",
-          "… 13 more"
-        ],
-        "tag-groups": [
-          "CATEGORY",
-          "PLATFORM",
-          "… 13 more"
-        ],
-        "platform": {
-          "id": "1027",
-          "name": "Ethereum",
-          "symbol": "ETH",
-          "slug": "ethereum",
-          "token_address": "0x9cBbf0C7bfBfe4C1dAa646Ad1Ec306aB9f46ac98"
-        },
-        "twitter_username": "xStocksFi",
-        "is_hidden": 0,
-        "contract_address": [
-          {
-            "contract_address": "0x9cBbf0C7bfBfe4C1dAa646Ad1Ec306aB9f46ac98",
-            "platform": {
-              "name": "Ethereum",
-              "coin": {
-                "id": "1027",
-                "name": "Ethereum",
-                "symbol": "ETH",
-                "slug": "ethereum"
-              }
-            }
-          },
-          {
-            "contract_address": "0x9cBbf0C7bfBfe4C1dAa646Ad1Ec306aB9f46ac98",
-            "platform": {
-              "name": "BNB Smart Chain (BEP20)",
-              "coin": {
-                "id": "1839",
-                "name": "BNB",
-                "symbol": "BNB",
-                "slug": "bnb"
-              }
-            }
-          },
-          "… 8 more"
         ],
         "infinite_supply": false
       }
     },
     "status": {
-      "timestamp": "2026-10-15T17:04:19.233Z",
+      "timestamp": "2026-10-16T11:28:14.861Z",
       "error_code": 0,
       "error_message": null,
       "elapsed": 6,
