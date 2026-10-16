@@ -16,20 +16,20 @@
             {
               "symbol": "USD",
               "crypto_id": 2781,
-              "average_tokenized_price": 4156.76175751893,
-              "tokenized_market_cap": 4976687352.354234,
-              "tokenized_volume_24h": 337852721.6257947,
-              "last_updated": "2026-10-16T16:40:02.000Z"
+              "average_tokenized_price": 4158.073052740824,
+              "tokenized_market_cap": 4978195541.963118,
+              "tokenized_volume_24h": 358617733.300118,
+              "last_updated": "2026-10-16T21:10:03.000Z"
             }
           ],
           "rwa_id": 1,
           "asset_type": "commodity",
           "rwa_rank": 1,
           "has_tokens": true,
-          "average_tokenized_price": 4156.76175751893,
-          "tokenized_market_cap": 4976687352.354234,
-          "tokenized_volume_24h": 337852721.6257947,
-          "last_updated": "2026-10-16T16:38:36.000Z"
+          "average_tokenized_price": 4158.073052740824,
+          "tokenized_market_cap": 4978195541.963118,
+          "tokenized_volume_24h": 358617733.300118,
+          "last_updated": "2026-10-16T21:10:34.000Z"
         },
         {
           "name": "Circle Internet Group Inc",
@@ -39,29 +39,29 @@
             {
               "symbol": "USD",
               "crypto_id": 2781,
-              "average_tokenized_price": 84.04230598435687,
-              "tokenized_market_cap": 378300039.77111334,
-              "tokenized_volume_24h": 84749642.13034452,
-              "last_updated": "2026-10-16T16:40:02.000Z"
+              "average_tokenized_price": 82.47463128621665,
+              "tokenized_market_cap": 373039084.9104621,
+              "tokenized_volume_24h": 82758216.13992356,
+              "last_updated": "2026-10-16T21:10:03.000Z"
             }
           ],
           "rwa_id": 115,
           "asset_type": "stock",
-          "rwa_rank": 578,
+          "rwa_rank": 583,
           "has_tokens": true,
-          "average_tokenized_price": 84.04230598435687,
-          "tokenized_market_cap": 378300039.77111334,
-          "tokenized_volume_24h": 84749642.13034452,
-          "last_updated": "2026-10-16T16:38:37.000Z"
+          "average_tokenized_price": 82.47463128621665,
+          "tokenized_market_cap": 373039084.9104621,
+          "tokenized_volume_24h": 82758216.13992356,
+          "last_updated": "2026-10-16T21:09:15.000Z"
         },
         "… 248 more"
       ]
     },
     "status": {
-      "timestamp": "2026-10-16T16:41:01.050Z",
+      "timestamp": "2026-10-16T21:11:15.291Z",
       "error_code": "0",
       "error_message": "",
-      "elapsed": 11,
+      "elapsed": 21,
       "credit_count": 1
     }
   }
