@@ -1,17 +1,17 @@
 {
-  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42591&skip_invalid=true&aux=logo%2Cplatform",
+  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42470&skip_invalid=true&aux=logo%2Cplatform",
   "headers": {
     "X-CMC_PRO_API_KEY": "<redacted>"
   },
   "response": {
     "data": {
-      "42591": {
-        "id": 42591,
-        "name": "Hesai Group Tokenized Stock (Coinbase)",
-        "symbol": "HSAIc",
+      "42470": {
+        "id": 42470,
+        "name": "Philip Morris International Inc. Tokenized Stock (Coinbase)",
+        "symbol": "PMc",
         "category": "token",
-        "slug": "hesai-group-tokenized-stock-coinbase",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42591.png",
+        "slug": "philip-morris-international-inc-tokenized-stock-coinbase",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42470.png",
         "subreddit": "",
         "tag-names": [
           "DeFi",
@@ -28,13 +28,13 @@
           "name": "Base",
           "symbol": "-",
           "slug": "base",
-          "token_address": "0xb200000000000000000000f3049F4aa834b23b64"
+          "token_address": "0xb2000000000000000000008fc2a8c23cf5937b66"
         },
         "twitter_username": "",
         "is_hidden": 0,
         "contract_address": [
           {
-            "contract_address": "0xb200000000000000000000f3049F4aa834b23b64",
+            "contract_address": "0xb2000000000000000000008fc2a8c23cf5937b66",
             "platform": {
               "name": "Base",
               "coin": {
@@ -50,7 +50,7 @@
       }
     },
     "status": {
-      "timestamp": "2026-10-16T11:28:14.861Z",
+      "timestamp": "2026-10-17T15:38:32.634Z",
       "error_code": 0,
       "error_message": null,
       "elapsed": 6,
