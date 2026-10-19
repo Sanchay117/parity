@@ -1,47 +1,90 @@
 {
-  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42470&skip_invalid=true&aux=logo%2Cplatform",
+  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42614%2C42611&skip_invalid=true&aux=logo%2Cplatform",
   "headers": {
     "X-CMC_PRO_API_KEY": "<redacted>"
   },
   "response": {
     "data": {
-      "42470": {
-        "id": 42470,
-        "name": "Philip Morris International Inc. Tokenized Stock (Coinbase)",
-        "symbol": "PMc",
+      "42611": {
+        "id": 42611,
+        "name": "Direxion Daily 20 Year Treasury Bull 3X ETF Tokenized bStocks",
+        "symbol": "TMFB",
         "category": "token",
-        "slug": "philip-morris-international-inc-tokenized-stock-coinbase",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42470.png",
+        "slug": "direxion-daily-20-year-treasury-bull-3x-etf-tokenized-bstocks",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42611.png",
         "subreddit": "",
         "tag-names": [
           "DeFi",
           "Tokenized Stock",
-          "… 3 more"
+          "… 5 more"
         ],
         "tag-groups": [
           "CATEGORY",
           "CATEGORY",
-          "… 3 more"
+          "… 5 more"
         ],
         "platform": {
-          "id": "27716",
-          "name": "Base",
-          "symbol": "-",
-          "slug": "base",
-          "token_address": "0xb2000000000000000000008fc2a8c23cf5937b66"
+          "id": "1839",
+          "name": "BNB",
+          "symbol": "BNB",
+          "slug": "bnb",
+          "token_address": "0x19568bf80e61e6272ff04403c4d5b09833cc7c54"
         },
         "twitter_username": "",
         "is_hidden": 0,
         "contract_address": [
           {
-            "contract_address": "0xb2000000000000000000008fc2a8c23cf5937b66",
+            "contract_address": "0x19568bf80e61e6272ff04403c4d5b09833cc7c54",
             "platform": {
-              "name": "Base",
+              "name": "BNB Smart Chain (BEP20)",
               "coin": {
-                "id": "27716",
-                "name": "Base",
-                "symbol": "-",
-                "slug": "base"
+                "id": "1839",
+                "name": "BNB",
+                "symbol": "BNB",
+                "slug": "bnb"
+              }
+            }
+          }
+        ],
+        "infinite_supply": false
+      },
+      "42614": {
+        "id": 42614,
+        "name": "Vistra Corp Tokenized bStocks",
+        "symbol": "VSTB",
+        "category": "token",
+        "slug": "vistra-corp-tokenized-bstocks",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42614.png",
+        "subreddit": "",
+        "tag-names": [
+          "DeFi",
+          "Tokenized Stock",
+          "… 5 more"
+        ],
+        "tag-groups": [
+          "CATEGORY",
+          "CATEGORY",
+          "… 5 more"
+        ],
+        "platform": {
+          "id": "1839",
+          "name": "BNB",
+          "symbol": "BNB",
+          "slug": "bnb",
+          "token_address": "0xc7fb9c23f359b7e072706eb43db8cf489aa8f87f"
+        },
+        "twitter_username": "",
+        "is_hidden": 0,
+        "contract_address": [
+          {
+            "contract_address": "0xc7fb9c23f359b7e072706eb43db8cf489aa8f87f",
+            "platform": {
+              "name": "BNB Smart Chain (BEP20)",
+              "coin": {
+                "id": "1839",
+                "name": "BNB",
+                "symbol": "BNB",
+                "slug": "bnb"
               }
             }
           }
@@ -50,10 +93,10 @@
       }
     },
     "status": {
-      "timestamp": "2026-10-17T15:38:32.634Z",
+      "timestamp": "2026-10-19T20:37:37.686Z",
       "error_code": 0,
       "error_message": null,
-      "elapsed": 6,
+      "elapsed": 5,
       "credit_count": 1,
       "notice": null
     }
