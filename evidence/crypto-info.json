@@ -1,104 +1,62 @@
 {
-  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42637%2C42615&skip_invalid=true&aux=logo%2Cplatform",
+  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42649%2C42650&skip_invalid=true&aux=logo%2Cplatform",
   "headers": {
     "X-CMC_PRO_API_KEY": "<redacted>"
   },
   "response": {
     "data": {
-      "42615": {
-        "id": 42615,
-        "name": "KraneShares STAR Market 50 ETF Tokenized bStocks",
-        "symbol": "KSTRB",
+      "42649": {
+        "id": 42649,
+        "name": "General Electric Company (Derivatives)",
+        "symbol": "GE",
         "category": "token",
-        "slug": "kraneshares-star-market-50-etf-tokenized-bstocks",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42615.png",
+        "slug": "general-electric-company-derivatives",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42649.png",
         "subreddit": "",
         "tag-names": [
           "DeFi",
           "Tokenized Stock",
-          "… 5 more"
+          "… 3 more"
         ],
         "tag-groups": [
           "CATEGORY",
           "CATEGORY",
-          "… 5 more"
+          "… 3 more"
         ],
-        "platform": {
-          "id": "1839",
-          "name": "BNB",
-          "symbol": "BNB",
-          "slug": "bnb",
-          "token_address": "0x5f1668b592cdf695b0c8e643a5a0078bb94cd80c"
-        },
+        "platform": null,
         "twitter_username": "",
         "is_hidden": 0,
-        "contract_address": [
-          {
-            "contract_address": "0x5f1668b592cdf695b0c8e643a5a0078bb94cd80c",
-            "platform": {
-              "name": "BNB Smart Chain (BEP20)",
-              "coin": {
-                "id": "1839",
-                "name": "BNB",
-                "symbol": "BNB",
-                "slug": "bnb"
-              }
-            }
-          }
-        ],
         "infinite_supply": false
       },
-      "42637": {
-        "id": 42637,
-        "name": "Airbnb tokenized stock (Backpack)",
-        "symbol": "ABNB",
+      "42650": {
+        "id": 42650,
+        "name": "AbbVie Inc (Derivatives)",
+        "symbol": "ABBV",
         "category": "token",
-        "slug": "airbnb-tokenized-stock-backpack",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42637.png",
+        "slug": "abbvibe-inc-derivatives",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42650.png",
         "subreddit": "",
         "tag-names": [
           "DeFi",
           "Tokenized Stock",
-          "… 2 more"
+          "… 3 more"
         ],
         "tag-groups": [
           "CATEGORY",
           "CATEGORY",
-          "… 2 more"
+          "… 3 more"
         ],
-        "platform": {
-          "id": "5426",
-          "name": "Solana",
-          "symbol": "SOL",
-          "slug": "solana",
-          "token_address": "ABNB56TteaTZG1S3DY2W8VMncQmHMvNCGaZgAba49CLP"
-        },
+        "platform": null,
         "twitter_username": "",
         "is_hidden": 0,
-        "contract_address": [
-          {
-            "contract_address": "ABNB56TteaTZG1S3DY2W8VMncQmHMvNCGaZgAba49CLP",
-            "platform": {
-              "name": "Solana",
-              "coin": {
-                "id": "5426",
-                "name": "Solana",
-                "symbol": "SOL",
-                "slug": "solana"
-              }
-            }
-          }
-        ],
-        "self_reported_circulating_supply": 419.18,
-        "self_reported_market_cap": 72644.95400221595,
         "infinite_supply": false
       }
     },
     "status": {
-      "timestamp": "2026-10-21T17:15:44.339Z",
+      "timestamp": "2026-10-23T11:42:46.174Z",
       "error_code": 0,
       "error_message": null,
-      "elapsed": 7,
+      "elapsed": 6,
       "credit_count": 1,
       "notice": null
     }
