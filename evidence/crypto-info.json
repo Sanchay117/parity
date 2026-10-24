@@ -1,17 +1,17 @@
 {
-  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42649%2C42650&skip_invalid=true&aux=logo%2Cplatform",
+  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42491&skip_invalid=true&aux=logo%2Cplatform",
   "headers": {
     "X-CMC_PRO_API_KEY": "<redacted>"
   },
   "response": {
     "data": {
-      "42649": {
-        "id": 42649,
-        "name": "General Electric Company (Derivatives)",
-        "symbol": "GE",
+      "42491": {
+        "id": 42491,
+        "name": "CoreWeave, Inc. Tokenized Stock (Coinbase)",
+        "symbol": "CRWVc",
         "category": "token",
-        "slug": "general-electric-company-derivatives",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42649.png",
+        "slug": "coreweave-inc-tokenized-stock-coinbase",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42491.png",
         "subreddit": "",
         "tag-names": [
           "DeFi",
@@ -23,37 +23,34 @@
           "CATEGORY",
           "… 3 more"
         ],
-        "platform": null,
+        "platform": {
+          "id": "27716",
+          "name": "Base",
+          "symbol": "-",
+          "slug": "base",
+          "token_address": "0xb200000000000000000000F111184A74720787E6"
+        },
         "twitter_username": "",
         "is_hidden": 0,
-        "infinite_supply": false
-      },
-      "42650": {
-        "id": 42650,
-        "name": "AbbVie Inc (Derivatives)",
-        "symbol": "ABBV",
-        "category": "token",
-        "slug": "abbvibe-inc-derivatives",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42650.png",
-        "subreddit": "",
-        "tag-names": [
-          "DeFi",
-          "Tokenized Stock",
-          "… 3 more"
+        "contract_address": [
+          {
+            "contract_address": "0xb200000000000000000000F111184A74720787E6",
+            "platform": {
+              "name": "Base",
+              "coin": {
+                "id": "27716",
+                "name": "Base",
+                "symbol": "-",
+                "slug": "base"
+              }
+            }
+          }
         ],
-        "tag-groups": [
-          "CATEGORY",
-          "CATEGORY",
-          "… 3 more"
-        ],
-        "platform": null,
-        "twitter_username": "",
-        "is_hidden": 0,
         "infinite_supply": false
       }
     },
     "status": {
-      "timestamp": "2026-10-23T11:42:46.174Z",
+      "timestamp": "2026-10-24T11:05:06.640Z",
       "error_code": 0,
       "error_message": null,
       "elapsed": 6,
