@@ -1,47 +1,47 @@
 {
-  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42491&skip_invalid=true&aux=logo%2Cplatform",
+  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42659&skip_invalid=true&aux=logo%2Cplatform",
   "headers": {
     "X-CMC_PRO_API_KEY": "<redacted>"
   },
   "response": {
     "data": {
-      "42491": {
-        "id": 42491,
-        "name": "CoreWeave, Inc. Tokenized Stock (Coinbase)",
-        "symbol": "CRWVc",
+      "42659": {
+        "id": 42659,
+        "name": "Advanced Micro Devices tokenized stock (Backpack)",
+        "symbol": "AMD",
         "category": "token",
-        "slug": "coreweave-inc-tokenized-stock-coinbase",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42491.png",
+        "slug": "advanced-micro-devices-tokenized-stock-backpack",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42659.png",
         "subreddit": "",
         "tag-names": [
           "DeFi",
           "Tokenized Stock",
-          "… 3 more"
+          "… 2 more"
         ],
         "tag-groups": [
           "CATEGORY",
           "CATEGORY",
-          "… 3 more"
+          "… 2 more"
         ],
         "platform": {
-          "id": "27716",
-          "name": "Base",
-          "symbol": "-",
-          "slug": "base",
-          "token_address": "0xb200000000000000000000F111184A74720787E6"
+          "id": "5426",
+          "name": "Solana",
+          "symbol": "SOL",
+          "slug": "solana",
+          "token_address": "AMD8XwJXgQ9WV45Wyj9yFLejxzf2J6VM1PJY8bJEjeES"
         },
-        "twitter_username": "",
+        "twitter_username": "amd",
         "is_hidden": 0,
         "contract_address": [
           {
-            "contract_address": "0xb200000000000000000000F111184A74720787E6",
+            "contract_address": "AMD8XwJXgQ9WV45Wyj9yFLejxzf2J6VM1PJY8bJEjeES",
             "platform": {
-              "name": "Base",
+              "name": "Solana",
               "coin": {
-                "id": "27716",
-                "name": "Base",
-                "symbol": "-",
-                "slug": "base"
+                "id": "5426",
+                "name": "Solana",
+                "symbol": "SOL",
+                "slug": "solana"
               }
             }
           }
@@ -50,10 +50,10 @@
       }
     },
     "status": {
-      "timestamp": "2026-10-24T11:05:06.640Z",
+      "timestamp": "2026-10-25T23:18:44.887Z",
       "error_code": 0,
       "error_message": null,
-      "elapsed": 6,
+      "elapsed": 5,
       "credit_count": 1,
       "notice": null
     }
