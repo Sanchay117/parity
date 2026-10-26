@@ -1,47 +1,90 @@
 {
-  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42659&skip_invalid=true&aux=logo%2Cplatform",
+  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42683%2C42681&skip_invalid=true&aux=logo%2Cplatform",
   "headers": {
     "X-CMC_PRO_API_KEY": "<redacted>"
   },
   "response": {
     "data": {
-      "42659": {
-        "id": 42659,
-        "name": "Advanced Micro Devices tokenized stock (Backpack)",
-        "symbol": "AMD",
+      "42681": {
+        "id": 42681,
+        "name": "GE Vernova Inc Tokenized bStocks",
+        "symbol": "GEVB",
         "category": "token",
-        "slug": "advanced-micro-devices-tokenized-stock-backpack",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42659.png",
+        "slug": "ge-vernova-inc-tokenized-bstocks",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42681.png",
         "subreddit": "",
         "tag-names": [
           "DeFi",
           "Tokenized Stock",
-          "… 2 more"
+          "… 5 more"
         ],
         "tag-groups": [
           "CATEGORY",
           "CATEGORY",
-          "… 2 more"
+          "… 5 more"
         ],
         "platform": {
-          "id": "5426",
-          "name": "Solana",
-          "symbol": "SOL",
-          "slug": "solana",
-          "token_address": "AMD8XwJXgQ9WV45Wyj9yFLejxzf2J6VM1PJY8bJEjeES"
+          "id": "1839",
+          "name": "BNB",
+          "symbol": "BNB",
+          "slug": "bnb",
+          "token_address": "0x5eadd95a428bc66698620c093eddd8a4b3165269"
         },
-        "twitter_username": "amd",
+        "twitter_username": "",
         "is_hidden": 0,
         "contract_address": [
           {
-            "contract_address": "AMD8XwJXgQ9WV45Wyj9yFLejxzf2J6VM1PJY8bJEjeES",
+            "contract_address": "0x5eadd95a428bc66698620c093eddd8a4b3165269",
             "platform": {
-              "name": "Solana",
+              "name": "BNB Smart Chain (BEP20)",
               "coin": {
-                "id": "5426",
-                "name": "Solana",
-                "symbol": "SOL",
-                "slug": "solana"
+                "id": "1839",
+                "name": "BNB",
+                "symbol": "BNB",
+                "slug": "bnb"
+              }
+            }
+          }
+        ],
+        "infinite_supply": false
+      },
+      "42683": {
+        "id": 42683,
+        "name": "Applovin Corp Tokenized bStocks",
+        "symbol": "APPB",
+        "category": "token",
+        "slug": "applovin-corp-tokenized-bstocks",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42683.png",
+        "subreddit": "",
+        "tag-names": [
+          "DeFi",
+          "Tokenized Stock",
+          "… 5 more"
+        ],
+        "tag-groups": [
+          "CATEGORY",
+          "CATEGORY",
+          "… 5 more"
+        ],
+        "platform": {
+          "id": "1839",
+          "name": "BNB",
+          "symbol": "BNB",
+          "slug": "bnb",
+          "token_address": "0x15ec59551096d5ae2df8cde08618035145828548"
+        },
+        "twitter_username": "",
+        "is_hidden": 0,
+        "contract_address": [
+          {
+            "contract_address": "0x15ec59551096d5ae2df8cde08618035145828548",
+            "platform": {
+              "name": "BNB Smart Chain (BEP20)",
+              "coin": {
+                "id": "1839",
+                "name": "BNB",
+                "symbol": "BNB",
+                "slug": "bnb"
               }
             }
           }
@@ -50,7 +93,7 @@
       }
     },
     "status": {
-      "timestamp": "2026-10-25T23:18:44.887Z",
+      "timestamp": "2026-10-26T13:07:33.454Z",
       "error_code": 0,
       "error_message": null,
       "elapsed": 5,
