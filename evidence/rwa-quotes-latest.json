@@ -1,5 +1,5 @@
 {
-  "request": "GET https://pro-api.coinmarketcap.com/v5/real-world-assets/quotes/latest?rwa_id=1%2C115%2C9%2C114%2C118%2C2%2C86%2C12%2C48%2C14%2C4%2C20%2C7750%2C141%2C82%2C8065%2C10%2C3066%2C3%2C13%2C70%2C125%2C211%2C6%2C7%2C25%2C205%2C4789%2C84%2C7712%2C8%2C204%2C5289%2C219%2C95%2C24%2C87%2C1062%2C5382%2C96%2C175%2C181%2C254%2C63%2C89%2C116%2C53%2C242%2C94%2C120%2C243%2C22%2C188%2C297%2C131%2C189%2C11%2C5699%2C229%2C251%2C187%2C191%2C124%2C103%2C206%2C26%2C37%2C183%2C190%2C119%2C34%2C54%2C68%2C42%2C137%2C92%2C7751%2C51%2C127%2C75%2C16%2C44%2C6206%2C511%2C250%2C1847%2C29%2C5186%2C1164%2C1588%2C140%2C50%2C90%2C196%2C43%2C200%2C443%2C17%2C65%2C5000",
+  "request": "GET https://pro-api.coinmarketcap.com/v5/real-world-assets/quotes/latest?rwa_id=1%2C115%2C9%2C114%2C118%2C2%2C86%2C12%2C48%2C14%2C4%2C20%2C7750%2C141%2C82%2C8065%2C10%2C3066%2C3%2C13%2C70%2C125%2C6%2C211%2C7%2C25%2C205%2C4789%2C7712%2C84%2C204%2C8%2C5289%2C95%2C219%2C24%2C87%2C1062%2C5382%2C96%2C175%2C181%2C254%2C63%2C89%2C53%2C116%2C242%2C94%2C120%2C243%2C22%2C188%2C297%2C131%2C189%2C11%2C5699%2C251%2C187%2C229%2C191%2C124%2C103%2C183%2C206%2C26%2C37%2C190%2C119%2C34%2C54%2C42%2C68%2C137%2C92%2C51%2C127%2C75%2C7751%2C16%2C44%2C6206%2C511%2C250%2C1847%2C29%2C1164%2C5186%2C50%2C140%2C1588%2C196%2C43%2C200%2C443%2C17%2C90%2C65%2C18",
   "headers": {
     "X-CMC_PRO_API_KEY": "<redacted>"
   },
@@ -14,40 +14,40 @@
             {
               "symbol": "USD",
               "crypto_id": 2781,
-              "average_tokenized_price": 3996.0802803794218,
-              "tokenized_market_cap": 4801056123.335202,
-              "tokenized_volume_24h": 159430830.39902255,
-              "last_updated": "2026-10-25T23:16:00.000Z"
+              "average_tokenized_price": 4009.2149228324565,
+              "tokenized_market_cap": 4816197123.77892,
+              "tokenized_volume_24h": 226148659.45060617,
+              "last_updated": "2026-10-26T04:48:00.000Z"
             }
           ],
           "rwa_id": 1,
           "asset_type": "commodity",
           "rwa_rank": 1,
           "has_tokens": true,
-          "average_tokenized_price": 3996.0802803794218,
-          "tokenized_market_cap": 4801056123.335202,
-          "tokenized_volume_24h": 159430830.39902255,
-          "last_updated": "2026-10-25T23:16:33.715Z",
+          "average_tokenized_price": 4009.2149228324565,
+          "tokenized_market_cap": 4816197123.77892,
+          "tokenized_volume_24h": 226148659.45060617,
+          "last_updated": "2026-10-26T04:48:53.857Z",
           "tokens": [
             {
               "symbol": "PAXG",
               "name": "PAX Gold",
-              "price": 4005.4627139999493,
+              "price": 4017.2806186139433,
               "crypto_id": 4705,
               "issuer_id": "68904c24abae9b5b9fb35815",
               "issuer_name": "Paxos",
-              "market_cap": 1778802725.06,
-              "volume_24h": 43110001.22956297
+              "market_cap": 1784057001.05,
+              "volume_24h": 63394183.61025877
             },
             {
               "symbol": "XAUt",
               "name": "Tether Gold",
-              "price": 3995.682437996855,
+              "price": 4007.9887660722275,
               "crypto_id": 5176,
               "issuer_id": "68904e9cabae9b5b9fb358ac",
               "issuer_name": "Tether Holdings",
-              "market_cap": 2914544926.66,
-              "volume_24h": 115064050.37766036
+              "market_cap": 2923521452.35,
+              "volume_24h": 161405729.0232734
             },
             "… 5 more"
           ],
@@ -61,40 +61,40 @@
             {
               "symbol": "USD",
               "crypto_id": 2781,
-              "average_tokenized_price": 85.07093346919687,
-              "tokenized_market_cap": 384452860.6466082,
-              "tokenized_volume_24h": 24389420.56104477,
-              "last_updated": "2026-10-25T23:16:00.000Z"
+              "average_tokenized_price": 83.61969195998796,
+              "tokenized_market_cap": 378545076.7215831,
+              "tokenized_volume_24h": 33157582.76917954,
+              "last_updated": "2026-10-26T04:48:00.000Z"
             }
           ],
           "rwa_id": 115,
           "asset_type": "stock",
           "rwa_rank": 571,
           "has_tokens": true,
-          "average_tokenized_price": 85.07093346919687,
-          "tokenized_market_cap": 384452860.6466082,
-          "tokenized_volume_24h": 24389420.56104477,
-          "last_updated": "2026-10-25T23:16:34.456Z",
+          "average_tokenized_price": 83.61969195998796,
+          "tokenized_market_cap": 378545076.7215831,
+          "tokenized_volume_24h": 33157582.76917954,
+          "last_updated": "2026-10-26T04:48:54.729Z",
           "tokens": [
             {
               "symbol": "CRCLX",
               "name": "Circle tokenized stock (xStock)",
-              "price": 85.13281669228377,
+              "price": 83.58974910418483,
               "crypto_id": 37005,
               "issuer_id": "6878977dcbbf471de3366e85",
               "issuer_name": "Backed Assets",
-              "market_cap": 108964798.6,
-              "volume_24h": 11904283.182693
+              "market_cap": 107021833.25,
+              "volume_24h": 17538066.225181
             },
             {
               "symbol": "CRCLon",
               "name": "Circle Internet Group Tokenized Stock (Ondo)",
-              "price": 84.97090159518564,
+              "price": 83.60859401992928,
               "crypto_id": 38056,
               "issuer_id": "688ca4ccabae9b5b9fb3167a",
               "issuer_name": "Ondo Assets",
-              "market_cap": 97865138.46,
-              "volume_24h": 1581865.76061375
+              "market_cap": 96298132.54,
+              "volume_24h": 1951633.71489936
             },
             "… 6 more"
           ],
@@ -114,10 +114,10 @@
       ]
     },
     "status": {
-      "timestamp": "2026-10-25T23:17:29.428Z",
+      "timestamp": "2026-10-26T04:49:46.494Z",
       "error_code": "0",
       "error_message": "",
-      "elapsed": 13,
+      "elapsed": 15,
       "credit_count": 1
     }
   }
