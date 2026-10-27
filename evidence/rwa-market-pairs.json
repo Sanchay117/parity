@@ -5,10 +5,10 @@
   },
   "response": {
     "status": {
-      "timestamp": "2026-10-27T00:28:12.863Z",
+      "timestamp": "2026-10-27T09:03:21.764Z",
       "error_code": "1006",
       "error_message": "Your API Key subscription plan doesn't support this endpoint.",
-      "elapsed": 0,
+      "elapsed": 1,
       "credit_count": 0
     }
   }

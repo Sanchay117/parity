@@ -1,17 +1,17 @@
 {
-  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42445&skip_invalid=true&aux=logo%2Cplatform",
+  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=40800&skip_invalid=true&aux=logo%2Cplatform",
   "headers": {
     "X-CMC_PRO_API_KEY": "<redacted>"
   },
   "response": {
     "data": {
-      "42445": {
-        "id": 42445,
-        "name": "Circle Internet Group Inc. Tokenized Stock (Coinbase)",
-        "symbol": "CRCLc",
+      "40800": {
+        "id": 40800,
+        "name": "ON Semiconductor Corp (Derivatives)",
+        "symbol": "ON",
         "category": "token",
-        "slug": "circle-internet-group-inc-tokenized-stock-coinbase",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42445.png",
+        "slug": "on-semiconductor-corp-derivatives",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/40800.png",
         "subreddit": "",
         "tag-names": [
           "DeFi",
@@ -23,34 +23,14 @@
           "CATEGORY",
           "… 3 more"
         ],
-        "platform": {
-          "id": "27716",
-          "name": "Base",
-          "symbol": "-",
-          "slug": "base",
-          "token_address": "0xB20000000000000000000019f6E7C675b73C2e4D"
-        },
+        "platform": null,
         "twitter_username": "",
         "is_hidden": 0,
-        "contract_address": [
-          {
-            "contract_address": "0xB20000000000000000000019f6E7C675b73C2e4D",
-            "platform": {
-              "name": "Base",
-              "coin": {
-                "id": "27716",
-                "name": "Base",
-                "symbol": "-",
-                "slug": "base"
-              }
-            }
-          }
-        ],
         "infinite_supply": false
       }
     },
     "status": {
-      "timestamp": "2026-10-27T00:28:10.818Z",
+      "timestamp": "2026-10-27T09:03:19.860Z",
       "error_code": 0,
       "error_message": null,
       "elapsed": 6,
