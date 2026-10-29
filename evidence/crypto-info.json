@@ -1,59 +1,85 @@
 {
-  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42505&skip_invalid=true&aux=logo%2Cplatform",
+  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42699%2C42700%2C42696&skip_invalid=true&aux=logo%2Cplatform",
   "headers": {
     "X-CMC_PRO_API_KEY": "<redacted>"
   },
   "response": {
     "data": {
-      "42505": {
-        "id": 42505,
-        "name": "Intel Corporation Tokenized Stock (Coinbase)",
-        "symbol": "INTCc",
+      "42696": {
+        "id": 42696,
+        "name": "Occidental Petroleum Corporation (Derivative)",
+        "symbol": "OXY",
         "category": "token",
-        "slug": "intel-corporation-tokenized-stock-coinbase",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42505.png",
+        "slug": "occidental-petroleum-corporation-derivative",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42696.png",
         "subreddit": "",
         "tag-names": [
           "DeFi",
           "Tokenized Stock",
-          "… 3 more"
+          "… 5 more"
         ],
         "tag-groups": [
           "CATEGORY",
           "CATEGORY",
-          "… 3 more"
+          "… 5 more"
         ],
-        "platform": {
-          "id": "27716",
-          "name": "Base",
-          "symbol": "-",
-          "slug": "base",
-          "token_address": "0xb2000000000000000000004aff16039ba04bdfbc"
-        },
+        "platform": null,
         "twitter_username": "",
         "is_hidden": 0,
-        "contract_address": [
-          {
-            "contract_address": "0xb2000000000000000000004aff16039ba04bdfbc",
-            "platform": {
-              "name": "Base",
-              "coin": {
-                "id": "27716",
-                "name": "Base",
-                "symbol": "-",
-                "slug": "base"
-              }
-            }
-          }
+        "infinite_supply": false
+      },
+      "42699": {
+        "id": 42699,
+        "name": "Pfizer Inc (Derivative)",
+        "symbol": "PFE",
+        "category": "token",
+        "slug": "pfizer-inc-derivative",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42699.png",
+        "subreddit": "",
+        "tag-names": [
+          "DeFi",
+          "Tokenized Stock",
+          "… 5 more"
         ],
+        "tag-groups": [
+          "CATEGORY",
+          "CATEGORY",
+          "… 5 more"
+        ],
+        "platform": null,
+        "twitter_username": "",
+        "is_hidden": 0,
+        "infinite_supply": false
+      },
+      "42700": {
+        "id": 42700,
+        "name": "MercadoLibre Inc (Derivative)",
+        "symbol": "MELI",
+        "category": "token",
+        "slug": "mercadolibre-inc-derivative",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42700.png",
+        "subreddit": "",
+        "tag-names": [
+          "DeFi",
+          "Tokenized Stock",
+          "… 5 more"
+        ],
+        "tag-groups": [
+          "CATEGORY",
+          "CATEGORY",
+          "… 5 more"
+        ],
+        "platform": null,
+        "twitter_username": "",
+        "is_hidden": 0,
         "infinite_supply": false
       }
     },
     "status": {
-      "timestamp": "2026-10-28T20:18:03.238Z",
+      "timestamp": "2026-10-29T18:30:40.900Z",
       "error_code": 0,
       "error_message": null,
-      "elapsed": 6,
+      "elapsed": 11,
       "credit_count": 1,
       "notice": null
     }
