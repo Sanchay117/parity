@@ -1,73 +1,27 @@
 {
-  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42699%2C42700%2C42696&skip_invalid=true&aux=logo%2Cplatform",
+  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42734&skip_invalid=true&aux=logo%2Cplatform",
   "headers": {
     "X-CMC_PRO_API_KEY": "<redacted>"
   },
   "response": {
     "data": {
-      "42696": {
-        "id": 42696,
-        "name": "Occidental Petroleum Corporation (Derivative)",
-        "symbol": "OXY",
+      "42734": {
+        "id": 42734,
+        "name": "Baidu Inc (Derivatives)",
+        "symbol": "BIDU",
         "category": "token",
-        "slug": "occidental-petroleum-corporation-derivative",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42696.png",
+        "slug": "baidu-inc-derivatives",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42734.png",
         "subreddit": "",
         "tag-names": [
           "DeFi",
           "Tokenized Stock",
-          "… 5 more"
+          "… 3 more"
         ],
         "tag-groups": [
           "CATEGORY",
           "CATEGORY",
-          "… 5 more"
-        ],
-        "platform": null,
-        "twitter_username": "",
-        "is_hidden": 0,
-        "infinite_supply": false
-      },
-      "42699": {
-        "id": 42699,
-        "name": "Pfizer Inc (Derivative)",
-        "symbol": "PFE",
-        "category": "token",
-        "slug": "pfizer-inc-derivative",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42699.png",
-        "subreddit": "",
-        "tag-names": [
-          "DeFi",
-          "Tokenized Stock",
-          "… 5 more"
-        ],
-        "tag-groups": [
-          "CATEGORY",
-          "CATEGORY",
-          "… 5 more"
-        ],
-        "platform": null,
-        "twitter_username": "",
-        "is_hidden": 0,
-        "infinite_supply": false
-      },
-      "42700": {
-        "id": 42700,
-        "name": "MercadoLibre Inc (Derivative)",
-        "symbol": "MELI",
-        "category": "token",
-        "slug": "mercadolibre-inc-derivative",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42700.png",
-        "subreddit": "",
-        "tag-names": [
-          "DeFi",
-          "Tokenized Stock",
-          "… 5 more"
-        ],
-        "tag-groups": [
-          "CATEGORY",
-          "CATEGORY",
-          "… 5 more"
+          "… 3 more"
         ],
         "platform": null,
         "twitter_username": "",
@@ -76,10 +30,10 @@
       }
     },
     "status": {
-      "timestamp": "2026-10-29T18:30:40.900Z",
+      "timestamp": "2026-10-31T12:35:03.485Z",
       "error_code": 0,
       "error_message": null,
-      "elapsed": 11,
+      "elapsed": 7,
       "credit_count": 1,
       "notice": null
     }
