@@ -1,17 +1,17 @@
 {
-  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42734&skip_invalid=true&aux=logo%2Cplatform",
+  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42587&skip_invalid=true&aux=logo%2Cplatform",
   "headers": {
     "X-CMC_PRO_API_KEY": "<redacted>"
   },
   "response": {
     "data": {
-      "42734": {
-        "id": 42734,
-        "name": "Baidu Inc (Derivatives)",
-        "symbol": "BIDU",
+      "42587": {
+        "id": 42587,
+        "name": "Rocket Lab Corporation Tokenized Stock (Coinbase)",
+        "symbol": "RKLBc",
         "category": "token",
-        "slug": "baidu-inc-derivatives",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42734.png",
+        "slug": "rocket-lab-corporation-tokenized-stock-coinbase",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42587.png",
         "subreddit": "",
         "tag-names": [
           "DeFi",
@@ -23,14 +23,34 @@
           "CATEGORY",
           "… 3 more"
         ],
-        "platform": null,
+        "platform": {
+          "id": "27716",
+          "name": "Base",
+          "symbol": "-",
+          "slug": "base",
+          "token_address": "0xb200000000000000000000e8e50cbbb9a3861a3c"
+        },
         "twitter_username": "",
         "is_hidden": 0,
+        "contract_address": [
+          {
+            "contract_address": "0xb200000000000000000000e8e50cbbb9a3861a3c",
+            "platform": {
+              "name": "Base",
+              "coin": {
+                "id": "27716",
+                "name": "Base",
+                "symbol": "-",
+                "slug": "base"
+              }
+            }
+          }
+        ],
         "infinite_supply": false
       }
     },
     "status": {
-      "timestamp": "2026-10-31T12:35:03.485Z",
+      "timestamp": "2026-11-01T19:43:18.019Z",
       "error_code": 0,
       "error_message": null,
       "elapsed": 7,
