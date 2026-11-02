@@ -16,52 +16,52 @@
             {
               "symbol": "USD",
               "crypto_id": 2781,
-              "average_tokenized_price": 3894.49328663765,
-              "tokenized_market_cap": 4765894858.009358,
-              "tokenized_volume_24h": 277089414.54390997,
-              "last_updated": "2026-11-02T11:09:58.000Z"
+              "average_tokenized_price": 3932.1485368175427,
+              "tokenized_market_cap": 4816288630.593374,
+              "tokenized_volume_24h": 373355229.48547107,
+              "last_updated": "2026-11-02T21:41:59.000Z"
             }
           ],
           "rwa_id": 1,
           "asset_type": "commodity",
           "rwa_rank": 1,
           "has_tokens": true,
-          "average_tokenized_price": 3894.49328663765,
-          "tokenized_market_cap": 4765894858.009358,
-          "tokenized_volume_24h": 277089414.54390997,
-          "last_updated": "2026-11-02T11:09:33.000Z"
+          "average_tokenized_price": 3932.1485368175427,
+          "tokenized_market_cap": 4816288630.593374,
+          "tokenized_volume_24h": 373355229.48547107,
+          "last_updated": "2026-11-02T21:41:39.000Z"
         },
         {
-          "name": "Circle Internet Group Inc",
-          "symbol": "CRCL",
-          "slug": "circle",
+          "name": "SpaceX",
+          "symbol": "SPCX",
+          "slug": "spacex",
           "quotes": [
             {
               "symbol": "USD",
               "crypto_id": 2781,
-              "average_tokenized_price": 73.63168205437665,
-              "tokenized_market_cap": 371558794.5665279,
-              "tokenized_volume_24h": 24522495.94078522,
-              "last_updated": "2026-11-02T11:09:58.000Z"
+              "average_tokenized_price": 136.8964664279599,
+              "tokenized_market_cap": 378946384.2154385,
+              "tokenized_volume_24h": 133082831.8301112,
+              "last_updated": "2026-11-02T21:41:59.000Z"
             }
           ],
-          "rwa_id": 115,
+          "rwa_id": 9,
           "asset_type": "stock",
-          "rwa_rank": 620,
+          "rwa_rank": 9,
           "has_tokens": true,
-          "average_tokenized_price": 73.63168205437665,
-          "tokenized_market_cap": 371558794.5665279,
-          "tokenized_volume_24h": 24522495.94078522,
-          "last_updated": "2026-11-02T11:09:34.000Z"
+          "average_tokenized_price": 136.8964664279599,
+          "tokenized_market_cap": 378946384.2154385,
+          "tokenized_volume_24h": 133082831.8301112,
+          "last_updated": "2026-11-02T21:42:19.000Z"
         },
         "… 248 more"
       ]
     },
     "status": {
-      "timestamp": "2026-11-02T11:11:20.944Z",
+      "timestamp": "2026-11-02T21:43:18.059Z",
       "error_code": "0",
       "error_message": "",
-      "elapsed": 14,
+      "elapsed": 15,
       "credit_count": 1
     }
   }
