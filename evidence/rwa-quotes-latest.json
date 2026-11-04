@@ -1,5 +1,5 @@
 {
-  "request": "GET https://pro-api.coinmarketcap.com/v5/real-world-assets/quotes/latest?rwa_id=1%2C9%2C115%2C114%2C4%2C118%2C86%2C2%2C48%2C12%2C14%2C20%2C7750%2C141%2C8065%2C82%2C10%2C3066%2C3%2C13%2C211%2C6%2C125%2C70%2C7%2C25%2C4789%2C7712%2C205%2C8%2C84%2C219%2C204%2C1062%2C95%2C24%2C254%2C87%2C181%2C5382%2C96%2C5289%2C175%2C63%2C243%2C89%2C116%2C53%2C11%2C120%2C94%2C189%2C297%2C22%2C242%2C188%2C131%2C5186%2C229%2C7751%2C191%2C5699%2C251%2C187%2C124%2C443%2C183%2C190%2C37%2C103%2C26%2C34%2C68%2C119%2C54%2C42%2C137%2C6206%2C7733%2C127%2C92%2C51%2C16%2C75%2C1164%2C250%2C511%2C1588%2C44%2C1847%2C140%2C50%2C29%2C200%2C232%2C196%2C43%2C17%2C18%2C65",
+  "request": "GET https://pro-api.coinmarketcap.com/v5/real-world-assets/quotes/latest?rwa_id=1%2C115%2C9%2C114%2C4%2C118%2C86%2C2%2C48%2C12%2C14%2C20%2C7750%2C141%2C8065%2C82%2C10%2C3066%2C3%2C211%2C13%2C6%2C125%2C70%2C7%2C25%2C4789%2C205%2C7712%2C219%2C84%2C8%2C204%2C1062%2C95%2C24%2C181%2C87%2C254%2C96%2C63%2C5289%2C175%2C5382%2C243%2C89%2C116%2C53%2C11%2C120%2C94%2C189%2C297%2C22%2C242%2C188%2C131%2C7751%2C5186%2C191%2C229%2C5699%2C187%2C251%2C124%2C183%2C190%2C37%2C443%2C103%2C26%2C34%2C68%2C119%2C42%2C54%2C137%2C7733%2C92%2C127%2C6206%2C51%2C16%2C75%2C250%2C1164%2C511%2C1588%2C44%2C1847%2C140%2C50%2C29%2C200%2C232%2C196%2C17%2C43%2C18%2C65",
   "headers": {
     "X-CMC_PRO_API_KEY": "<redacted>"
   },
@@ -14,89 +14,89 @@
             {
               "symbol": "USD",
               "crypto_id": 2781,
-              "average_tokenized_price": 3924.854058929726,
-              "tokenized_market_cap": 4807016172.487236,
-              "tokenized_volume_24h": 317121646.3037715,
-              "last_updated": "2026-11-03T23:23:02.000Z"
+              "average_tokenized_price": 3998.083756288981,
+              "tokenized_market_cap": 4896844555.78235,
+              "tokenized_volume_24h": 426857444.8585385,
+              "last_updated": "2026-11-04T06:25:01.000Z"
             }
           ],
           "rwa_id": 1,
           "asset_type": "commodity",
           "rwa_rank": 1,
           "has_tokens": true,
-          "average_tokenized_price": 3924.854058929726,
-          "tokenized_market_cap": 4807016172.487236,
-          "tokenized_volume_24h": 317121646.3037715,
-          "last_updated": "2026-11-03T23:22:35.737Z",
+          "average_tokenized_price": 3998.083756288981,
+          "tokenized_market_cap": 4896844555.78235,
+          "tokenized_volume_24h": 426857444.8585385,
+          "last_updated": "2026-11-04T06:24:36.141Z",
           "tokens": [
             {
               "symbol": "PAXG",
               "name": "PAX Gold",
-              "price": 3932.999583889779,
+              "price": 4011.1397354566125,
               "crypto_id": 4705,
               "issuer_id": "68904c24abae9b5b9fb35815",
               "issuer_name": "Paxos",
-              "market_cap": 1759249661.0325325,
-              "volume_24h": 98008394.71673813
+              "market_cap": 1794202127.2672288,
+              "volume_24h": 126388059.52651855
             },
             {
               "symbol": "XAUt",
               "name": "Tether Gold",
-              "price": 3922.900709353659,
+              "price": 3998.8674501574183,
               "crypto_id": 5176,
               "issuer_id": "68904e9cabae9b5b9fb358ac",
               "issuer_name": "Tether Holdings",
-              "market_cap": 2939914232.9089303,
-              "volume_24h": 217691011.1092451
+              "market_cap": 2996845498.587962,
+              "volume_24h": 301140703.8932645
             },
             "… 5 more"
           ],
           "tradfi_markets": []
         },
         {
-          "name": "SpaceX",
-          "symbol": "SPCX",
-          "slug": "spacex",
+          "name": "Circle Internet Group Inc",
+          "symbol": "CRCL",
+          "slug": "circle",
           "quotes": [
             {
               "symbol": "USD",
               "crypto_id": 2781,
-              "average_tokenized_price": 141.6474271531041,
-              "tokenized_market_cap": 403587810.8490022,
-              "tokenized_volume_24h": 79626599.89352082,
-              "last_updated": "2026-11-03T23:23:02.000Z"
+              "average_tokenized_price": 74.805756328094,
+              "tokenized_market_cap": 393803702.0138033,
+              "tokenized_volume_24h": 68702702.4924362,
+              "last_updated": "2026-11-04T06:25:01.000Z"
             }
           ],
-          "rwa_id": 9,
+          "rwa_id": 115,
           "asset_type": "stock",
-          "rwa_rank": 9,
+          "rwa_rank": 612,
           "has_tokens": true,
-          "average_tokenized_price": 141.6474271531041,
-          "tokenized_market_cap": 403587810.8490022,
-          "tokenized_volume_24h": 79626599.89352082,
-          "last_updated": "2026-11-03T23:22:19.314Z",
+          "average_tokenized_price": 74.805756328094,
+          "tokenized_market_cap": 393803702.0138033,
+          "tokenized_volume_24h": 68702702.4924362,
+          "last_updated": "2026-11-04T06:24:37.003Z",
           "tokens": [
             {
-              "symbol": "SPACEX",
-              "name": "SpaceX tokenized stock (PreStocks)",
-              "price": 537.065969976431,
-              "crypto_id": 37656,
-              "issuer_id": "689612983f270c6ff4781b96",
-              "issuer_name": "PreStocks Assets",
-              "market_cap": 4695294.247679754,
-              "volume_24h": 30793.152844463133
+              "symbol": "CRCLX",
+              "name": "Circle tokenized stock (xStock)",
+              "price": 74.76092574819239,
+              "crypto_id": 37005,
+              "issuer_id": "6878977dcbbf471de3366e85",
+              "issuer_name": "Backed Assets",
+              "market_cap": 119767109.68024275,
+              "volume_24h": 31377199.31201732
             },
             {
-              "symbol": "SPCX",
-              "name": "SpaceX (Derivatives)",
-              "price": 142.36870368768123,
-              "crypto_id": 39501,
-              "issuer_id": "695e11f774b54210f3b95dc3",
-              "issuer_name": "NA (Derivatives)",
-              "market_cap": 0,
-              "volume_24h": 0
+              "symbol": "CRCLon",
+              "name": "Circle Internet Group Tokenized Stock (Ondo)",
+              "price": 74.76920125414436,
+              "crypto_id": 38056,
+              "issuer_id": "688ca4ccabae9b5b9fb3167a",
+              "issuer_name": "Ondo Assets",
+              "market_cap": 88301530.45227851,
+              "volume_24h": 2742006.290330936
             },
-            "… 10 more"
+            "… 6 more"
           ],
           "tradfi_markets": [
             {
@@ -105,8 +105,8 @@
                 "name": "Binance",
                 "exchange_id": 270
               },
-              "ticker": "SPCX",
-              "market_url": "https://www.binance.com/en/stocks/EQ_SPCX"
+              "ticker": "CRCL",
+              "market_url": "https://www.binance.com/en/stocks/EQ_CRCL"
             }
           ]
         },
@@ -114,7 +114,7 @@
       ]
     },
     "status": {
-      "timestamp": "2026-11-03T23:24:40.635Z",
+      "timestamp": "2026-11-04T06:25:50.071Z",
       "error_code": "0",
       "error_message": "",
       "elapsed": 12,

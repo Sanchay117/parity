@@ -1,27 +1,70 @@
 {
-  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42766&skip_invalid=true&aux=logo%2Cplatform",
+  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=40622%2C40803&skip_invalid=true&aux=logo%2Cplatform",
   "headers": {
     "X-CMC_PRO_API_KEY": "<redacted>"
   },
   "response": {
     "data": {
-      "42766": {
-        "id": 42766,
-        "name": "iShares Semiconductor ETF (Derivatives)",
-        "symbol": "SOXX",
+      "40622": {
+        "id": 40622,
+        "name": "Silicon Motion Tokenized Stock (Reality)",
+        "symbol": "rSIMO",
         "category": "token",
-        "slug": "ishares-semiconductor-etf-derivatives",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42766.png",
+        "slug": "silicon-motion-tokenized-stock-reality",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/40622.png",
+        "subreddit": "",
+        "tag-names": [
+          "DeFi",
+          "Tokenized Stock",
+          "… 4 more"
+        ],
+        "tag-groups": [
+          "CATEGORY",
+          "CATEGORY",
+          "… 4 more"
+        ],
+        "platform": {
+          "id": "11841",
+          "name": "Arbitrum",
+          "symbol": "ARB",
+          "slug": "arbitrum",
+          "token_address": "0xb19b80f1263c466c672831a98e72ef03ec746618"
+        },
+        "twitter_username": "RealityFi_xyz",
+        "is_hidden": 0,
+        "contract_address": [
+          {
+            "contract_address": "0xb19b80f1263c466c672831a98e72ef03ec746618",
+            "platform": {
+              "name": "Arbitrum",
+              "coin": {
+                "id": "11841",
+                "name": "Arbitrum",
+                "symbol": "ARB",
+                "slug": "arbitrum"
+              }
+            }
+          }
+        ],
+        "infinite_supply": false
+      },
+      "40803": {
+        "id": 40803,
+        "name": "Silicon Motion Technology Corp (Derivatives)",
+        "symbol": "SIMO",
+        "category": "token",
+        "slug": "silicon-motion-technology-corp-derivatives",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/40803.png",
         "subreddit": "",
         "tag-names": [
           "DeFi",
           "Synthetics",
-          "… 3 more"
+          "… 1 more"
         ],
         "tag-groups": [
           "CATEGORY",
           "INDUSTRY",
-          "… 3 more"
+          "… 1 more"
         ],
         "platform": null,
         "twitter_username": "",
@@ -30,7 +73,7 @@
       }
     },
     "status": {
-      "timestamp": "2026-11-02T11:12:38.145Z",
+      "timestamp": "2026-11-04T06:27:05.856Z",
       "error_code": 0,
       "error_message": null,
       "elapsed": 6,
