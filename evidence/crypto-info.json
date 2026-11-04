@@ -1,79 +1,56 @@
 {
-  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=40622%2C40803&skip_invalid=true&aux=logo%2Cplatform",
+  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42576&skip_invalid=true&aux=logo%2Cplatform",
   "headers": {
     "X-CMC_PRO_API_KEY": "<redacted>"
   },
   "response": {
     "data": {
-      "40622": {
-        "id": 40622,
-        "name": "Silicon Motion Tokenized Stock (Reality)",
-        "symbol": "rSIMO",
+      "42576": {
+        "id": 42576,
+        "name": "Western Digital Corporation Tokenized Stock (Coinbase)",
+        "symbol": "WDCc",
         "category": "token",
-        "slug": "silicon-motion-tokenized-stock-reality",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/40622.png",
+        "slug": "western-digital-corporation-tokenized-stock-coinbase",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42576.png",
         "subreddit": "",
         "tag-names": [
           "DeFi",
           "Tokenized Stock",
-          "… 4 more"
+          "… 3 more"
         ],
         "tag-groups": [
           "CATEGORY",
           "CATEGORY",
-          "… 4 more"
+          "… 3 more"
         ],
         "platform": {
-          "id": "11841",
-          "name": "Arbitrum",
-          "symbol": "ARB",
-          "slug": "arbitrum",
-          "token_address": "0xb19b80f1263c466c672831a98e72ef03ec746618"
+          "id": "27716",
+          "name": "Base",
+          "symbol": "-",
+          "slug": "base",
+          "token_address": "0xb2000000000000000000008fde21a1f5c69fec0b"
         },
-        "twitter_username": "RealityFi_xyz",
+        "twitter_username": "",
         "is_hidden": 0,
         "contract_address": [
           {
-            "contract_address": "0xb19b80f1263c466c672831a98e72ef03ec746618",
+            "contract_address": "0xb2000000000000000000008fde21a1f5c69fec0b",
             "platform": {
-              "name": "Arbitrum",
+              "name": "Base",
               "coin": {
-                "id": "11841",
-                "name": "Arbitrum",
-                "symbol": "ARB",
-                "slug": "arbitrum"
+                "id": "27716",
+                "name": "Base",
+                "symbol": "-",
+                "slug": "base"
               }
             }
           }
         ],
         "infinite_supply": false
-      },
-      "40803": {
-        "id": 40803,
-        "name": "Silicon Motion Technology Corp (Derivatives)",
-        "symbol": "SIMO",
-        "category": "token",
-        "slug": "silicon-motion-technology-corp-derivatives",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/40803.png",
-        "subreddit": "",
-        "tag-names": [
-          "DeFi",
-          "Synthetics",
-          "… 1 more"
-        ],
-        "tag-groups": [
-          "CATEGORY",
-          "INDUSTRY",
-          "… 1 more"
-        ],
-        "platform": null,
-        "twitter_username": "",
-        "is_hidden": 0,
-        "infinite_supply": false
       }
     },
     "status": {
-      "timestamp": "2026-11-04T06:27:05.856Z",
+      "timestamp": "2026-11-04T23:42:22.737Z",
       "error_code": 0,
       "error_message": null,
       "elapsed": 6,
