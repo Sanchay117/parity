@@ -1,5 +1,5 @@
 {
-  "request": "GET https://pro-api.coinmarketcap.com/v5/real-world-assets/info?rwa_id=1%2C115%2C9%2C114%2C4%2C118%2C86%2C2%2C48%2C12%2C14%2C20%2C7750%2C141%2C82%2C10%2C3066%2C8065%2C3%2C211%2C6%2C125%2C7%2C70%2C25%2C13%2C205%2C219%2C84%2C4789%2C204%2C7712%2C8%2C95%2C1062%2C24%2C5289%2C87%2C181%2C175%2C96%2C63%2C254%2C243%2C11%2C89%2C116%2C53%2C94%2C120%2C242%2C297%2C189%2C188%2C7751%2C131%2C5186%2C187%2C190%2C251%2C124%2C191%2C37%2C183%2C5699%2C229%2C103%2C443%2C26%2C34%2C119%2C68%2C42%2C137%2C92%2C54%2C6206%2C7733%2C16%2C250%2C232%2C127%2C51%2C108%2C75%2C50%2C140%2C511%2C29%2C1847%2C1588%2C200%2C44%2C17%2C18%2C196%2C65%2C1164%2C43%2C22&skip_invalid=true",
+  "request": "GET https://pro-api.coinmarketcap.com/v5/real-world-assets/info?rwa_id=1%2C9%2C115%2C114%2C4%2C118%2C86%2C2%2C48%2C12%2C14%2C20%2C7750%2C141%2C82%2C10%2C8065%2C3066%2C3%2C211%2C6%2C125%2C7%2C70%2C13%2C205%2C204%2C7712%2C4789%2C8%2C84%2C25%2C219%2C95%2C181%2C1062%2C87%2C24%2C175%2C96%2C5289%2C63%2C89%2C7751%2C243%2C11%2C116%2C94%2C120%2C53%2C242%2C254%2C131%2C297%2C189%2C188%2C5186%2C187%2C124%2C37%2C183%2C251%2C190%2C191%2C26%2C103%2C34%2C5699%2C119%2C68%2C229%2C443%2C42%2C137%2C92%2C16%2C108%2C7733%2C51%2C232%2C54%2C6206%2C127%2C50%2C140%2C29%2C200%2C250%2C511%2C17%2C1847%2C44%2C75%2C18%2C65%2C1588%2C69%2C5293%2C196%2C1164&skip_invalid=true",
   "headers": {
     "X-CMC_PRO_API_KEY": "<redacted>"
   },
@@ -28,34 +28,34 @@
           "primary_exchange": null
         },
         {
-          "name": "Circle Internet Group Inc",
-          "symbol": "CRCL",
-          "slug": "circle",
-          "website": "https://www.circle.com",
-          "employees": 900,
-          "founded": "2013-10-01",
-          "industry": "Finance Services",
-          "cik": "0001876042",
+          "name": "SpaceX",
+          "symbol": "SPCX",
+          "slug": "spacex",
+          "website": "https://www.spacex.com/",
+          "employees": 10088,
+          "founded": "2002-03-14",
+          "industry": "Guided Missiles & Space Vehicles & Parts",
+          "cik": null,
           "about": {
-            "description": "### What is Circle Internet Group Inc., and what does the company do?\n\nCircle is a fintech company that builds infrastructure for digital currencies and blockchain-based finance.\n\nIts core product is USDC-a fully-backed stablecoin used for payments, DeFi, trading, and tokenization. Circle also provides APIs, wallets, and treasury services for businesses integrating digital dollars into global operations.\n\n\n### How is Circle connected to [USDC] (https://coinmarketcap.com/currencies/usd-coin/) (USD Coin)?\n\nCircle is the co-creator and primary issuer of USDC.\n\nAlong with Coinbase under the Centre Consortium, Circle helped launch USDC in 2018. It manages reserves, ensures 1:1 backing with U.S. dollars, and facilitates integration with financial institutions and blockchain networks.\n\n\n### What role does Circle play in the broader crypto and fintech ecosystem?\n\nCircle bridges traditional finance and blockchain.\n\nIt powers stablecoin settlement for exchanges, fintech apps, merchants, and DeFi protocols. Circle’s infrastructure enables faster, borderless payments and tokenized dollar rails, making it a key player in Web3 and real-world asset integration.\n\n\n### Is Circle profitable, and what are its current earnings or projections?\n\nCircle is not yet publicly profitable, but revenue is growing.\n\nThe company earns yield on USDC reserves and offers enterprise services. Its IPO was delayed in 2022, but renewed interest in stablecoins and tokenization may strengthen its financial outlook for 2025 and beyond.\n\n\n### How does Circle’s USDC stablecoin work on the blockchain?\n\nUSDC is a fiat-backed stablecoin redeemable 1:1 for U.S. dollars.\n\nEach USDC is backed by cash or short-term U.S. Treasuries, verified via monthly attestations. Users can mint or redeem through Circle or integrated partners, while blockchain wallets freely transfer USDC peer to peer.\n\n\n### Which blockchains currently support USDC ([Ethereum] (https://coinmarketcap.com/currencies/ethereum/), [Solana] (https://coinmarketcap.com/currencies/solana/) , Polygon, etc.)?\n\nUSDC is live on 15+ blockchains.\n\nThese include Ethereum, Solana, [Avalanche] (https://coinmarketcap.com/currencies/avalanche/), Polygon, [Arbitrum] (https://coinmarketcap.com/currencies/arbitrum/), Base, [Optimism] (https://coinmarketcap.com/currencies/optimism-ethereum/), [Stellar] (https://coinmarketcap.com/currencies/stellar/), [Near] (https://coinmarketcap.com/currencies/near-protocol/), and more. Circle’s “Cross-Chain Transfer Protocol” also enables seamless movement of USDC across chains with native issuance.\n\n\n### Could Circle launch more stablecoins (like Euro Coin or others)?\n\nYes - Circle already launched Euro Coin (EURC).\n\nBacked 1:1 by euros, EURC is Circle’s next step toward multi-currency stablecoin infrastructure. Additional regional fiat stablecoins could follow, especially in response to regulatory clarity and rising global demand.\n\n\n### Does Circle plan to integrate tokenized real-world assets (RWA) into USDC?\n\nYes - Circle actively supports the tokenization of RWAs.\n\nUSDC serves as settlement and liquidity collateral for tokenized T-bills, treasuries, and private market assets. Circle aims to embed USDC deeper into RWA ecosystems, including partnerships with BlackRock and other asset managers.\n\n\n### Is Circle stock a good investment for 2025 and beyond?\n\nCircle’s stock may appeal to investors seeking stablecoin and fintech exposure.\n\nIf it lists publicly, Circle’s performance will hinge on USDC adoption, regulatory clarity, and its expansion into cross-chain, RWA, and enterprise markets. It's a pure-play bet on tokenized dollars in global finance.\n\n\n### How is Circle’s USDC different from Tether (USDT)?\n\nUSDC is more transparent, but USDT is more widely used.\n\nUSDC offers monthly reserve attestations, operates under U.S. oversight, and maintains high-quality collateral. Tether remains dominant in trading volume and global usage but has faced transparency concerns over reserve composition.\n\n\n### Will Circle benefit from Bitcoin ETFs and crypto adoption?\n\nYes - more capital inflow into crypto boosts USDC usage.\n\nAs Bitcoin ETFs and TradFi adoption expand, demand for fiat on-ramps and stable settlement grows. Circle is well-positioned to serve this demand across exchanges, wallets, and tokenized asset platforms.",
+            "description": null,
             "logo": null,
-            "website": "https://www.circle.com",
-            "date_added": "2025-07-18T04:33:24.000Z"
+            "website": "https://www.spacex.com/",
+            "date_added": "2026-04-29T07:39:00.000Z"
           },
-          "rwa_id": 115,
+          "rwa_id": 9,
           "asset_type": "stock",
-          "rwa_rank": 608,
+          "rwa_rank": 9,
           "has_tokens": true,
-          "primary_exchange": "New York Stock Exchange"
+          "primary_exchange": null
         },
         "… 98 more"
       ]
     },
     "status": {
-      "timestamp": "2026-11-05T06:49:42.813Z",
+      "timestamp": "2026-11-05T17:25:33.191Z",
       "error_code": "0",
       "error_message": "",
-      "elapsed": 4,
+      "elapsed": 5,
       "credit_count": 1
     }
   }
