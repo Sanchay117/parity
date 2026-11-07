@@ -1,72 +1,59 @@
 {
-  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42784&skip_invalid=true&aux=logo%2Cplatform",
+  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42552&skip_invalid=true&aux=logo%2Cplatform",
   "headers": {
     "X-CMC_PRO_API_KEY": "<redacted>"
   },
   "response": {
     "data": {
-      "42784": {
-        "id": 42784,
-        "name": "Oscar Health Inc tokenized stock (xStock)",
-        "symbol": "OSCRx",
+      "42552": {
+        "id": 42552,
+        "name": "Applied Optoelectronics Inc Tokenized Stock (Coinbase)",
+        "symbol": "AAOIc",
         "category": "token",
-        "slug": "oscar-health-inc-tokenized-stock-xstock",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42784.png",
+        "slug": "applied-optoelectronics-inc-tokenized-stock-coinbase",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42552.png",
         "subreddit": "",
         "tag-names": [
           "DeFi",
-          "Ethereum Ecosystem",
-          "… 12 more"
+          "Tokenized Stock",
+          "… 3 more"
         ],
         "tag-groups": [
           "CATEGORY",
-          "PLATFORM",
-          "… 12 more"
+          "CATEGORY",
+          "… 3 more"
         ],
         "platform": {
-          "id": "1027",
-          "name": "Ethereum",
-          "symbol": "ETH",
-          "slug": "ethereum",
-          "token_address": "0x3Fe783b3e3eDF6dfD6D8126AF38f5c7f675d9CbC"
+          "id": "27716",
+          "name": "Base",
+          "symbol": "-",
+          "slug": "base",
+          "token_address": "0xb200000000000000000000cf36d05963a3e2205c"
         },
-        "twitter_username": "xStocksFi",
+        "twitter_username": "",
         "is_hidden": 0,
         "contract_address": [
           {
-            "contract_address": "0x3Fe783b3e3eDF6dfD6D8126AF38f5c7f675d9CbC",
+            "contract_address": "0xb200000000000000000000cf36d05963a3e2205c",
             "platform": {
-              "name": "Ethereum",
+              "name": "Base",
               "coin": {
-                "id": "1027",
-                "name": "Ethereum",
-                "symbol": "ETH",
-                "slug": "ethereum"
+                "id": "27716",
+                "name": "Base",
+                "symbol": "-",
+                "slug": "base"
               }
             }
-          },
-          {
-            "contract_address": "0x3Fe783b3e3eDF6dfD6D8126AF38f5c7f675d9CbC",
-            "platform": {
-              "name": "Arbitrum",
-              "coin": {
-                "id": "11841",
-                "name": "Arbitrum",
-                "symbol": "ARB",
-                "slug": "arbitrum"
-              }
-            }
-          },
-          "… 8 more"
+          }
         ],
         "infinite_supply": false
       }
     },
     "status": {
-      "timestamp": "2026-11-06T16:48:00.586Z",
+      "timestamp": "2026-11-07T06:01:06.587Z",
       "error_code": 0,
       "error_message": null,
-      "elapsed": 7,
+      "elapsed": 8,
       "credit_count": 1,
       "notice": null
     }
