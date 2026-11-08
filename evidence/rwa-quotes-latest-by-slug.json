@@ -5,7 +5,7 @@
   },
   "response": {
     "status": {
-      "timestamp": "2026-11-08T10:25:06.642Z",
+      "timestamp": "2026-11-08T17:56:23.179Z",
       "error_code": "4001",
       "error_message": "Invalid parameter.",
       "elapsed": 0,
