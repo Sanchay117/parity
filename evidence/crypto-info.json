@@ -1,17 +1,17 @@
 {
-  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42552&skip_invalid=true&aux=logo%2Cplatform",
+  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42547&skip_invalid=true&aux=logo%2Cplatform",
   "headers": {
     "X-CMC_PRO_API_KEY": "<redacted>"
   },
   "response": {
     "data": {
-      "42552": {
-        "id": 42552,
-        "name": "Applied Optoelectronics Inc Tokenized Stock (Coinbase)",
-        "symbol": "AAOIc",
+      "42547": {
+        "id": 42547,
+        "name": "Lumentum Holdings Inc Tokenized Stock (Coinbase)",
+        "symbol": "LITEc",
         "category": "token",
-        "slug": "applied-optoelectronics-inc-tokenized-stock-coinbase",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42552.png",
+        "slug": "lumentum-holdings-inc-tokenized-stock-coinbase",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42547.png",
         "subreddit": "",
         "tag-names": [
           "DeFi",
@@ -28,13 +28,13 @@
           "name": "Base",
           "symbol": "-",
           "slug": "base",
-          "token_address": "0xb200000000000000000000cf36d05963a3e2205c"
+          "token_address": "0xb200000000000000000000eda6c2c6f11e0f838f"
         },
         "twitter_username": "",
         "is_hidden": 0,
         "contract_address": [
           {
-            "contract_address": "0xb200000000000000000000cf36d05963a3e2205c",
+            "contract_address": "0xb200000000000000000000eda6c2c6f11e0f838f",
             "platform": {
               "name": "Base",
               "coin": {
@@ -50,10 +50,10 @@
       }
     },
     "status": {
-      "timestamp": "2026-11-07T06:01:06.587Z",
+      "timestamp": "2026-11-08T10:26:18.053Z",
       "error_code": 0,
       "error_message": null,
-      "elapsed": 8,
+      "elapsed": 142,
       "credit_count": 1,
       "notice": null
     }
