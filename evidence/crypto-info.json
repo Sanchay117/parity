@@ -1,59 +1,72 @@
 {
-  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42547&skip_invalid=true&aux=logo%2Cplatform",
+  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42796&skip_invalid=true&aux=logo%2Cplatform",
   "headers": {
     "X-CMC_PRO_API_KEY": "<redacted>"
   },
   "response": {
     "data": {
-      "42547": {
-        "id": 42547,
-        "name": "Lumentum Holdings Inc Tokenized Stock (Coinbase)",
-        "symbol": "LITEc",
+      "42796": {
+        "id": 42796,
+        "name": "Baidu Inc tokenized stock (xStock)",
+        "symbol": "BIDUx",
         "category": "token",
-        "slug": "lumentum-holdings-inc-tokenized-stock-coinbase",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42547.png",
+        "slug": "baidu-inc-tokenized-stock-xstock",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42796.png",
         "subreddit": "",
         "tag-names": [
           "DeFi",
-          "Tokenized Stock",
-          "… 3 more"
+          "Ethereum Ecosystem",
+          "… 5 more"
         ],
         "tag-groups": [
           "CATEGORY",
-          "CATEGORY",
-          "… 3 more"
+          "PLATFORM",
+          "… 5 more"
         ],
         "platform": {
-          "id": "27716",
-          "name": "Base",
-          "symbol": "-",
-          "slug": "base",
-          "token_address": "0xb200000000000000000000eda6c2c6f11e0f838f"
+          "id": "1027",
+          "name": "Ethereum",
+          "symbol": "ETH",
+          "slug": "ethereum",
+          "token_address": "0xE630aa1cd9AE37C789F3E4f44104dC99bBb482De"
         },
-        "twitter_username": "",
+        "twitter_username": "xStocksFi",
         "is_hidden": 0,
         "contract_address": [
           {
-            "contract_address": "0xb200000000000000000000eda6c2c6f11e0f838f",
+            "contract_address": "0xE630aa1cd9AE37C789F3E4f44104dC99bBb482De",
             "platform": {
-              "name": "Base",
+              "name": "Ethereum",
               "coin": {
-                "id": "27716",
-                "name": "Base",
-                "symbol": "-",
-                "slug": "base"
+                "id": "1027",
+                "name": "Ethereum",
+                "symbol": "ETH",
+                "slug": "ethereum"
               }
             }
-          }
+          },
+          {
+            "contract_address": "0xE630aa1cd9AE37C789F3E4f44104dC99bBb482De",
+            "platform": {
+              "name": "BNB Smart Chain (BEP20)",
+              "coin": {
+                "id": "1839",
+                "name": "BNB",
+                "symbol": "BNB",
+                "slug": "bnb"
+              }
+            }
+          },
+          "… 1 more"
         ],
         "infinite_supply": false
       }
     },
     "status": {
-      "timestamp": "2026-11-08T10:26:18.053Z",
+      "timestamp": "2026-11-10T14:56:13.832Z",
       "error_code": 0,
       "error_message": null,
-      "elapsed": 142,
+      "elapsed": 5,
       "credit_count": 1,
       "notice": null
     }
