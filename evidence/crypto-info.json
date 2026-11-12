@@ -1,40 +1,40 @@
 {
-  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42803%2C39230%2C42793%2C39285%2C42651%2C42795&skip_invalid=true&aux=logo%2Cplatform",
+  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42807%2C42841%2C42810%2C39238%2C42372%2C42801%2C40681%2C42802&skip_invalid=true&aux=logo%2Cplatform",
   "headers": {
     "X-CMC_PRO_API_KEY": "<redacted>"
   },
   "response": {
     "data": {
-      "39230": {
-        "id": 39230,
-        "name": "Analog Devices Tokenized Stock (Ondo)",
-        "symbol": "ADIon",
+      "39238": {
+        "id": 39238,
+        "name": "Carvana Tokenized Stock (Ondo)",
+        "symbol": "CVNAon",
         "category": "token",
-        "slug": "analog-devices-tokenized-stock-ondo",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/39230.png",
+        "slug": "carvana-tokenized-stock-ondo",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/39238.png",
         "subreddit": "",
         "tag-names": [
-          "DeFi",
           "Ethereum Ecosystem",
-          "… 5 more"
+          "Solana Ecosystem",
+          "… 3 more"
         ],
         "tag-groups": [
-          "CATEGORY",
           "PLATFORM",
-          "… 5 more"
+          "PLATFORM",
+          "… 3 more"
         ],
         "platform": {
           "id": "1027",
           "name": "Ethereum",
           "symbol": "ETH",
           "slug": "ethereum",
-          "token_address": "0x2ddc2391cc89e3e716a938f089ae755174cfdf1f"
+          "token_address": "0xfe4ec50e0413148021d2f50d114cc44de6ffbf23"
         },
         "twitter_username": "ondofinance",
         "is_hidden": 0,
         "contract_address": [
           {
-            "contract_address": "0x2ddc2391cc89e3e716a938f089ae755174cfdf1f",
+            "contract_address": "0xfe4ec50e0413148021d2f50d114cc44de6ffbf23",
             "platform": {
               "name": "Ethereum",
               "coin": {
@@ -46,7 +46,7 @@
             }
           },
           {
-            "contract_address": "0x0e246e05212dbbd78a354c072a92b4e5723b2fa0",
+            "contract_address": "0xc145dc2ebdbe8ead1fecdebf46c76eb1fdd0104d",
             "platform": {
               "name": "BNB Smart Chain (BEP20)",
               "coin": {
@@ -61,204 +61,36 @@
         ],
         "infinite_supply": false
       },
-      "39285": {
-        "id": 39285,
-        "name": "Amgen Tokenized Stock (Ondo)",
-        "symbol": "AMGNon",
+      "40681": {
+        "id": 40681,
+        "name": "Flex Ltd. Ordinary Shares (Derivatives)",
+        "symbol": "FLEX",
         "category": "token",
-        "slug": "amgen-tokenized-stock-ondo",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/39285.png",
+        "slug": "flex-ltd-ordinary-shares-derivatives",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/40681.png",
         "subreddit": "",
         "tag-names": [
           "DeFi",
-          "Ethereum Ecosystem",
-          "… 5 more"
+          "Synthetics",
+          "… 3 more"
         ],
         "tag-groups": [
           "CATEGORY",
-          "PLATFORM",
-          "… 5 more"
-        ],
-        "platform": {
-          "id": "1027",
-          "name": "Ethereum",
-          "symbol": "ETH",
-          "slug": "ethereum",
-          "token_address": "0x1c5fa55eade69ae98571059332520f73733c2d82"
-        },
-        "twitter_username": "ondofinance",
-        "is_hidden": 0,
-        "contract_address": [
-          {
-            "contract_address": "0x1c5fa55eade69ae98571059332520f73733c2d82",
-            "platform": {
-              "name": "Ethereum",
-              "coin": {
-                "id": "1027",
-                "name": "Ethereum",
-                "symbol": "ETH",
-                "slug": "ethereum"
-              }
-            }
-          },
-          {
-            "contract_address": "SS6AEWhzRrxhL2cXzKKjhFt3rCzmHHGKmFyugDTondo",
-            "platform": {
-              "name": "Solana",
-              "coin": {
-                "id": "5426",
-                "name": "Solana",
-                "symbol": "SOL",
-                "slug": "solana"
-              }
-            }
-          },
-          "… 1 more"
-        ],
-        "infinite_supply": false
-      },
-      "42651": {
-        "id": 42651,
-        "name": "Amgen Inc (Derivatives)",
-        "symbol": "AMGN",
-        "category": "token",
-        "slug": "amgen-inc-derivatives",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42651.png",
-        "subreddit": "",
-        "tag-names": [
-          "DeFi",
-          "Derivatives",
-          "… 4 more"
-        ],
-        "tag-groups": [
-          "CATEGORY",
-          "CATEGORY",
-          "… 4 more"
+          "INDUSTRY",
+          "… 3 more"
         ],
         "platform": null,
         "twitter_username": "",
         "is_hidden": 0,
         "infinite_supply": false
       },
-      "42793": {
-        "id": 42793,
-        "name": "Analog Devices Inc tokenized stock (xStock)",
-        "symbol": "ADIx",
+      "42372": {
+        "id": 42372,
+        "name": "Carvana Co (Derivatives)",
+        "symbol": "CVNA",
         "category": "token",
-        "slug": "analog-devices-inc-tokenized-stock-xstock",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42793.png",
-        "subreddit": "",
-        "tag-names": [
-          "DeFi",
-          "Ethereum Ecosystem",
-          "… 5 more"
-        ],
-        "tag-groups": [
-          "CATEGORY",
-          "PLATFORM",
-          "… 5 more"
-        ],
-        "platform": {
-          "id": "1027",
-          "name": "Ethereum",
-          "symbol": "ETH",
-          "slug": "ethereum",
-          "token_address": "0xCCc9e8d1182f64b15E350dB929fF6c6F98ebea29"
-        },
-        "twitter_username": "xStocksFi",
-        "is_hidden": 0,
-        "contract_address": [
-          {
-            "contract_address": "0xCCc9e8d1182f64b15E350dB929fF6c6F98ebea29",
-            "platform": {
-              "name": "Ethereum",
-              "coin": {
-                "id": "1027",
-                "name": "Ethereum",
-                "symbol": "ETH",
-                "slug": "ethereum"
-              }
-            }
-          },
-          {
-            "contract_address": "0xCCc9e8d1182f64b15E350dB929fF6c6F98ebea29",
-            "platform": {
-              "name": "BNB Smart Chain (BEP20)",
-              "coin": {
-                "id": "1839",
-                "name": "BNB",
-                "symbol": "BNB",
-                "slug": "bnb"
-              }
-            }
-          },
-          "… 1 more"
-        ],
-        "infinite_supply": false
-      },
-      "42795": {
-        "id": 42795,
-        "name": "Amgen Inc tokenized stock (xStock)",
-        "symbol": "AMGNx",
-        "category": "token",
-        "slug": "amgen-inc-tokenized-stock-xstock",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42795.png",
-        "subreddit": "",
-        "tag-names": [
-          "DeFi",
-          "Ethereum Ecosystem",
-          "… 5 more"
-        ],
-        "tag-groups": [
-          "CATEGORY",
-          "PLATFORM",
-          "… 5 more"
-        ],
-        "platform": {
-          "id": "1027",
-          "name": "Ethereum",
-          "symbol": "ETH",
-          "slug": "ethereum",
-          "token_address": "0xdCD6B813D01a45de8dA9367b36cB02B2E570fDFD"
-        },
-        "twitter_username": "xStocksFi",
-        "is_hidden": 0,
-        "contract_address": [
-          {
-            "contract_address": "0xdCD6B813D01a45de8dA9367b36cB02B2E570fDFD",
-            "platform": {
-              "name": "Ethereum",
-              "coin": {
-                "id": "1027",
-                "name": "Ethereum",
-                "symbol": "ETH",
-                "slug": "ethereum"
-              }
-            }
-          },
-          {
-            "contract_address": "0xdCD6B813D01a45de8dA9367b36cB02B2E570fDFD",
-            "platform": {
-              "name": "BNB Smart Chain (BEP20)",
-              "coin": {
-                "id": "1839",
-                "name": "BNB",
-                "symbol": "BNB",
-                "slug": "bnb"
-              }
-            }
-          },
-          "… 1 more"
-        ],
-        "infinite_supply": false
-      },
-      "42803": {
-        "id": 42803,
-        "name": "Nu Holdings Ltd. (Derivatives)",
-        "symbol": "NU",
-        "category": "token",
-        "slug": "nu-holding-ltd-derivatives",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42803.png",
+        "slug": "carvana-co-derivatives",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42372.png",
         "subreddit": "",
         "tag-names": [
           "DeFi",
@@ -274,13 +106,293 @@
         "twitter_username": "",
         "is_hidden": 0,
         "infinite_supply": false
+      },
+      "42801": {
+        "id": 42801,
+        "name": "Carvana Co tokenized stock (xStock)",
+        "symbol": "CVNAx",
+        "category": "token",
+        "slug": "carvana-co-tokenized-stock-xstock",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42801.png",
+        "subreddit": "",
+        "tag-names": [
+          "DeFi",
+          "Ethereum Ecosystem",
+          "… 5 more"
+        ],
+        "tag-groups": [
+          "CATEGORY",
+          "PLATFORM",
+          "… 5 more"
+        ],
+        "platform": {
+          "id": "1027",
+          "name": "Ethereum",
+          "symbol": "ETH",
+          "slug": "ethereum",
+          "token_address": "0x3783c4704B2fB000B8426250661A3959441DeC2C"
+        },
+        "twitter_username": "xStocksFi",
+        "is_hidden": 0,
+        "contract_address": [
+          {
+            "contract_address": "0x3783c4704B2fB000B8426250661A3959441DeC2C",
+            "platform": {
+              "name": "Ethereum",
+              "coin": {
+                "id": "1027",
+                "name": "Ethereum",
+                "symbol": "ETH",
+                "slug": "ethereum"
+              }
+            }
+          },
+          {
+            "contract_address": "0x3783c4704B2fB000B8426250661A3959441DeC2C",
+            "platform": {
+              "name": "BNB Smart Chain (BEP20)",
+              "coin": {
+                "id": "1839",
+                "name": "BNB",
+                "symbol": "BNB",
+                "slug": "bnb"
+              }
+            }
+          },
+          "… 1 more"
+        ],
+        "infinite_supply": false
+      },
+      "42802": {
+        "id": 42802,
+        "name": "Flex Ltd tokenized stock (xStock)",
+        "symbol": "FLEXx",
+        "category": "token",
+        "slug": "flex-ltd-tokenized-stock-xstock",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42802.png",
+        "subreddit": "",
+        "tag-names": [
+          "DeFi",
+          "Ethereum Ecosystem",
+          "… 5 more"
+        ],
+        "tag-groups": [
+          "CATEGORY",
+          "PLATFORM",
+          "… 5 more"
+        ],
+        "platform": {
+          "id": "1027",
+          "name": "Ethereum",
+          "symbol": "ETH",
+          "slug": "ethereum",
+          "token_address": "0x19e7151F809a9E44Ad2Ae5364F243eB4640d0b7b"
+        },
+        "twitter_username": "xStocksFi",
+        "is_hidden": 0,
+        "contract_address": [
+          {
+            "contract_address": "0x19e7151F809a9E44Ad2Ae5364F243eB4640d0b7b",
+            "platform": {
+              "name": "Ethereum",
+              "coin": {
+                "id": "1027",
+                "name": "Ethereum",
+                "symbol": "ETH",
+                "slug": "ethereum"
+              }
+            }
+          },
+          {
+            "contract_address": "0x19e7151F809a9E44Ad2Ae5364F243eB4640d0b7b",
+            "platform": {
+              "name": "BNB Smart Chain (BEP20)",
+              "coin": {
+                "id": "1839",
+                "name": "BNB",
+                "symbol": "BNB",
+                "slug": "bnb"
+              }
+            }
+          },
+          "… 1 more"
+        ],
+        "infinite_supply": false
+      },
+      "42807": {
+        "id": 42807,
+        "name": "GE Aerospace tokenized stock (xStock)",
+        "symbol": "GEx",
+        "category": "token",
+        "slug": "ge-aerospace-tokenized-stock-xstock",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42807.png",
+        "subreddit": "",
+        "tag-names": [
+          "DeFi",
+          "Ethereum Ecosystem",
+          "… 5 more"
+        ],
+        "tag-groups": [
+          "CATEGORY",
+          "PLATFORM",
+          "… 5 more"
+        ],
+        "platform": {
+          "id": "1027",
+          "name": "Ethereum",
+          "symbol": "ETH",
+          "slug": "ethereum",
+          "token_address": "0x450D36A2B13DF58f3ac374A4002dbcc177C99718"
+        },
+        "twitter_username": "xStocksFi",
+        "is_hidden": 0,
+        "contract_address": [
+          {
+            "contract_address": "0x450D36A2B13DF58f3ac374A4002dbcc177C99718",
+            "platform": {
+              "name": "Ethereum",
+              "coin": {
+                "id": "1027",
+                "name": "Ethereum",
+                "symbol": "ETH",
+                "slug": "ethereum"
+              }
+            }
+          },
+          {
+            "contract_address": "0x450D36A2B13DF58f3ac374A4002dbcc177C99718",
+            "platform": {
+              "name": "BNB Smart Chain (BEP20)",
+              "coin": {
+                "id": "1839",
+                "name": "BNB",
+                "symbol": "BNB",
+                "slug": "bnb"
+              }
+            }
+          },
+          "… 1 more"
+        ],
+        "infinite_supply": false
+      },
+      "42810": {
+        "id": 42810,
+        "name": "Mp Materials Corp tokenized stock (xStock)",
+        "symbol": "MPx",
+        "category": "token",
+        "slug": "mp-materials-corp-tokenized-stock-xstock",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42810.png",
+        "subreddit": "",
+        "tag-names": [
+          "DeFi",
+          "Ethereum Ecosystem",
+          "… 5 more"
+        ],
+        "tag-groups": [
+          "CATEGORY",
+          "PLATFORM",
+          "… 5 more"
+        ],
+        "platform": {
+          "id": "1027",
+          "name": "Ethereum",
+          "symbol": "ETH",
+          "slug": "ethereum",
+          "token_address": "0x75D3C07dCe9F1424Dce574f78242e7eF1696B8A2"
+        },
+        "twitter_username": "xStocksFi",
+        "is_hidden": 0,
+        "contract_address": [
+          {
+            "contract_address": "0x75D3C07dCe9F1424Dce574f78242e7eF1696B8A2",
+            "platform": {
+              "name": "Ethereum",
+              "coin": {
+                "id": "1027",
+                "name": "Ethereum",
+                "symbol": "ETH",
+                "slug": "ethereum"
+              }
+            }
+          },
+          {
+            "contract_address": "0x75D3C07dCe9F1424Dce574f78242e7eF1696B8A2",
+            "platform": {
+              "name": "BNB Smart Chain (BEP20)",
+              "coin": {
+                "id": "1839",
+                "name": "BNB",
+                "symbol": "BNB",
+                "slug": "bnb"
+              }
+            }
+          },
+          "… 1 more"
+        ],
+        "infinite_supply": false
+      },
+      "42841": {
+        "id": 42841,
+        "name": "Penguin Solutions Inc tokenized stock (xStock)",
+        "symbol": "PENGx",
+        "category": "token",
+        "slug": "penguin-solutions-inc-tokenized-stock-xstock",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42841.png",
+        "subreddit": "",
+        "tag-names": [
+          "DeFi",
+          "Ethereum Ecosystem",
+          "… 5 more"
+        ],
+        "tag-groups": [
+          "CATEGORY",
+          "PLATFORM",
+          "… 5 more"
+        ],
+        "platform": {
+          "id": "1027",
+          "name": "Ethereum",
+          "symbol": "ETH",
+          "slug": "ethereum",
+          "token_address": "0x0A7b870a1F09553c141ceC33A764f1494b57eE61"
+        },
+        "twitter_username": "xStocksFi",
+        "is_hidden": 0,
+        "contract_address": [
+          {
+            "contract_address": "0x0A7b870a1F09553c141ceC33A764f1494b57eE61",
+            "platform": {
+              "name": "Ethereum",
+              "coin": {
+                "id": "1027",
+                "name": "Ethereum",
+                "symbol": "ETH",
+                "slug": "ethereum"
+              }
+            }
+          },
+          {
+            "contract_address": "0x0A7b870a1F09553c141ceC33A764f1494b57eE61",
+            "platform": {
+              "name": "BNB Smart Chain (BEP20)",
+              "coin": {
+                "id": "1839",
+                "name": "BNB",
+                "symbol": "BNB",
+                "slug": "bnb"
+              }
+            }
+          },
+          "… 1 more"
+        ],
+        "infinite_supply": false
       }
     },
     "status": {
-      "timestamp": "2026-11-11T17:10:48.480Z",
+      "timestamp": "2026-11-12T11:16:03.044Z",
       "error_code": 0,
       "error_message": null,
-      "elapsed": 6,
+      "elapsed": 8,
       "credit_count": 1,
       "notice": null
     }
