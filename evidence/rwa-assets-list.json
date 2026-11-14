@@ -16,20 +16,20 @@
             {
               "symbol": "USD",
               "crypto_id": 2781,
-              "average_tokenized_price": 3863.6250433274818,
-              "tokenized_market_cap": 4732321534.932013,
-              "tokenized_volume_24h": 258684258.41102463,
-              "last_updated": "2026-11-14T10:27:04.000Z"
+              "average_tokenized_price": 3832.2743701832374,
+              "tokenized_market_cap": 4694131848.711001,
+              "tokenized_volume_24h": 286993407.4743135,
+              "last_updated": "2026-11-14T18:03:02.000Z"
             }
           ],
           "rwa_id": 1,
           "asset_type": "commodity",
           "rwa_rank": 1,
           "has_tokens": true,
-          "average_tokenized_price": 3863.6250433274818,
-          "tokenized_market_cap": 4732321534.932013,
-          "tokenized_volume_24h": 258684258.41102463,
-          "last_updated": "2026-11-14T10:27:39.000Z"
+          "average_tokenized_price": 3832.2743701832374,
+          "tokenized_market_cap": 4694131848.711001,
+          "tokenized_volume_24h": 286993407.4743135,
+          "last_updated": "2026-11-14T18:03:34.000Z"
         },
         {
           "name": "SpaceX",
@@ -39,29 +39,29 @@
             {
               "symbol": "USD",
               "crypto_id": 2781,
-              "average_tokenized_price": 135.45943011646884,
-              "tokenized_market_cap": 362245260.67280483,
-              "tokenized_volume_24h": 141342006.64166698,
-              "last_updated": "2026-11-14T10:27:04.000Z"
+              "average_tokenized_price": 134.96164822992537,
+              "tokenized_market_cap": 360564390.53393227,
+              "tokenized_volume_24h": 89358554.5215188,
+              "last_updated": "2026-11-14T18:03:02.000Z"
             }
           ],
           "rwa_id": 9,
           "asset_type": "stock",
           "rwa_rank": 9,
           "has_tokens": true,
-          "average_tokenized_price": 135.45943011646884,
-          "tokenized_market_cap": 362245260.67280483,
-          "tokenized_volume_24h": 141342006.64166698,
-          "last_updated": "2026-11-14T10:27:19.000Z"
+          "average_tokenized_price": 134.96164822992537,
+          "tokenized_market_cap": 360564390.53393227,
+          "tokenized_volume_24h": 89358554.5215188,
+          "last_updated": "2026-11-14T18:03:19.000Z"
         },
         "… 248 more"
       ]
     },
     "status": {
-      "timestamp": "2026-11-14T10:28:27.524Z",
+      "timestamp": "2026-11-14T18:04:16.038Z",
       "error_code": "0",
       "error_message": "",
-      "elapsed": 12,
+      "elapsed": 37,
       "credit_count": 1
     }
   }
