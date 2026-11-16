@@ -1,52 +1,40 @@
 {
-  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42858&skip_invalid=true&aux=logo%2Cplatform",
+  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42865%2C42859%2C42861%2C42862%2C42863%2C42866&skip_invalid=true&aux=logo%2Cplatform",
   "headers": {
     "X-CMC_PRO_API_KEY": "<redacted>"
   },
   "response": {
     "data": {
-      "42858": {
-        "id": 42858,
-        "name": "TAKE-TWO INTERACTIVE SOFTWARE tokenized stock (xStock)",
-        "symbol": "TTWOx",
+      "42859": {
+        "id": 42859,
+        "name": "MercadoLibre Tokenized bStocks",
+        "symbol": "MELIB",
         "category": "token",
-        "slug": "take-two-interactive-software-tokenized-stock-xstock",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42858.png",
+        "slug": "mercadolibre-tokenized-bstocks",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42859.png",
         "subreddit": "",
         "tag-names": [
           "DeFi",
-          "Ethereum Ecosystem",
+          "Tokenized Stock",
           "… 5 more"
         ],
         "tag-groups": [
           "CATEGORY",
-          "PLATFORM",
+          "CATEGORY",
           "… 5 more"
         ],
         "platform": {
-          "id": "1027",
-          "name": "Ethereum",
-          "symbol": "ETH",
-          "slug": "ethereum",
-          "token_address": "0x3234421Fa54dDf0Eb750aE04680cc0c4d2DE2721"
+          "id": "1839",
+          "name": "BNB",
+          "symbol": "BNB",
+          "slug": "bnb",
+          "token_address": "0xe1fc8b12eeda0b7f8ed1330477ba330d3b5afbc9"
         },
-        "twitter_username": "xStocksFi",
+        "twitter_username": "",
         "is_hidden": 0,
         "contract_address": [
           {
-            "contract_address": "0x3234421Fa54dDf0Eb750aE04680cc0c4d2DE2721",
-            "platform": {
-              "name": "Ethereum",
-              "coin": {
-                "id": "1027",
-                "name": "Ethereum",
-                "symbol": "ETH",
-                "slug": "ethereum"
-              }
-            }
-          },
-          {
-            "contract_address": "0x3234421Fa54dDf0Eb750aE04680cc0c4d2DE2721",
+            "contract_address": "0xe1fc8b12eeda0b7f8ed1330477ba330d3b5afbc9",
             "platform": {
               "name": "BNB Smart Chain (BEP20)",
               "coin": {
@@ -56,14 +44,228 @@
                 "slug": "bnb"
               }
             }
-          },
-          "… 1 more"
+          }
+        ],
+        "infinite_supply": false
+      },
+      "42861": {
+        "id": 42861,
+        "name": "iShares MSCI Brazil ETF Tokenized bStocks",
+        "symbol": "EWZB",
+        "category": "token",
+        "slug": "ishares-msci-brazil-etf-tokenized-bstocks",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42861.png",
+        "subreddit": "",
+        "tag-names": [
+          "DeFi",
+          "Tokenized Stock",
+          "… 5 more"
+        ],
+        "tag-groups": [
+          "CATEGORY",
+          "CATEGORY",
+          "… 5 more"
+        ],
+        "platform": {
+          "id": "1839",
+          "name": "BNB",
+          "symbol": "BNB",
+          "slug": "bnb",
+          "token_address": "0xb17d6ec90fd85315cd1bbcd330c3ebb07dcc822d"
+        },
+        "twitter_username": "",
+        "is_hidden": 0,
+        "contract_address": [
+          {
+            "contract_address": "0xb17d6ec90fd85315cd1bbcd330c3ebb07dcc822d",
+            "platform": {
+              "name": "BNB Smart Chain (BEP20)",
+              "coin": {
+                "id": "1839",
+                "name": "BNB",
+                "symbol": "BNB",
+                "slug": "bnb"
+              }
+            }
+          }
+        ],
+        "infinite_supply": false
+      },
+      "42862": {
+        "id": 42862,
+        "name": "Nu Holdings Tokenized bStocks",
+        "symbol": "NUB",
+        "category": "token",
+        "slug": "nu-holdings-tokenized-bstocks",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42862.png",
+        "subreddit": "",
+        "tag-names": [
+          "DeFi",
+          "Tokenized Stock",
+          "… 5 more"
+        ],
+        "tag-groups": [
+          "CATEGORY",
+          "CATEGORY",
+          "… 5 more"
+        ],
+        "platform": {
+          "id": "1839",
+          "name": "BNB",
+          "symbol": "BNB",
+          "slug": "bnb",
+          "token_address": "0x3cf7b2b634bac8c5e977e1576d79ea667e62f31c"
+        },
+        "twitter_username": "",
+        "is_hidden": 0,
+        "contract_address": [
+          {
+            "contract_address": "0x3cf7b2b634bac8c5e977e1576d79ea667e62f31c",
+            "platform": {
+              "name": "BNB Smart Chain (BEP20)",
+              "coin": {
+                "id": "1839",
+                "name": "BNB",
+                "symbol": "BNB",
+                "slug": "bnb"
+              }
+            }
+          }
+        ],
+        "infinite_supply": false
+      },
+      "42863": {
+        "id": 42863,
+        "name": "iShares MSCI Japan ETF Tokenized bStocks",
+        "symbol": "EWJB",
+        "category": "token",
+        "slug": "ishares-msci-japan-etf-tokenized-bstocks",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42863.png",
+        "subreddit": "",
+        "tag-names": [
+          "DeFi",
+          "Tokenized Stock",
+          "… 6 more"
+        ],
+        "tag-groups": [
+          "CATEGORY",
+          "CATEGORY",
+          "… 6 more"
+        ],
+        "platform": {
+          "id": "1839",
+          "name": "BNB",
+          "symbol": "BNB",
+          "slug": "bnb",
+          "token_address": "0x26e32dab9f844d7256db4195b3a43750272a51e9"
+        },
+        "twitter_username": "",
+        "is_hidden": 0,
+        "contract_address": [
+          {
+            "contract_address": "0x26e32dab9f844d7256db4195b3a43750272a51e9",
+            "platform": {
+              "name": "BNB Smart Chain (BEP20)",
+              "coin": {
+                "id": "1839",
+                "name": "BNB",
+                "symbol": "BNB",
+                "slug": "bnb"
+              }
+            }
+          }
+        ],
+        "infinite_supply": false
+      },
+      "42865": {
+        "id": 42865,
+        "name": "iShares Russell 2000 Index Fund Tokenized bStocks",
+        "symbol": "IWMB",
+        "category": "token",
+        "slug": "ishares-russell-2000-index-fund-tokenized-bstocks",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42865.png",
+        "subreddit": "",
+        "tag-names": [
+          "DeFi",
+          "Tokenized Stock",
+          "… 5 more"
+        ],
+        "tag-groups": [
+          "CATEGORY",
+          "CATEGORY",
+          "… 5 more"
+        ],
+        "platform": {
+          "id": "1839",
+          "name": "BNB",
+          "symbol": "BNB",
+          "slug": "bnb",
+          "token_address": "0x5e0ec7c48f2da6d8db1a2c95d71c535bf8a77c41"
+        },
+        "twitter_username": "",
+        "is_hidden": 0,
+        "contract_address": [
+          {
+            "contract_address": "0x5e0ec7c48f2da6d8db1a2c95d71c535bf8a77c41",
+            "platform": {
+              "name": "BNB Smart Chain (BEP20)",
+              "coin": {
+                "id": "1839",
+                "name": "BNB",
+                "symbol": "BNB",
+                "slug": "bnb"
+              }
+            }
+          }
+        ],
+        "infinite_supply": false
+      },
+      "42866": {
+        "id": 42866,
+        "name": "iShares MSCI Taiwan ETF Tokenized bStocks",
+        "symbol": "EWTB",
+        "category": "token",
+        "slug": "ishares-msci-taiwan-etf-tokenized-bstocks",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42866.png",
+        "subreddit": "",
+        "tag-names": [
+          "DeFi",
+          "Tokenized Stock",
+          "… 5 more"
+        ],
+        "tag-groups": [
+          "CATEGORY",
+          "CATEGORY",
+          "… 5 more"
+        ],
+        "platform": {
+          "id": "1839",
+          "name": "BNB",
+          "symbol": "BNB",
+          "slug": "bnb",
+          "token_address": "0x24824404bb9577697d11a07a5d88341191de6578"
+        },
+        "twitter_username": "",
+        "is_hidden": 0,
+        "contract_address": [
+          {
+            "contract_address": "0x24824404bb9577697d11a07a5d88341191de6578",
+            "platform": {
+              "name": "BNB Smart Chain (BEP20)",
+              "coin": {
+                "id": "1839",
+                "name": "BNB",
+                "symbol": "BNB",
+                "slug": "bnb"
+              }
+            }
+          }
         ],
         "infinite_supply": false
       }
     },
     "status": {
-      "timestamp": "2026-11-16T06:33:39.785Z",
+      "timestamp": "2026-11-16T19:38:56.521Z",
       "error_code": 0,
       "error_message": null,
       "elapsed": 7,
