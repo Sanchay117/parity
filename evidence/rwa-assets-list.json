@@ -16,49 +16,49 @@
             {
               "symbol": "USD",
               "crypto_id": 2781,
-              "average_tokenized_price": 3848.1137737072872,
-              "tokenized_market_cap": 4712797328.935015,
-              "tokenized_volume_24h": 340509753.69741976,
-              "last_updated": "2026-11-16T19:37:04.000Z"
+              "average_tokenized_price": 3855.34074387593,
+              "tokenized_market_cap": 4721898038.206123,
+              "tokenized_volume_24h": 261526204.07203805,
+              "last_updated": "2026-11-17T03:54:03.000Z"
             }
           ],
           "rwa_id": 1,
           "asset_type": "commodity",
           "rwa_rank": 1,
           "has_tokens": true,
-          "average_tokenized_price": 3848.1137737072872,
-          "tokenized_market_cap": 4712797328.935015,
-          "tokenized_volume_24h": 340509753.69741976,
-          "last_updated": "2026-11-16T19:36:35.000Z"
+          "average_tokenized_price": 3855.34074387593,
+          "tokenized_market_cap": 4721898038.206123,
+          "tokenized_volume_24h": 261526204.07203805,
+          "last_updated": "2026-11-17T03:53:56.000Z"
         },
         {
-          "name": "SpaceX",
-          "symbol": "SPCX",
-          "slug": "spacex",
+          "name": "Nvidia Corp",
+          "symbol": "NVDA",
+          "slug": "nvidia",
           "quotes": [
             {
               "symbol": "USD",
               "crypto_id": 2781,
-              "average_tokenized_price": 138.49996094619502,
-              "tokenized_market_cap": 366199315.1581423,
-              "tokenized_volume_24h": 169714914.154467,
-              "last_updated": "2026-11-16T19:37:04.000Z"
+              "average_tokenized_price": 157.74031494828827,
+              "tokenized_market_cap": 359609387.4677422,
+              "tokenized_volume_24h": 315568043.950504,
+              "last_updated": "2026-11-17T03:54:03.000Z"
             }
           ],
-          "rwa_id": 9,
+          "rwa_id": 2,
           "asset_type": "stock",
-          "rwa_rank": 9,
+          "rwa_rank": 4,
           "has_tokens": true,
-          "average_tokenized_price": 138.49996094619502,
-          "tokenized_market_cap": 366199315.1581423,
-          "tokenized_volume_24h": 169714914.154467,
-          "last_updated": "2026-11-16T19:36:19.000Z"
+          "average_tokenized_price": 157.74031494828827,
+          "tokenized_market_cap": 359609387.4677422,
+          "tokenized_volume_24h": 315568043.950504,
+          "last_updated": "2026-11-17T03:54:00.000Z"
         },
         "… 248 more"
       ]
     },
     "status": {
-      "timestamp": "2026-11-16T19:37:43.694Z",
+      "timestamp": "2026-11-17T03:55:21.222Z",
       "error_code": "0",
       "error_message": "",
       "elapsed": 14,
