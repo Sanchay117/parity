@@ -1,105 +1,138 @@
 {
-  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42868%2C42869%2C41680&skip_invalid=true&aux=logo%2Cplatform",
+  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42885%2C42697%2C42864&skip_invalid=true&aux=logo%2Cplatform",
   "headers": {
     "X-CMC_PRO_API_KEY": "<redacted>"
   },
   "response": {
     "data": {
-      "41680": {
-        "id": 41680,
-        "name": "Wrapped Take-Two Interactive Software Tokenized Stock (xStock)",
-        "symbol": "wTTWOx",
+      "42697": {
+        "id": 42697,
+        "name": "iShares MSCI Brazil Small-Cap ETF (Derivative)",
+        "symbol": "EWZS",
         "category": "token",
-        "slug": "wrapped-take-two-interactive-software-tokenized-stock-xstock",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/41680.png",
+        "slug": "ishares-msci-brazil-small-cap-etf-derivative",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42697.png",
+        "subreddit": "",
+        "tag-names": [
+          "DeFi",
+          "Synthetics",
+          "… 5 more"
+        ],
+        "tag-groups": [
+          "CATEGORY",
+          "INDUSTRY",
+          "… 5 more"
+        ],
+        "platform": null,
+        "twitter_username": "",
+        "is_hidden": 0,
+        "infinite_supply": false
+      },
+      "42864": {
+        "id": 42864,
+        "name": "iShares MSCI Brazil Small-Cap ETF Tokenized bStocks",
+        "symbol": "EWZSB",
+        "category": "token",
+        "slug": "ishares-msci-brazil-small-cap-etf-tokenized-bstocks",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42864.png",
         "subreddit": "",
         "tag-names": [
           "DeFi",
           "Tokenized Stock",
-          "… 3 more"
+          "… 5 more"
         ],
         "tag-groups": [
           "CATEGORY",
           "CATEGORY",
-          "… 3 more"
+          "… 5 more"
         ],
         "platform": {
-          "id": "3897",
-          "name": "OKB",
-          "symbol": "OKB",
-          "slug": "okb",
-          "token_address": "0xC30A91A854cFff001656cEA8F76005009bf62546"
+          "id": "1839",
+          "name": "BNB",
+          "symbol": "BNB",
+          "slug": "bnb",
+          "token_address": "0xc5a784b9bc0d9c526a1ef582c107ab2ff1c8fe14"
         },
-        "twitter_username": "xstocksfi",
+        "twitter_username": "",
         "is_hidden": 0,
         "contract_address": [
           {
-            "contract_address": "0xC30A91A854cFff001656cEA8F76005009bf62546",
+            "contract_address": "0xc5a784b9bc0d9c526a1ef582c107ab2ff1c8fe14",
             "platform": {
-              "name": "X Layer",
+              "name": "BNB Smart Chain (BEP20)",
               "coin": {
-                "id": "3897",
-                "name": "OKB",
-                "symbol": "OKB",
-                "slug": "okb"
+                "id": "1839",
+                "name": "BNB",
+                "symbol": "BNB",
+                "slug": "bnb"
               }
             }
           }
         ],
         "infinite_supply": false
       },
-      "42868": {
-        "id": 42868,
-        "name": "Anthropic PBC (Derivatives)",
-        "symbol": "ANT",
+      "42885": {
+        "id": 42885,
+        "name": "Anthropic tokenized stock (xStock)",
+        "symbol": "ANTx",
         "category": "token",
-        "slug": "anthropic-pbc-derivatives",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42868.png",
+        "slug": "anthropic-tokenized-stock-xstock",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42885.png",
         "subreddit": "",
         "tag-names": [
           "DeFi",
-          "Tokenized Stock",
-          "… 6 more"
+          "Ethereum Ecosystem",
+          "… 11 more"
         ],
         "tag-groups": [
           "CATEGORY",
-          "CATEGORY",
-          "… 6 more"
+          "PLATFORM",
+          "… 11 more"
         ],
-        "platform": null,
-        "twitter_username": "",
+        "platform": {
+          "id": "1027",
+          "name": "Ethereum",
+          "symbol": "ETH",
+          "slug": "ethereum",
+          "token_address": "0x909369940f22dC1c143aC78753A33f41597138B1"
+        },
+        "twitter_username": "xStocksFi",
         "is_hidden": 0,
-        "infinite_supply": false
-      },
-      "42869": {
-        "id": 42869,
-        "name": "Anthropic (EQX Labs)",
-        "symbol": "EQANT",
-        "category": "token",
-        "slug": "anthropic-eqx-labs",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42869.png",
-        "subreddit": "",
-        "tag-names": [
-          "DeFi",
-          "Tokenized Stock",
-          "… 2 more"
+        "contract_address": [
+          {
+            "contract_address": "0x909369940f22dC1c143aC78753A33f41597138B1",
+            "platform": {
+              "name": "Ethereum",
+              "coin": {
+                "id": "1027",
+                "name": "Ethereum",
+                "symbol": "ETH",
+                "slug": "ethereum"
+              }
+            }
+          },
+          {
+            "contract_address": "0x909369940f22dC1c143aC78753A33f41597138B1",
+            "platform": {
+              "name": "BNB Smart Chain (BEP20)",
+              "coin": {
+                "id": "1839",
+                "name": "BNB",
+                "symbol": "BNB",
+                "slug": "bnb"
+              }
+            }
+          },
+          "… 8 more"
         ],
-        "tag-groups": [
-          "CATEGORY",
-          "CATEGORY",
-          "… 2 more"
-        ],
-        "platform": null,
-        "twitter_username": "",
-        "is_hidden": 0,
         "infinite_supply": false
       }
     },
     "status": {
-      "timestamp": "2026-11-17T16:03:27.230Z",
+      "timestamp": "2026-11-18T20:34:31.542Z",
       "error_code": 0,
       "error_message": null,
-      "elapsed": 8,
+      "elapsed": 12,
       "credit_count": 1,
       "notice": null
     }
