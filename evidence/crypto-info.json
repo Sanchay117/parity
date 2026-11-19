@@ -1,40 +1,40 @@
 {
-  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42894&skip_invalid=true&aux=logo%2Cplatform",
+  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42895&skip_invalid=true&aux=logo%2Cplatform",
   "headers": {
     "X-CMC_PRO_API_KEY": "<redacted>"
   },
   "response": {
     "data": {
-      "42894": {
-        "id": 42894,
-        "name": "iShares 20+ Year Treasury Bond tokenized ETF (xStock)",
-        "symbol": "TLTx",
+      "42895": {
+        "id": 42895,
+        "name": "PDD Holdings Inc tokenized stock (xStock)",
+        "symbol": "PDDx",
         "category": "token",
-        "slug": "ishares-20-year-treasury-bond-tokenized-etf-xstock",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42894.png",
+        "slug": "pdd-holdings-inc-tokenized-stock-xstock",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42895.png",
         "subreddit": "",
         "tag-names": [
           "DeFi",
           "Ethereum Ecosystem",
-          "… 6 more"
+          "… 5 more"
         ],
         "tag-groups": [
           "CATEGORY",
           "PLATFORM",
-          "… 6 more"
+          "… 5 more"
         ],
         "platform": {
           "id": "1027",
           "name": "Ethereum",
           "symbol": "ETH",
           "slug": "ethereum",
-          "token_address": "0xd066Eaac44d53EC47304048a33CdFA58C2015cd5"
+          "token_address": "0x5a0b3434151e0F2D23608c949505a62E436aaE86"
         },
         "twitter_username": "xStocksFi",
         "is_hidden": 0,
         "contract_address": [
           {
-            "contract_address": "0xd066Eaac44d53EC47304048a33CdFA58C2015cd5",
+            "contract_address": "0x5a0b3434151e0F2D23608c949505a62E436aaE86",
             "platform": {
               "name": "Ethereum",
               "coin": {
@@ -46,7 +46,7 @@
             }
           },
           {
-            "contract_address": "0xd066Eaac44d53EC47304048a33CdFA58C2015cd5",
+            "contract_address": "0x5a0b3434151e0F2D23608c949505a62E436aaE86",
             "platform": {
               "name": "BNB Smart Chain (BEP20)",
               "coin": {
@@ -63,10 +63,10 @@
       }
     },
     "status": {
-      "timestamp": "2026-11-19T11:43:46.051Z",
+      "timestamp": "2026-11-19T20:40:50.459Z",
       "error_code": 0,
       "error_message": null,
-      "elapsed": 7,
+      "elapsed": 8,
       "credit_count": 1,
       "notice": null
     }
