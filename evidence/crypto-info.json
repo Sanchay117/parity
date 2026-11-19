@@ -1,106 +1,40 @@
 {
-  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42885%2C42697%2C42864&skip_invalid=true&aux=logo%2Cplatform",
+  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42894&skip_invalid=true&aux=logo%2Cplatform",
   "headers": {
     "X-CMC_PRO_API_KEY": "<redacted>"
   },
   "response": {
     "data": {
-      "42697": {
-        "id": 42697,
-        "name": "iShares MSCI Brazil Small-Cap ETF (Derivative)",
-        "symbol": "EWZS",
+      "42894": {
+        "id": 42894,
+        "name": "iShares 20+ Year Treasury Bond tokenized ETF (xStock)",
+        "symbol": "TLTx",
         "category": "token",
-        "slug": "ishares-msci-brazil-small-cap-etf-derivative",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42697.png",
-        "subreddit": "",
-        "tag-names": [
-          "DeFi",
-          "Synthetics",
-          "… 5 more"
-        ],
-        "tag-groups": [
-          "CATEGORY",
-          "INDUSTRY",
-          "… 5 more"
-        ],
-        "platform": null,
-        "twitter_username": "",
-        "is_hidden": 0,
-        "infinite_supply": false
-      },
-      "42864": {
-        "id": 42864,
-        "name": "iShares MSCI Brazil Small-Cap ETF Tokenized bStocks",
-        "symbol": "EWZSB",
-        "category": "token",
-        "slug": "ishares-msci-brazil-small-cap-etf-tokenized-bstocks",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42864.png",
-        "subreddit": "",
-        "tag-names": [
-          "DeFi",
-          "Tokenized Stock",
-          "… 5 more"
-        ],
-        "tag-groups": [
-          "CATEGORY",
-          "CATEGORY",
-          "… 5 more"
-        ],
-        "platform": {
-          "id": "1839",
-          "name": "BNB",
-          "symbol": "BNB",
-          "slug": "bnb",
-          "token_address": "0xc5a784b9bc0d9c526a1ef582c107ab2ff1c8fe14"
-        },
-        "twitter_username": "",
-        "is_hidden": 0,
-        "contract_address": [
-          {
-            "contract_address": "0xc5a784b9bc0d9c526a1ef582c107ab2ff1c8fe14",
-            "platform": {
-              "name": "BNB Smart Chain (BEP20)",
-              "coin": {
-                "id": "1839",
-                "name": "BNB",
-                "symbol": "BNB",
-                "slug": "bnb"
-              }
-            }
-          }
-        ],
-        "infinite_supply": false
-      },
-      "42885": {
-        "id": 42885,
-        "name": "Anthropic tokenized stock (xStock)",
-        "symbol": "ANTx",
-        "category": "token",
-        "slug": "anthropic-tokenized-stock-xstock",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42885.png",
+        "slug": "ishares-20-year-treasury-bond-tokenized-etf-xstock",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42894.png",
         "subreddit": "",
         "tag-names": [
           "DeFi",
           "Ethereum Ecosystem",
-          "… 11 more"
+          "… 6 more"
         ],
         "tag-groups": [
           "CATEGORY",
           "PLATFORM",
-          "… 11 more"
+          "… 6 more"
         ],
         "platform": {
           "id": "1027",
           "name": "Ethereum",
           "symbol": "ETH",
           "slug": "ethereum",
-          "token_address": "0x909369940f22dC1c143aC78753A33f41597138B1"
+          "token_address": "0xd066Eaac44d53EC47304048a33CdFA58C2015cd5"
         },
         "twitter_username": "xStocksFi",
         "is_hidden": 0,
         "contract_address": [
           {
-            "contract_address": "0x909369940f22dC1c143aC78753A33f41597138B1",
+            "contract_address": "0xd066Eaac44d53EC47304048a33CdFA58C2015cd5",
             "platform": {
               "name": "Ethereum",
               "coin": {
@@ -112,7 +46,7 @@
             }
           },
           {
-            "contract_address": "0x909369940f22dC1c143aC78753A33f41597138B1",
+            "contract_address": "0xd066Eaac44d53EC47304048a33CdFA58C2015cd5",
             "platform": {
               "name": "BNB Smart Chain (BEP20)",
               "coin": {
@@ -123,16 +57,16 @@
               }
             }
           },
-          "… 8 more"
+          "… 1 more"
         ],
         "infinite_supply": false
       }
     },
     "status": {
-      "timestamp": "2026-11-18T20:34:31.542Z",
+      "timestamp": "2026-11-19T11:43:46.051Z",
       "error_code": 0,
       "error_message": null,
-      "elapsed": 12,
+      "elapsed": 7,
       "credit_count": 1,
       "notice": null
     }
