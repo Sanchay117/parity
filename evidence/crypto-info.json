@@ -1,17 +1,17 @@
 {
-  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42895&skip_invalid=true&aux=logo%2Cplatform",
+  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42874&skip_invalid=true&aux=logo%2Cplatform",
   "headers": {
     "X-CMC_PRO_API_KEY": "<redacted>"
   },
   "response": {
     "data": {
-      "42895": {
-        "id": 42895,
-        "name": "PDD Holdings Inc tokenized stock (xStock)",
-        "symbol": "PDDx",
+      "42874": {
+        "id": 42874,
+        "name": "Anthropic Tokenized Stock (Ondo)",
+        "symbol": "ANTon",
         "category": "token",
-        "slug": "pdd-holdings-inc-tokenized-stock-xstock",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42895.png",
+        "slug": "anthropic-tokenized-stock-ondo",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42874.png",
         "subreddit": "",
         "tag-names": [
           "DeFi",
@@ -28,13 +28,13 @@
           "name": "Ethereum",
           "symbol": "ETH",
           "slug": "ethereum",
-          "token_address": "0x5a0b3434151e0F2D23608c949505a62E436aaE86"
+          "token_address": "0x43a0943893474F246aA58e9921d975aD60Adee59"
         },
-        "twitter_username": "xStocksFi",
+        "twitter_username": "ondofinance",
         "is_hidden": 0,
         "contract_address": [
           {
-            "contract_address": "0x5a0b3434151e0F2D23608c949505a62E436aaE86",
+            "contract_address": "0x43a0943893474F246aA58e9921d975aD60Adee59",
             "platform": {
               "name": "Ethereum",
               "coin": {
@@ -46,7 +46,7 @@
             }
           },
           {
-            "contract_address": "0x5a0b3434151e0F2D23608c949505a62E436aaE86",
+            "contract_address": "0x343ccbc9f8409f862008b7abebFFf20ECf935C75",
             "platform": {
               "name": "BNB Smart Chain (BEP20)",
               "coin": {
@@ -63,10 +63,10 @@
       }
     },
     "status": {
-      "timestamp": "2026-11-19T20:40:50.459Z",
+      "timestamp": "2026-11-20T02:21:37.003Z",
       "error_code": 0,
       "error_message": null,
-      "elapsed": 8,
+      "elapsed": 60,
       "credit_count": 1,
       "notice": null
     }
