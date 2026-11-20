@@ -1,52 +1,40 @@
 {
-  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42874&skip_invalid=true&aux=logo%2Cplatform",
+  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42860%2C42896%2C42897%2C42901&skip_invalid=true&aux=logo%2Cplatform",
   "headers": {
     "X-CMC_PRO_API_KEY": "<redacted>"
   },
   "response": {
     "data": {
-      "42874": {
-        "id": 42874,
-        "name": "Anthropic Tokenized Stock (Ondo)",
-        "symbol": "ANTon",
+      "42860": {
+        "id": 42860,
+        "name": "Anthropic Tokenized bStocks",
+        "symbol": "ANTB",
         "category": "token",
-        "slug": "anthropic-tokenized-stock-ondo",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42874.png",
+        "slug": "anthropic-tokenized-bstocks",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42860.png",
         "subreddit": "",
         "tag-names": [
           "DeFi",
-          "Ethereum Ecosystem",
+          "Tokenized Stock",
           "… 5 more"
         ],
         "tag-groups": [
           "CATEGORY",
-          "PLATFORM",
+          "CATEGORY",
           "… 5 more"
         ],
         "platform": {
-          "id": "1027",
-          "name": "Ethereum",
-          "symbol": "ETH",
-          "slug": "ethereum",
-          "token_address": "0x43a0943893474F246aA58e9921d975aD60Adee59"
+          "id": "1839",
+          "name": "BNB",
+          "symbol": "BNB",
+          "slug": "bnb",
+          "token_address": "0x38dd26788cf2d901e3abf04efe3007d459d0fc53"
         },
-        "twitter_username": "ondofinance",
+        "twitter_username": "",
         "is_hidden": 0,
         "contract_address": [
           {
-            "contract_address": "0x43a0943893474F246aA58e9921d975aD60Adee59",
-            "platform": {
-              "name": "Ethereum",
-              "coin": {
-                "id": "1027",
-                "name": "Ethereum",
-                "symbol": "ETH",
-                "slug": "ethereum"
-              }
-            }
-          },
-          {
-            "contract_address": "0x343ccbc9f8409f862008b7abebFFf20ECf935C75",
+            "contract_address": "0x38dd26788cf2d901e3abf04efe3007d459d0fc53",
             "platform": {
               "name": "BNB Smart Chain (BEP20)",
               "coin": {
@@ -56,17 +44,125 @@
                 "slug": "bnb"
               }
             }
-          },
-          "… 1 more"
+          }
         ],
+        "infinite_supply": false
+      },
+      "42896": {
+        "id": 42896,
+        "name": "Anthropic (Robinhood)",
+        "symbol": "ANT",
+        "category": "token",
+        "slug": "anthropic-robinhood",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42896.png",
+        "subreddit": "",
+        "tag-names": [
+          "DeFi",
+          "Tokenized Stock",
+          "… 2 more"
+        ],
+        "tag-groups": [
+          "CATEGORY",
+          "CATEGORY",
+          "… 2 more"
+        ],
+        "platform": {
+          "id": "40670",
+          "name": "Robinhood",
+          "symbol": "-",
+          "slug": "robinhood-placeholder",
+          "token_address": "0xbbb6c29bcc3a1028a2b54310df73f4f7a3bcb373"
+        },
+        "twitter_username": "RobinhoodCrypto",
+        "is_hidden": 0,
+        "contract_address": [
+          {
+            "contract_address": "0xbbb6c29bcc3a1028a2b54310df73f4f7a3bcb373",
+            "platform": {
+              "name": "Robinhood Chain",
+              "coin": {
+                "id": "40670",
+                "name": "Robinhood",
+                "symbol": "-",
+                "slug": "robinhood-placeholder"
+              }
+            }
+          }
+        ],
+        "infinite_supply": false
+      },
+      "42897": {
+        "id": 42897,
+        "name": "Anthropic PBC Tokenized Stock (Coinbase)",
+        "symbol": "ANTc",
+        "category": "token",
+        "slug": "anthropic-pbc-tokenized-stock-coinbase",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42897.png",
+        "subreddit": "",
+        "tag-names": [
+          "DeFi",
+          "Tokenized Stock",
+          "… 3 more"
+        ],
+        "tag-groups": [
+          "CATEGORY",
+          "CATEGORY",
+          "… 3 more"
+        ],
+        "platform": {
+          "id": "27716",
+          "name": "Base",
+          "symbol": "-",
+          "slug": "base",
+          "token_address": "0xb20000000000000000000016e38FD364d271Ba28"
+        },
+        "twitter_username": "coinbase",
+        "is_hidden": 0,
+        "contract_address": [
+          {
+            "contract_address": "0xb20000000000000000000016e38FD364d271Ba28",
+            "platform": {
+              "name": "Base",
+              "coin": {
+                "id": "27716",
+                "name": "Base",
+                "symbol": "-",
+                "slug": "base"
+              }
+            }
+          }
+        ],
+        "infinite_supply": false
+      },
+      "42901": {
+        "id": 42901,
+        "name": "NIO Inc. ADR (Derivatives)",
+        "symbol": "NIO",
+        "category": "token",
+        "slug": "nio-inc-adr-derivatives",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42901.png",
+        "subreddit": "",
+        "tag-names": [
+          "DeFi",
+          "Tokenized Stock",
+          "… 5 more"
+        ],
+        "tag-groups": [
+          "CATEGORY",
+          "CATEGORY",
+          "… 5 more"
+        ],
+        "platform": null,
+        "twitter_username": "",
+        "is_hidden": 0,
         "infinite_supply": false
       }
     },
     "status": {
-      "timestamp": "2026-11-20T02:21:37.003Z",
+      "timestamp": "2026-11-20T11:43:44.201Z",
       "error_code": 0,
       "error_message": null,
-      "elapsed": 60,
+      "elapsed": 47,
       "credit_count": 1,
       "notice": null
     }
