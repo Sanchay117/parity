@@ -1,5 +1,5 @@
 {
-  "request": "GET https://pro-api.coinmarketcap.com/v5/real-world-assets/quotes/latest?rwa_id=1%2C2%2C9%2C115%2C118%2C4%2C114%2C86%2C12%2C14%2C7750%2C20%2C48%2C141%2C8065%2C10%2C82%2C3%2C6%2C211%2C3066%2C7%2C8%2C70%2C204%2C181%2C125%2C7712%2C13%2C24%2C205%2C5289%2C1062%2C95%2C84%2C96%2C175%2C87%2C219%2C116%2C254%2C4789%2C89%2C25%2C120%2C242%2C53%2C94%2C63%2C243%2C187%2C131%2C5699%2C183%2C229%2C251%2C124%2C189%2C26%2C37%2C103%2C191%2C119%2C68%2C6206%2C190%2C42%2C7751%2C443%2C108%2C5186%2C51%2C16%2C54%2C11%2C50%2C140%2C127%2C466%2C188%2C7733%2C1847%2C200%2C29%2C17%2C297%2C75%2C511%2C18%2C22%2C5000%2C148%2C69%2C65%2C1588%2C5293%2C44%2C43%2C232%2C15",
+  "request": "GET https://pro-api.coinmarketcap.com/v5/real-world-assets/quotes/latest?rwa_id=1%2C2%2C9%2C115%2C118%2C4%2C114%2C86%2C12%2C14%2C7750%2C20%2C48%2C141%2C8065%2C10%2C82%2C3%2C6%2C3066%2C211%2C7%2C8%2C70%2C204%2C125%2C181%2C7712%2C24%2C13%2C205%2C5289%2C1062%2C95%2C84%2C175%2C96%2C87%2C219%2C116%2C254%2C4789%2C89%2C120%2C25%2C242%2C53%2C94%2C63%2C187%2C243%2C131%2C5699%2C183%2C229%2C251%2C124%2C189%2C26%2C37%2C103%2C191%2C119%2C68%2C6206%2C190%2C42%2C443%2C5186%2C108%2C7751%2C51%2C16%2C54%2C11%2C50%2C140%2C127%2C466%2C7733%2C188%2C1847%2C29%2C200%2C17%2C297%2C75%2C511%2C18%2C22%2C5000%2C148%2C69%2C65%2C1588%2C5293%2C44%2C43%2C232%2C15",
   "headers": {
     "X-CMC_PRO_API_KEY": "<redacted>"
   },
@@ -14,40 +14,40 @@
             {
               "symbol": "USD",
               "crypto_id": 2781,
-              "average_tokenized_price": 3549.259158480042,
-              "tokenized_market_cap": 4345212040.720928,
-              "tokenized_volume_24h": 374697445.7440062,
-              "last_updated": "2026-11-21T19:16:02.000Z"
+              "average_tokenized_price": 3543.449544454152,
+              "tokenized_market_cap": 4338433042.123253,
+              "tokenized_volume_24h": 306154566.35029936,
+              "last_updated": "2026-11-22T01:20:02.000Z"
             }
           ],
           "rwa_id": 1,
           "asset_type": "commodity",
           "rwa_rank": 1,
           "has_tokens": true,
-          "average_tokenized_price": 3549.259158480042,
-          "tokenized_market_cap": 4345212040.720928,
-          "tokenized_volume_24h": 374697445.7440062,
-          "last_updated": "2026-11-21T19:17:11.126Z",
+          "average_tokenized_price": 3543.449544454152,
+          "tokenized_market_cap": 4338433042.123253,
+          "tokenized_volume_24h": 306154566.35029936,
+          "last_updated": "2026-11-22T01:20:12.083Z",
           "tokens": [
             {
               "symbol": "PAXG",
               "name": "PAX Gold",
-              "price": 3551.9510520090876,
+              "price": 3546.606462944495,
               "crypto_id": 4705,
               "issuer_id": "68904c24abae9b5b9fb35815",
               "issuer_name": "Paxos",
-              "market_cap": 1588928842.9993794,
-              "volume_24h": 128882433.52599172
+              "market_cap": 1586537995.9425466,
+              "volume_24h": 103219179.37954411
             },
             {
               "symbol": "XAUt",
               "name": "Tether Gold",
-              "price": 3548.926529545155,
+              "price": 3543.257782875043,
               "crypto_id": 5176,
               "issuer_id": "68904e9cabae9b5b9fb358ac",
               "issuer_name": "Tether Holdings",
-              "market_cap": 2659649170.0339103,
-              "volume_24h": 243994474.77699187
+              "market_cap": 2655400877.697966,
+              "volume_24h": 201253425.78045964
             },
             "… 5 more"
           ],
@@ -61,30 +61,30 @@
             {
               "symbol": "USD",
               "crypto_id": 2781,
-              "average_tokenized_price": 130.64338740411551,
-              "tokenized_market_cap": 371543611.6070724,
-              "tokenized_volume_24h": 266910664.17020565,
-              "last_updated": "2026-11-21T19:16:02.000Z"
+              "average_tokenized_price": 130.9326561717566,
+              "tokenized_market_cap": 372378079.08674467,
+              "tokenized_volume_24h": 123004775.89393117,
+              "last_updated": "2026-11-22T01:20:02.000Z"
             }
           ],
           "rwa_id": 2,
           "asset_type": "stock",
           "rwa_rank": 5,
           "has_tokens": true,
-          "average_tokenized_price": 130.64338740411551,
-          "tokenized_market_cap": 371543611.6070724,
-          "tokenized_volume_24h": 266910664.17020565,
-          "last_updated": "2026-11-21T19:17:11.131Z",
+          "average_tokenized_price": 130.9326561717566,
+          "tokenized_market_cap": 372378079.08674467,
+          "tokenized_volume_24h": 123004775.89393117,
+          "last_updated": "2026-11-22T01:20:12.089Z",
           "tokens": [
             {
               "symbol": "NVDAX",
               "name": "NVIDIA tokenized stock (xStock)",
-              "price": 130.86091477247632,
+              "price": 131.19599814666063,
               "crypto_id": 36992,
               "issuer_id": "6878977dcbbf471de3366e85",
               "issuer_name": "Backed Assets",
-              "market_cap": 111249168.47958297,
-              "volume_24h": 70399961.88556173
+              "market_cap": 111534649.97009,
+              "volume_24h": 29294529.297289822
             },
             {
               "symbol": "NVDA.D",
@@ -114,7 +114,7 @@
       ]
     },
     "status": {
-      "timestamp": "2026-11-21T19:17:25.348Z",
+      "timestamp": "2026-11-22T01:20:50.114Z",
       "error_code": "0",
       "error_message": "",
       "elapsed": 13,
