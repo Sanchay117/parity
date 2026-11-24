@@ -1,134 +1,17 @@
 {
-  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42923%2C42921%2C42925%2C42918%2C42929&skip_invalid=true&aux=logo%2Cplatform",
+  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42872%2C42531%2C42892&skip_invalid=true&aux=logo%2Cplatform",
   "headers": {
     "X-CMC_PRO_API_KEY": "<redacted>"
   },
   "response": {
     "data": {
-      "42918": {
-        "id": 42918,
-        "name": "The Coca-Cola Company Tokenized Stock (Coinbase)",
-        "symbol": "KOc",
+      "42531": {
+        "id": 42531,
+        "name": "T-Rex 2X Long MSTR Daily Target ETF (Derivatives)",
+        "symbol": "MSTU",
         "category": "token",
-        "slug": "the-coca-cola-company-tokenized-stock-coinbase",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42918.png",
-        "subreddit": "",
-        "tag-names": [
-          "Base Ecosystem"
-        ],
-        "tag-groups": [
-          "PLATFORM"
-        ],
-        "platform": {
-          "id": "27716",
-          "name": "Base",
-          "symbol": "-",
-          "slug": "base",
-          "token_address": "0xb200000000000000000000ffef181DB6dC5ed6A3"
-        },
-        "twitter_username": "coinbase",
-        "is_hidden": 0,
-        "contract_address": [
-          {
-            "contract_address": "0xb200000000000000000000ffef181DB6dC5ed6A3",
-            "platform": {
-              "name": "Base",
-              "coin": {
-                "id": "27716",
-                "name": "Base",
-                "symbol": "-",
-                "slug": "base"
-              }
-            }
-          }
-        ],
-        "infinite_supply": false
-      },
-      "42921": {
-        "id": 42921,
-        "name": "McDonald's Corporation Tokenized Stock (Coinbase)",
-        "symbol": "MCDc",
-        "category": "token",
-        "slug": "mcdonalds-corporation-tokenized-stock-coinbase",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42921.png",
-        "subreddit": "",
-        "tag-names": [
-          "Base Ecosystem"
-        ],
-        "tag-groups": [
-          "PLATFORM"
-        ],
-        "platform": {
-          "id": "27716",
-          "name": "Base",
-          "symbol": "-",
-          "slug": "base",
-          "token_address": "0xb200000000000000000000d2f4cf2f7DEBB244BB"
-        },
-        "twitter_username": "coinbase",
-        "is_hidden": 0,
-        "contract_address": [
-          {
-            "contract_address": "0xb200000000000000000000d2f4cf2f7DEBB244BB",
-            "platform": {
-              "name": "Base",
-              "coin": {
-                "id": "27716",
-                "name": "Base",
-                "symbol": "-",
-                "slug": "base"
-              }
-            }
-          }
-        ],
-        "infinite_supply": false
-      },
-      "42923": {
-        "id": 42923,
-        "name": "Robinhood Markets, Inc. Tokenized Stock (Coinbase)",
-        "symbol": "HOODc",
-        "category": "token",
-        "slug": "robinhood-markets-inc-tokenized-stock-coinbase",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42923.png",
-        "subreddit": "",
-        "tag-names": [
-          "Base Ecosystem"
-        ],
-        "tag-groups": [
-          "PLATFORM"
-        ],
-        "platform": {
-          "id": "27716",
-          "name": "Base",
-          "symbol": "-",
-          "slug": "base",
-          "token_address": "0xb2000000000000000000006F944897540579D3f2"
-        },
-        "twitter_username": "coinbase",
-        "is_hidden": 0,
-        "contract_address": [
-          {
-            "contract_address": "0xb2000000000000000000006F944897540579D3f2",
-            "platform": {
-              "name": "Base",
-              "coin": {
-                "id": "27716",
-                "name": "Base",
-                "symbol": "-",
-                "slug": "base"
-              }
-            }
-          }
-        ],
-        "infinite_supply": false
-      },
-      "42925": {
-        "id": 42925,
-        "name": "Take-Two Interactive Software, Inc Tokenized bStocks",
-        "symbol": "TTWOB",
-        "category": "token",
-        "slug": "take-two-interactive-software-inc-tokenized-bstocks",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42925.png",
+        "slug": "t-rex-2x-long-mstr-daily-target-etf-derivatives",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42531.png",
         "subreddit": "",
         "tag-names": [
           "DeFi",
@@ -140,61 +23,53 @@
           "CATEGORY",
           "… 5 more"
         ],
-        "platform": {
-          "id": "1839",
-          "name": "BNB",
-          "symbol": "BNB",
-          "slug": "bnb",
-          "token_address": "0x253905a715d855c99661edc73261134eded405be"
-        },
+        "platform": null,
         "twitter_username": "",
         "is_hidden": 0,
-        "contract_address": [
-          {
-            "contract_address": "0x253905a715d855c99661edc73261134eded405be",
-            "platform": {
-              "name": "BNB Smart Chain (BEP20)",
-              "coin": {
-                "id": "1839",
-                "name": "BNB",
-                "symbol": "BNB",
-                "slug": "bnb"
-              }
-            }
-          }
-        ],
         "infinite_supply": false
       },
-      "42929": {
-        "id": 42929,
-        "name": "iShares Semiconductor ETF Tokenized bStocks",
-        "symbol": "SOXXB",
+      "42872": {
+        "id": 42872,
+        "name": "Take-Two Interactive Software Tokenized Stock (Ondo)",
+        "symbol": "TTWOon",
         "category": "token",
-        "slug": "ishares-semiconductor-etf-tokenized-bstocks",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42929.png",
+        "slug": "take-two-interactive-software-tokenized-stock-ondo",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42872.png",
         "subreddit": "",
         "tag-names": [
           "DeFi",
-          "Tokenized Stock",
+          "Ethereum Ecosystem",
           "… 5 more"
         ],
         "tag-groups": [
           "CATEGORY",
-          "CATEGORY",
+          "PLATFORM",
           "… 5 more"
         ],
         "platform": {
-          "id": "1839",
-          "name": "BNB",
-          "symbol": "BNB",
-          "slug": "bnb",
-          "token_address": "0xcd1e9a6d7416674347c44e7a95b1f5954540fffd"
+          "id": "1027",
+          "name": "Ethereum",
+          "symbol": "ETH",
+          "slug": "ethereum",
+          "token_address": "0x6C190f0b8f7525244C6dcf0363A1241a99509101"
         },
-        "twitter_username": "",
+        "twitter_username": "ondofinance",
         "is_hidden": 0,
         "contract_address": [
           {
-            "contract_address": "0xcd1e9a6d7416674347c44e7a95b1f5954540fffd",
+            "contract_address": "0x6C190f0b8f7525244C6dcf0363A1241a99509101",
+            "platform": {
+              "name": "Ethereum",
+              "coin": {
+                "id": "1027",
+                "name": "Ethereum",
+                "symbol": "ETH",
+                "slug": "ethereum"
+              }
+            }
+          },
+          {
+            "contract_address": "0xf095607F8aB6F8f813a1F93F70047ec2f0A8bd85",
             "platform": {
               "name": "BNB Smart Chain (BEP20)",
               "coin": {
@@ -204,16 +79,73 @@
                 "slug": "bnb"
               }
             }
-          }
+          },
+          "… 1 more"
+        ],
+        "infinite_supply": false
+      },
+      "42892": {
+        "id": 42892,
+        "name": "T-REX 2X Long MSTR Daily Target tokenized ETF (xStock)",
+        "symbol": "MSTUx",
+        "category": "token",
+        "slug": "t-rex-2x-long-mstr-daily-target-tokenized-etf-xstock",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42892.png",
+        "subreddit": "",
+        "tag-names": [
+          "DeFi",
+          "Ethereum Ecosystem",
+          "… 6 more"
+        ],
+        "tag-groups": [
+          "CATEGORY",
+          "PLATFORM",
+          "… 6 more"
+        ],
+        "platform": {
+          "id": "1027",
+          "name": "Ethereum",
+          "symbol": "ETH",
+          "slug": "ethereum",
+          "token_address": "0xA9beED5e64BfA36BB7b83b39b3682e0D84E7ac21"
+        },
+        "twitter_username": "xStocksFi",
+        "is_hidden": 0,
+        "contract_address": [
+          {
+            "contract_address": "0xA9beED5e64BfA36BB7b83b39b3682e0D84E7ac21",
+            "platform": {
+              "name": "Ethereum",
+              "coin": {
+                "id": "1027",
+                "name": "Ethereum",
+                "symbol": "ETH",
+                "slug": "ethereum"
+              }
+            }
+          },
+          {
+            "contract_address": "0xA9beED5e64BfA36BB7b83b39b3682e0D84E7ac21",
+            "platform": {
+              "name": "BNB Smart Chain (BEP20)",
+              "coin": {
+                "id": "1839",
+                "name": "BNB",
+                "symbol": "BNB",
+                "slug": "bnb"
+              }
+            }
+          },
+          "… 1 more"
         ],
         "infinite_supply": false
       }
     },
     "status": {
-      "timestamp": "2026-11-23T12:48:04.831Z",
+      "timestamp": "2026-11-24T02:15:30.472Z",
       "error_code": 0,
       "error_message": null,
-      "elapsed": 6,
+      "elapsed": 7,
       "credit_count": 1,
       "notice": null
     }
