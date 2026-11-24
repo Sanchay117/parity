@@ -16,20 +16,20 @@
             {
               "symbol": "USD",
               "crypto_id": 2781,
-              "average_tokenized_price": 3608.353562403303,
-              "tokenized_market_cap": 4417803532.216373,
-              "tokenized_volume_24h": 377034849.9460492,
-              "last_updated": "2026-11-24T13:44:04.000Z"
+              "average_tokenized_price": 3540.2492999024275,
+              "tokenized_market_cap": 4341208214.654196,
+              "tokenized_volume_24h": 286262059.11361426,
+              "last_updated": "2026-11-24T23:53:05.000Z"
             }
           ],
           "rwa_id": 1,
           "asset_type": "commodity",
           "rwa_rank": 1,
           "has_tokens": true,
-          "average_tokenized_price": 3608.353562403303,
-          "tokenized_market_cap": 4417803532.216373,
-          "tokenized_volume_24h": 377034849.9460492,
-          "last_updated": "2026-11-24T13:44:12.000Z"
+          "average_tokenized_price": 3540.2492999024275,
+          "tokenized_market_cap": 4341208214.654196,
+          "tokenized_volume_24h": 286262059.11361426,
+          "last_updated": "2026-11-24T23:54:11.000Z"
         },
         {
           "name": "Nvidia Corp",
@@ -39,29 +39,29 @@
             {
               "symbol": "USD",
               "crypto_id": 2781,
-              "average_tokenized_price": 156.61764998445895,
-              "tokenized_market_cap": 410987911.15311027,
-              "tokenized_volume_24h": 785753801.6755627,
-              "last_updated": "2026-11-24T13:44:04.000Z"
+              "average_tokenized_price": 152.93159731337016,
+              "tokenized_market_cap": 406623668.00583076,
+              "tokenized_volume_24h": 299079811.4825211,
+              "last_updated": "2026-11-24T23:53:05.000Z"
             }
           ],
           "rwa_id": 2,
           "asset_type": "stock",
           "rwa_rank": 3,
           "has_tokens": true,
-          "average_tokenized_price": 156.61764998445895,
-          "tokenized_market_cap": 410987911.15311027,
-          "tokenized_volume_24h": 785753801.6755627,
-          "last_updated": "2026-11-24T13:44:12.000Z"
+          "average_tokenized_price": 152.93159731337016,
+          "tokenized_market_cap": 406623668.00583076,
+          "tokenized_volume_24h": 299079811.4825211,
+          "last_updated": "2026-11-24T23:54:11.000Z"
         },
         "… 248 more"
       ]
     },
     "status": {
-      "timestamp": "2026-11-24T13:45:18.646Z",
+      "timestamp": "2026-11-24T23:54:39.260Z",
       "error_code": "0",
       "error_message": "",
-      "elapsed": 13,
+      "elapsed": 10,
       "credit_count": 1
     }
   }
