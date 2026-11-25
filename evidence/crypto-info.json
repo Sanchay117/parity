@@ -1,39 +1,280 @@
 {
-  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42936&skip_invalid=true&aux=logo%2Cplatform",
+  "request": "GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=42804%2C42930%2C42878%2C42927%2C42879%2C42926%2C42877%2C42928&skip_invalid=true&aux=logo%2Cplatform",
   "headers": {
     "X-CMC_PRO_API_KEY": "<redacted>"
   },
   "response": {
     "data": {
-      "42936": {
-        "id": 42936,
-        "name": "JD.Com Inc  (Derivatives)",
-        "symbol": "JD",
+      "42804": {
+        "id": 42804,
+        "name": "Freedom Holding Corp (Derivatives)",
+        "symbol": "FRHC",
         "category": "token",
-        "slug": "jdcom-inc-derivatives",
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42936.png",
+        "slug": "freedom-holding-corp-derivatives",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42804.png",
         "subreddit": "",
         "tag-names": [
           "DeFi",
           "Tokenized Stock",
-          "… 3 more"
+          "… 5 more"
         ],
         "tag-groups": [
           "CATEGORY",
           "CATEGORY",
-          "… 3 more"
+          "… 5 more"
         ],
         "platform": null,
         "twitter_username": "",
         "is_hidden": 0,
         "infinite_supply": false
+      },
+      "42877": {
+        "id": 42877,
+        "name": "iShares Expanded Tech-Software ETF (Derivatives)",
+        "symbol": "IGV",
+        "category": "token",
+        "slug": "ishares-expanded-tech-software-etf-derivatives",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42877.png",
+        "subreddit": "",
+        "tag-names": [
+          "Binance Ecosystem",
+          "Binance Listing",
+          "… 2 more"
+        ],
+        "tag-groups": [
+          "CATEGORY",
+          "CATEGORY",
+          "… 2 more"
+        ],
+        "platform": null,
+        "twitter_username": "",
+        "is_hidden": 0,
+        "infinite_supply": false
+      },
+      "42878": {
+        "id": 42878,
+        "name": "iShares Future AI & Tech ETF (Derivatives)",
+        "symbol": "ARTY",
+        "category": "token",
+        "slug": "ishares-future-ai-tech-etf-derivatives",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42878.png",
+        "subreddit": "",
+        "tag-names": [
+          "Binance Ecosystem",
+          "Binance Listing",
+          "… 2 more"
+        ],
+        "tag-groups": [
+          "CATEGORY",
+          "CATEGORY",
+          "… 2 more"
+        ],
+        "platform": null,
+        "twitter_username": "",
+        "is_hidden": 0,
+        "infinite_supply": false
+      },
+      "42879": {
+        "id": 42879,
+        "name": "iShares Bitcoin Trust ETF (Derivatives)",
+        "symbol": "IBIT",
+        "category": "token",
+        "slug": "ishares-bitcoin-trust-etf-derivatives",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42879.png",
+        "subreddit": "",
+        "tag-names": [
+          "Binance Ecosystem",
+          "Binance Listing",
+          "… 2 more"
+        ],
+        "tag-groups": [
+          "CATEGORY",
+          "CATEGORY",
+          "… 2 more"
+        ],
+        "platform": null,
+        "twitter_username": "",
+        "is_hidden": 0,
+        "infinite_supply": false
+      },
+      "42926": {
+        "id": 42926,
+        "name": "iShares Bitcoin Trust Tokenized bStocks",
+        "symbol": "IBITB",
+        "category": "token",
+        "slug": "ishares-bitcoin-trust-tokenized-bstocks",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42926.png",
+        "subreddit": "",
+        "tag-names": [
+          "DeFi",
+          "Tokenized Stock",
+          "… 5 more"
+        ],
+        "tag-groups": [
+          "CATEGORY",
+          "CATEGORY",
+          "… 5 more"
+        ],
+        "platform": {
+          "id": "1839",
+          "name": "BNB",
+          "symbol": "BNB",
+          "slug": "bnb",
+          "token_address": "0x2480a1b8e5f68752fe880fba96e5517369a5f6a1"
+        },
+        "twitter_username": "",
+        "is_hidden": 0,
+        "contract_address": [
+          {
+            "contract_address": "0x2480a1b8e5f68752fe880fba96e5517369a5f6a1",
+            "platform": {
+              "name": "BNB Smart Chain (BEP20)",
+              "coin": {
+                "id": "1839",
+                "name": "BNB",
+                "symbol": "BNB",
+                "slug": "bnb"
+              }
+            }
+          }
+        ],
+        "infinite_supply": false
+      },
+      "42927": {
+        "id": 42927,
+        "name": "iShares Future AI & Tech ETF Tokenized bStocks",
+        "symbol": "ARTYB",
+        "category": "token",
+        "slug": "ishares-future-ai-tech-etf-tokenized-bstocks",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42927.png",
+        "subreddit": "",
+        "tag-names": [
+          "DeFi",
+          "Tokenized Stock",
+          "… 5 more"
+        ],
+        "tag-groups": [
+          "CATEGORY",
+          "CATEGORY",
+          "… 5 more"
+        ],
+        "platform": {
+          "id": "1839",
+          "name": "BNB",
+          "symbol": "BNB",
+          "slug": "bnb",
+          "token_address": "0x4c7ae9c293641cd1530ba3ab1b14ef004193e928"
+        },
+        "twitter_username": "",
+        "is_hidden": 0,
+        "contract_address": [
+          {
+            "contract_address": "0x4c7ae9c293641cd1530ba3ab1b14ef004193e928",
+            "platform": {
+              "name": "BNB Smart Chain (BEP20)",
+              "coin": {
+                "id": "1839",
+                "name": "BNB",
+                "symbol": "BNB",
+                "slug": "bnb"
+              }
+            }
+          }
+        ],
+        "infinite_supply": false
+      },
+      "42928": {
+        "id": 42928,
+        "name": "iShares Expanded Tech-Software Sector ETF Tokenized bStocks",
+        "symbol": "IGVB",
+        "category": "token",
+        "slug": "ishares-expanded-tech-software-sector-etf-tokenized-bstocks",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42928.png",
+        "subreddit": "",
+        "tag-names": [
+          "DeFi",
+          "Tokenized Stock",
+          "… 5 more"
+        ],
+        "tag-groups": [
+          "CATEGORY",
+          "CATEGORY",
+          "… 5 more"
+        ],
+        "platform": {
+          "id": "1839",
+          "name": "BNB",
+          "symbol": "BNB",
+          "slug": "bnb",
+          "token_address": "0x3f9550a5355e11c4c4e24a82e47b53a4a5d1e17d"
+        },
+        "twitter_username": "",
+        "is_hidden": 0,
+        "contract_address": [
+          {
+            "contract_address": "0x3f9550a5355e11c4c4e24a82e47b53a4a5d1e17d",
+            "platform": {
+              "name": "BNB Smart Chain (BEP20)",
+              "coin": {
+                "id": "1839",
+                "name": "BNB",
+                "symbol": "BNB",
+                "slug": "bnb"
+              }
+            }
+          }
+        ],
+        "infinite_supply": false
+      },
+      "42930": {
+        "id": 42930,
+        "name": "Freedom Holding Corp Tokenized bStocks",
+        "symbol": "FRHCB",
+        "category": "token",
+        "slug": "freedom-holding-corp-tokenized-bstocks",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/42930.png",
+        "subreddit": "",
+        "tag-names": [
+          "DeFi",
+          "Tokenized Stock",
+          "… 5 more"
+        ],
+        "tag-groups": [
+          "CATEGORY",
+          "CATEGORY",
+          "… 5 more"
+        ],
+        "platform": {
+          "id": "1839",
+          "name": "BNB",
+          "symbol": "BNB",
+          "slug": "bnb",
+          "token_address": "0x091d185e0702131a3047beb6460454f43d667e80"
+        },
+        "twitter_username": "",
+        "is_hidden": 0,
+        "contract_address": [
+          {
+            "contract_address": "0x091d185e0702131a3047beb6460454f43d667e80",
+            "platform": {
+              "name": "BNB Smart Chain (BEP20)",
+              "coin": {
+                "id": "1839",
+                "name": "BNB",
+                "symbol": "BNB",
+                "slug": "bnb"
+              }
+            }
+          }
+        ],
+        "infinite_supply": false
       }
     },
     "status": {
-      "timestamp": "2026-11-25T08:38:29.695Z",
+      "timestamp": "2026-11-25T19:19:29.054Z",
       "error_code": 0,
       "error_message": null,
-      "elapsed": 38,
+      "elapsed": 10,
       "credit_count": 1,
       "notice": null
     }
